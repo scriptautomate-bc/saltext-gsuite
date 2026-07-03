@@ -1,0 +1,135 @@
+{{ header }}
+# pylint: disable=invalid-name,line-too-long,broad-except
+"""
+{{ title }} state module (best-effort, generated).
+
+Auto-generated ``present``/``absent`` states derived from the CRUD method pattern of each
+resource. Identity/diffing is shallow; resources that need real idempotency logic should be
+hand-tuned in ``saltext/gsuite/states/overrides/{{ module }}.py`` (which the generator prefers
+over the auto-generated version).
+"""
+import logging
+
+from saltext.gsuite import _binary
+{%- if overrides_import %}
+
+from saltext.gsuite.states.overrides import {{ module }} as _overrides
+{%- endif %}
+
+log = logging.getLogger(__name__)
+
+__virtualname__ = "{{ virtualname }}"
+
+
+def __virtual__():
+    if not _binary.is_available(opts=__opts__, pillar=__pillar__):
+        return (False, "The 'gws' binary is not available")
+    return __virtualname__
+
+{% for r in resources %}
+
+def {{ r.present_name }}(name, body=None, **params):
+    """
+    Ensure the {{ r.label }} identified by ``name`` exists (best-effort).
+
+    ``name`` is the value of the ``{{ r.id_param }}`` identifier. Additional required
+    parameters (e.g. parent identifiers) and query parameters are passed via ``**params``.
+    ``body`` is the resource representation used on create{% if r.update_method %}/update{% endif %}.
+
+    CLI Example:
+
+    .. code-block:: yaml
+
+        my-{{ r.present_name }}:
+          {{ virtualname }}.{{ r.present_name }}:
+            - name: {{ r.id_param }}-value
+            - body: {}
+    """
+{%- if overrides_import %}
+    if hasattr(_overrides, {{ r.present_name | tojson }}):
+        return getattr(_overrides, {{ r.present_name | tojson }})(name, body=body, **params)
+{%- endif %}
+    ret = {"name": name, "changes": {}, "result": None, "comment": ""}
+    test = __opts__.get("test", False)
+    lookup = dict(params)
+    lookup[{{ r.id_param | tojson }}] = name
+    existing = None
+    try:
+        existing = __salt__["{{ exec_virtualname }}.{{ r.get_fn }}"](**lookup)
+    except Exception:  # pylint: disable=broad-except
+        existing = None
+
+    if existing:
+{%- if r.update_method %}
+        if body:
+            if test:
+                ret["result"] = None
+                ret["changes"] = {"updated": name}
+                ret["comment"] = f"{{ r.label }} '{name}' would be updated"
+                return ret
+            update_args = dict(params)
+            update_args[{{ r.id_param | tojson }}] = name
+            __salt__["{{ exec_virtualname }}.{{ r.update_fn }}"](body=body, **update_args)
+            ret["result"] = True
+            ret["changes"] = {"updated": name}
+            ret["comment"] = f"{{ r.label }} '{name}' updated"
+            return ret
+{%- endif %}
+        ret["result"] = True
+        ret["comment"] = f"{{ r.label }} '{name}' is already present"
+        return ret
+
+    if test:
+        ret["result"] = None
+        ret["changes"] = {"created": name}
+        ret["comment"] = f"{{ r.label }} '{name}' would be created"
+        return ret
+    create_args = dict(params)
+    __salt__["{{ exec_virtualname }}.{{ r.create_fn }}"](body=body, **create_args)
+    ret["result"] = True
+    ret["changes"] = {"created": name}
+    ret["comment"] = f"{{ r.label }} '{name}' created"
+    return ret
+
+
+def {{ r.absent_name }}(name, **params):
+    """
+    Ensure the {{ r.label }} identified by ``name`` is absent (best-effort).
+
+    CLI Example:
+
+    .. code-block:: yaml
+
+        remove-{{ r.absent_name }}:
+          {{ virtualname }}.{{ r.absent_name }}:
+            - name: {{ r.id_param }}-value
+    """
+{%- if overrides_import %}
+    if hasattr(_overrides, {{ r.absent_name | tojson }}):
+        return getattr(_overrides, {{ r.absent_name | tojson }})(name, **params)
+{%- endif %}
+    ret = {"name": name, "changes": {}, "result": None, "comment": ""}
+    test = __opts__.get("test", False)
+    lookup = dict(params)
+    lookup[{{ r.id_param | tojson }}] = name
+    existing = None
+    try:
+        existing = __salt__["{{ exec_virtualname }}.{{ r.get_fn }}"](**lookup)
+    except Exception:  # pylint: disable=broad-except
+        existing = None
+
+    if not existing:
+        ret["result"] = True
+        ret["comment"] = f"{{ r.label }} '{name}' is already absent"
+        return ret
+    if test:
+        ret["result"] = None
+        ret["changes"] = {"deleted": name}
+        ret["comment"] = f"{{ r.label }} '{name}' would be deleted"
+        return ret
+    __salt__["{{ exec_virtualname }}.{{ r.delete_fn }}"](**lookup)
+    ret["result"] = True
+    ret["changes"] = {"deleted": name}
+    ret["comment"] = f"{{ r.label }} '{name}' deleted"
+    return ret
+{% endfor %}

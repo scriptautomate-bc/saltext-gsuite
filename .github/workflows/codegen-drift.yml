@@ -1,0 +1,39 @@
+name: codegen-drift
+
+# On PRs touching the generator/templates, regenerate the surface and fail if it drifts from
+# what is committed (catches template/logic changes that were not re-run).
+on:
+  pull_request:
+    paths:
+      - "tools/generate_modules.py"
+      - "tools/_codegen/**"
+      - "src/saltext/gsuite/metadata/services.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+      - name: Set up env
+        run: |
+          uv venv .venv
+          uv pip install --python .venv/bin/python -e . jinja2 black==26.5.1 isort==8.0.1
+      - name: Regenerate
+        run: .venv/bin/python tools/generate_modules.py --all
+      - name: Fail on drift
+        run: |
+          if ! git diff --quiet; then
+            echo "::error::Generated output is out of date. Run 'just generate' and commit the result."
+            git diff --stat
+            exit 1
+          fi
+          echo "No drift: generated surface is up to date."

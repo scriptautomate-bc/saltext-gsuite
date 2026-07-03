@@ -1,0 +1,93 @@
+name: release-wheels
+
+# On a release tag (vX.Y.Z.N), build one wheel per target architecture with the matching gws
+# binary bundled in, plus a source-only sdist, and publish to PyPI.
+on:
+  push:
+    tags:
+      - "v*.*.*.*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - name: Assert tag matches bundled gws version
+        run: python tools/update_gws.py --check-tag "${GITHUB_REF_NAME}"
+
+  wheels:
+    needs: verify-tag
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: linux-x86_64
+            plat: manylinux2014_x86_64
+          - arch: linux-aarch64
+            plat: manylinux2014_aarch64
+          - arch: macos-x86_64
+            plat: macosx_10_12_x86_64
+          - arch: macos-arm64
+            plat: macosx_11_0_arm64
+          - arch: windows-amd64
+            plat: win_amd64
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - name: Install build deps
+        run: python -m pip install build "setuptools>=50.3.2" wheel "setuptools_scm[toml]>=3.4"
+      - name: Fetch + verify gws binary for ${{ matrix.arch }}
+        run: python tools/fetch_binary.py --arch ${{ matrix.arch }}
+      - name: Build platform wheel
+        run: python -m build --wheel --no-isolation -C--build-option=--plat-name=${{ matrix.plat }} --outdir dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wheel-${{ matrix.arch }}
+          path: dist/*.whl
+
+  sdist:
+    needs: verify-tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - name: Build sdist (source-only, no binary)
+        run: |
+          python -m pip install build
+          python -m build --sdist --outdir dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sdist
+          path: dist/*.tar.gz
+
+  publish:
+    needs: [wheels, sdist]
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write  # trusted publishing
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1

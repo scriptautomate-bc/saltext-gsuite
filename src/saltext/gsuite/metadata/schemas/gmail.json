@@ -1,0 +1,1207 @@
+{
+  "api": "gmail",
+  "methods": [
+    {
+      "fn": "users_get_profile",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "getProfile",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_stop",
+      "has_body": false,
+      "http_method": "POST",
+      "method": "stop",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_watch",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "watch",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_drafts_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "drafts"
+      ],
+      "supports_media_upload": true
+    },
+    {
+      "fn": "users_drafts_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "userId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "drafts"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_drafts_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "userId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "drafts"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_drafts_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "drafts"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_drafts_send",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "send",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "drafts"
+      ],
+      "supports_media_upload": true
+    },
+    {
+      "fn": "users_drafts_update",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "update",
+      "required": [
+        "userId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "drafts"
+      ],
+      "supports_media_upload": true
+    },
+    {
+      "fn": "users_history_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "history"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_labels_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "labels"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_labels_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "userId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "labels"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_labels_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "userId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "labels"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_labels_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "labels"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_labels_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "userId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "labels"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_labels_update",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "update",
+      "required": [
+        "userId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "labels"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_messages_batch_delete",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "batchDelete",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "messages"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_messages_batch_modify",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "batchModify",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "messages"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_messages_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "userId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "messages"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_messages_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "userId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "messages"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_messages_import",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "import",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "messages"
+      ],
+      "supports_media_upload": true
+    },
+    {
+      "fn": "users_messages_insert",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "insert",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "messages"
+      ],
+      "supports_media_upload": true
+    },
+    {
+      "fn": "users_messages_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "messages"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_messages_modify",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "modify",
+      "required": [
+        "userId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "messages"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_messages_send",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "send",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "messages"
+      ],
+      "supports_media_upload": true
+    },
+    {
+      "fn": "users_messages_trash",
+      "has_body": false,
+      "http_method": "POST",
+      "method": "trash",
+      "required": [
+        "userId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "messages"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_messages_untrash",
+      "has_body": false,
+      "http_method": "POST",
+      "method": "untrash",
+      "required": [
+        "userId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "messages"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_messages_attachments_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "userId",
+        "messageId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "messages",
+        "attachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_get_auto_forwarding",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "getAutoForwarding",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_get_imap",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "getImap",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_get_language",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "getLanguage",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_get_pop",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "getPop",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_get_vacation",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "getVacation",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_update_auto_forwarding",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "updateAutoForwarding",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_update_imap",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "updateImap",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_update_language",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "updateLanguage",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_update_pop",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "updatePop",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_update_vacation",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "updateVacation",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_cse_identities_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "cse",
+        "identities"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_cse_identities_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "userId",
+        "cseEmailAddress"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "cse",
+        "identities"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_cse_identities_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "userId",
+        "cseEmailAddress"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "cse",
+        "identities"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_cse_identities_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "cse",
+        "identities"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_cse_identities_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "userId",
+        "emailAddress"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "cse",
+        "identities"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_cse_keypairs_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "cse",
+        "keypairs"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_cse_keypairs_disable",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "disable",
+      "required": [
+        "userId",
+        "keyPairId"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "cse",
+        "keypairs"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_cse_keypairs_enable",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "enable",
+      "required": [
+        "userId",
+        "keyPairId"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "cse",
+        "keypairs"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_cse_keypairs_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "userId",
+        "keyPairId"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "cse",
+        "keypairs"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_cse_keypairs_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "cse",
+        "keypairs"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_cse_keypairs_obliterate",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "obliterate",
+      "required": [
+        "userId",
+        "keyPairId"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "cse",
+        "keypairs"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_delegates_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "delegates"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_delegates_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "userId",
+        "delegateEmail"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "delegates"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_delegates_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "userId",
+        "delegateEmail"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "delegates"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_delegates_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "delegates"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_filters_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "filters"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_filters_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "userId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "filters"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_filters_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "userId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "filters"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_filters_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "filters"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_forwarding_addresses_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "forwardingAddresses"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_forwarding_addresses_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "userId",
+        "forwardingEmail"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "forwardingAddresses"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_forwarding_addresses_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "userId",
+        "forwardingEmail"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "forwardingAddresses"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_forwarding_addresses_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "forwardingAddresses"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_send_as_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "sendAs"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_send_as_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "userId",
+        "sendAsEmail"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "sendAs"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_send_as_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "userId",
+        "sendAsEmail"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "sendAs"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_send_as_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "sendAs"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_send_as_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "userId",
+        "sendAsEmail"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "sendAs"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_send_as_update",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "update",
+      "required": [
+        "userId",
+        "sendAsEmail"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "sendAs"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_send_as_verify",
+      "has_body": false,
+      "http_method": "POST",
+      "method": "verify",
+      "required": [
+        "userId",
+        "sendAsEmail"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "sendAs"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_send_as_smime_info_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "userId",
+        "sendAsEmail",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "sendAs",
+        "smimeInfo"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_send_as_smime_info_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "userId",
+        "sendAsEmail",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "sendAs",
+        "smimeInfo"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_send_as_smime_info_insert",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "insert",
+      "required": [
+        "userId",
+        "sendAsEmail"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "sendAs",
+        "smimeInfo"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_send_as_smime_info_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "userId",
+        "sendAsEmail"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "sendAs",
+        "smimeInfo"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_settings_send_as_smime_info_set_default",
+      "has_body": false,
+      "http_method": "POST",
+      "method": "setDefault",
+      "required": [
+        "userId",
+        "sendAsEmail",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "settings",
+        "sendAs",
+        "smimeInfo"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_threads_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "userId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "threads"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_threads_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "userId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "threads"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_threads_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "users",
+        "threads"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_threads_modify",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "modify",
+      "required": [
+        "userId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "threads"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_threads_trash",
+      "has_body": false,
+      "http_method": "POST",
+      "method": "trash",
+      "required": [
+        "userId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "threads"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_threads_untrash",
+      "has_body": false,
+      "http_method": "POST",
+      "method": "untrash",
+      "required": [
+        "userId",
+        "id"
+      ],
+      "resource_path": [
+        "users",
+        "threads"
+      ],
+      "supports_media_upload": false
+    }
+  ],
+  "revision": "20260629",
+  "version": "v1"
+}

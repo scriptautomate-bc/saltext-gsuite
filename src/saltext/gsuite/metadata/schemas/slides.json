@@ -1,0 +1,74 @@
+{
+  "api": "slides",
+  "methods": [
+    {
+      "fn": "presentations_batch_update",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "batchUpdate",
+      "required": [
+        "presentationId"
+      ],
+      "resource_path": [
+        "presentations"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "presentations_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [],
+      "resource_path": [
+        "presentations"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "presentations_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "presentationId"
+      ],
+      "resource_path": [
+        "presentations"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "presentations_pages_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "presentationId",
+        "pageObjectId"
+      ],
+      "resource_path": [
+        "presentations",
+        "pages"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "presentations_pages_get_thumbnail",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "getThumbnail",
+      "required": [
+        "presentationId",
+        "pageObjectId"
+      ],
+      "resource_path": [
+        "presentations",
+        "pages"
+      ],
+      "supports_media_upload": false
+    }
+  ],
+  "revision": "20260624",
+  "version": "v1"
+}

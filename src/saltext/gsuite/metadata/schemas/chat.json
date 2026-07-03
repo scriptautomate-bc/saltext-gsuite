@@ -1,0 +1,684 @@
+{
+  "api": "chat",
+  "methods": [
+    {
+      "fn": "custom_emojis_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [],
+      "resource_path": [
+        "customEmojis"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "custom_emojis_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "customEmojis"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "custom_emojis_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "customEmojis"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "custom_emojis_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [],
+      "resource_path": [
+        "customEmojis"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "media_download",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "download",
+      "required": [
+        "resourceName"
+      ],
+      "resource_path": [
+        "media"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "media_upload",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "upload",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "media"
+      ],
+      "supports_media_upload": true
+    },
+    {
+      "fn": "spaces_complete_import",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "completeImport",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "spaces"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [],
+      "resource_path": [
+        "spaces"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "spaces"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_find_direct_message",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "findDirectMessage",
+      "required": [],
+      "resource_path": [
+        "spaces"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_find_group_chats",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "findGroupChats",
+      "required": [],
+      "resource_path": [
+        "spaces"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "spaces"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [],
+      "resource_path": [
+        "spaces"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "spaces"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_search",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "search",
+      "required": [],
+      "resource_path": [
+        "spaces"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_setup",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "setup",
+      "required": [],
+      "resource_path": [
+        "spaces"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_members_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "spaces",
+        "members"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_members_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "spaces",
+        "members"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_members_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "spaces",
+        "members"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_members_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "spaces",
+        "members"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_members_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "spaces",
+        "members"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_messages_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "spaces",
+        "messages"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_messages_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "spaces",
+        "messages"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_messages_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "spaces",
+        "messages"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_messages_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "spaces",
+        "messages"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_messages_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "spaces",
+        "messages"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_messages_update",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "update",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "spaces",
+        "messages"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_messages_attachments_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "spaces",
+        "messages",
+        "attachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_messages_reactions_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "spaces",
+        "messages",
+        "reactions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_messages_reactions_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "spaces",
+        "messages",
+        "reactions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_messages_reactions_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "spaces",
+        "messages",
+        "reactions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_space_events_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "spaces",
+        "spaceEvents"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_space_events_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "spaces",
+        "spaceEvents"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_availability_get_availability",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "getAvailability",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "users",
+        "availability"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_availability_mark_as_active",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "markAsActive",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "users",
+        "availability"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_availability_mark_as_away",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "markAsAway",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "users",
+        "availability"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_availability_mark_as_do_not_disturb",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "markAsDoNotDisturb",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "users",
+        "availability"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_availability_update_availability",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "updateAvailability",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "users",
+        "availability"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_sections_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "users",
+        "sections"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_sections_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "users",
+        "sections"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_sections_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "users",
+        "sections"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_sections_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "users",
+        "sections"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_sections_position",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "position",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "users",
+        "sections"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_sections_items_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "users",
+        "sections",
+        "items"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_sections_items_move",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "move",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "users",
+        "sections",
+        "items"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_spaces_get_space_read_state",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "getSpaceReadState",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "users",
+        "spaces"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_spaces_update_space_read_state",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "updateSpaceReadState",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "users",
+        "spaces"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_spaces_space_notification_setting_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "users",
+        "spaces",
+        "spaceNotificationSetting"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_spaces_space_notification_setting_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "users",
+        "spaces",
+        "spaceNotificationSetting"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "users_spaces_threads_get_thread_read_state",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "getThreadReadState",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "users",
+        "spaces",
+        "threads"
+      ],
+      "supports_media_upload": false
+    }
+  ],
+  "revision": "20260628",
+  "version": "v1"
+}

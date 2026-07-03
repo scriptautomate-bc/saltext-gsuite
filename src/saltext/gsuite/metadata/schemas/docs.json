@@ -1,0 +1,44 @@
+{
+  "api": "docs",
+  "methods": [
+    {
+      "fn": "documents_batch_update",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "batchUpdate",
+      "required": [
+        "documentId"
+      ],
+      "resource_path": [
+        "documents"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "documents_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [],
+      "resource_path": [
+        "documents"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "documents_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "documentId"
+      ],
+      "resource_path": [
+        "documents"
+      ],
+      "supports_media_upload": false
+    }
+  ],
+  "revision": "20260629",
+  "version": "v1"
+}

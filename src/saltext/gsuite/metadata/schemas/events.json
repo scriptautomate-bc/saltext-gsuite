@@ -1,0 +1,200 @@
+{
+  "api": "workspaceevents",
+  "methods": [
+    {
+      "fn": "message_stream",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "stream",
+      "required": [],
+      "resource_path": [
+        "message"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "operations_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "operations"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "subscriptions_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [],
+      "resource_path": [
+        "subscriptions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "subscriptions_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "subscriptions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "subscriptions_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "subscriptions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "subscriptions_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [],
+      "resource_path": [
+        "subscriptions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "subscriptions_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "subscriptions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "subscriptions_reactivate",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "reactivate",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "subscriptions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasks_cancel",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "cancel",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "tasks"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasks_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "tasks"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasks_subscribe",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "subscribe",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "tasks"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasks_push_notification_configs_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "tasks",
+        "pushNotificationConfigs"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasks_push_notification_configs_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "tasks",
+        "pushNotificationConfigs"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasks_push_notification_configs_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "tasks",
+        "pushNotificationConfigs"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasks_push_notification_configs_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "tasks",
+        "pushNotificationConfigs"
+      ],
+      "supports_media_upload": false
+    }
+  ],
+  "revision": "20260630",
+  "version": "v1"
+}

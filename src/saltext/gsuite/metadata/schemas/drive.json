@@ -1,0 +1,843 @@
+{
+  "api": "drive",
+  "methods": [
+    {
+      "fn": "about_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [],
+      "resource_path": [
+        "about"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "accessproposals_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "fileId",
+        "proposalId"
+      ],
+      "resource_path": [
+        "accessproposals"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "accessproposals_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "fileId"
+      ],
+      "resource_path": [
+        "accessproposals"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "accessproposals_resolve",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "resolve",
+      "required": [
+        "fileId",
+        "proposalId"
+      ],
+      "resource_path": [
+        "accessproposals"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "approvals_approve",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "approve",
+      "required": [
+        "fileId",
+        "approvalId"
+      ],
+      "resource_path": [
+        "approvals"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "approvals_cancel",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "cancel",
+      "required": [
+        "fileId",
+        "approvalId"
+      ],
+      "resource_path": [
+        "approvals"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "approvals_comment",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "comment",
+      "required": [
+        "fileId",
+        "approvalId"
+      ],
+      "resource_path": [
+        "approvals"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "approvals_decline",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "decline",
+      "required": [
+        "fileId",
+        "approvalId"
+      ],
+      "resource_path": [
+        "approvals"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "approvals_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "fileId",
+        "approvalId"
+      ],
+      "resource_path": [
+        "approvals"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "approvals_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "fileId"
+      ],
+      "resource_path": [
+        "approvals"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "approvals_reassign",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "reassign",
+      "required": [
+        "fileId",
+        "approvalId"
+      ],
+      "resource_path": [
+        "approvals"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "approvals_start",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "start",
+      "required": [
+        "fileId"
+      ],
+      "resource_path": [
+        "approvals"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "apps_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "appId"
+      ],
+      "resource_path": [
+        "apps"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "apps_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [],
+      "resource_path": [
+        "apps"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "changes_get_start_page_token",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "getStartPageToken",
+      "required": [],
+      "resource_path": [
+        "changes"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "changes_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "pageToken"
+      ],
+      "resource_path": [
+        "changes"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "changes_watch",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "watch",
+      "required": [
+        "pageToken"
+      ],
+      "resource_path": [
+        "changes"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "channels_stop",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "stop",
+      "required": [],
+      "resource_path": [
+        "channels"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "comments_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "fileId"
+      ],
+      "resource_path": [
+        "comments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "comments_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "fileId",
+        "commentId"
+      ],
+      "resource_path": [
+        "comments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "comments_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "fileId",
+        "commentId"
+      ],
+      "resource_path": [
+        "comments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "comments_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "fileId"
+      ],
+      "resource_path": [
+        "comments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "comments_update",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "update",
+      "required": [
+        "fileId",
+        "commentId"
+      ],
+      "resource_path": [
+        "comments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "drives_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "requestId"
+      ],
+      "resource_path": [
+        "drives"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "drives_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "driveId"
+      ],
+      "resource_path": [
+        "drives"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "drives_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "driveId"
+      ],
+      "resource_path": [
+        "drives"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "drives_hide",
+      "has_body": false,
+      "http_method": "POST",
+      "method": "hide",
+      "required": [
+        "driveId"
+      ],
+      "resource_path": [
+        "drives"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "drives_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [],
+      "resource_path": [
+        "drives"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "drives_unhide",
+      "has_body": false,
+      "http_method": "POST",
+      "method": "unhide",
+      "required": [
+        "driveId"
+      ],
+      "resource_path": [
+        "drives"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "drives_update",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "update",
+      "required": [
+        "driveId"
+      ],
+      "resource_path": [
+        "drives"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "files_copy",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "copy",
+      "required": [
+        "fileId"
+      ],
+      "resource_path": [
+        "files"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "files_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [],
+      "resource_path": [
+        "files"
+      ],
+      "supports_media_upload": true
+    },
+    {
+      "fn": "files_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "fileId"
+      ],
+      "resource_path": [
+        "files"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "files_download",
+      "has_body": false,
+      "http_method": "POST",
+      "method": "download",
+      "required": [
+        "fileId"
+      ],
+      "resource_path": [
+        "files"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "files_empty_trash",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "emptyTrash",
+      "required": [],
+      "resource_path": [
+        "files"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "files_export",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "export",
+      "required": [
+        "fileId",
+        "mimeType"
+      ],
+      "resource_path": [
+        "files"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "files_generate_cse_token",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "generateCseToken",
+      "required": [],
+      "resource_path": [
+        "files"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "files_generate_ids",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "generateIds",
+      "required": [],
+      "resource_path": [
+        "files"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "files_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "fileId"
+      ],
+      "resource_path": [
+        "files"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "files_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [],
+      "resource_path": [
+        "files"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "files_list_labels",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "listLabels",
+      "required": [
+        "fileId"
+      ],
+      "resource_path": [
+        "files"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "files_modify_labels",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "modifyLabels",
+      "required": [
+        "fileId"
+      ],
+      "resource_path": [
+        "files"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "files_update",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "update",
+      "required": [
+        "fileId"
+      ],
+      "resource_path": [
+        "files"
+      ],
+      "supports_media_upload": true
+    },
+    {
+      "fn": "files_watch",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "watch",
+      "required": [
+        "fileId"
+      ],
+      "resource_path": [
+        "files"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "operations_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "operations"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "permissions_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "fileId"
+      ],
+      "resource_path": [
+        "permissions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "permissions_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "fileId",
+        "permissionId"
+      ],
+      "resource_path": [
+        "permissions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "permissions_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "fileId",
+        "permissionId"
+      ],
+      "resource_path": [
+        "permissions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "permissions_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "fileId"
+      ],
+      "resource_path": [
+        "permissions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "permissions_update",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "update",
+      "required": [
+        "fileId",
+        "permissionId"
+      ],
+      "resource_path": [
+        "permissions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "replies_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "fileId",
+        "commentId"
+      ],
+      "resource_path": [
+        "replies"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "replies_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "fileId",
+        "commentId",
+        "replyId"
+      ],
+      "resource_path": [
+        "replies"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "replies_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "fileId",
+        "commentId",
+        "replyId"
+      ],
+      "resource_path": [
+        "replies"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "replies_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "fileId",
+        "commentId"
+      ],
+      "resource_path": [
+        "replies"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "replies_update",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "update",
+      "required": [
+        "fileId",
+        "commentId",
+        "replyId"
+      ],
+      "resource_path": [
+        "replies"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "revisions_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "fileId",
+        "revisionId"
+      ],
+      "resource_path": [
+        "revisions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "revisions_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "fileId",
+        "revisionId"
+      ],
+      "resource_path": [
+        "revisions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "revisions_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "fileId"
+      ],
+      "resource_path": [
+        "revisions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "revisions_update",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "update",
+      "required": [
+        "fileId",
+        "revisionId"
+      ],
+      "resource_path": [
+        "revisions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "teamdrives_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "requestId"
+      ],
+      "resource_path": [
+        "teamdrives"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "teamdrives_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "teamDriveId"
+      ],
+      "resource_path": [
+        "teamdrives"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "teamdrives_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "teamDriveId"
+      ],
+      "resource_path": [
+        "teamdrives"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "teamdrives_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [],
+      "resource_path": [
+        "teamdrives"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "teamdrives_update",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "update",
+      "required": [
+        "teamDriveId"
+      ],
+      "resource_path": [
+        "teamdrives"
+      ],
+      "supports_media_upload": false
+    }
+  ],
+  "revision": "20260629",
+  "version": "v3"
+}

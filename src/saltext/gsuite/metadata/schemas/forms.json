@@ -1,0 +1,144 @@
+{
+  "api": "forms",
+  "methods": [
+    {
+      "fn": "forms_batch_update",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "batchUpdate",
+      "required": [
+        "formId"
+      ],
+      "resource_path": [
+        "forms"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "forms_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [],
+      "resource_path": [
+        "forms"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "forms_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "formId"
+      ],
+      "resource_path": [
+        "forms"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "forms_set_publish_settings",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "setPublishSettings",
+      "required": [
+        "formId"
+      ],
+      "resource_path": [
+        "forms"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "forms_responses_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "formId",
+        "responseId"
+      ],
+      "resource_path": [
+        "forms",
+        "responses"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "forms_responses_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "formId"
+      ],
+      "resource_path": [
+        "forms",
+        "responses"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "forms_watches_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "formId"
+      ],
+      "resource_path": [
+        "forms",
+        "watches"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "forms_watches_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "formId",
+        "watchId"
+      ],
+      "resource_path": [
+        "forms",
+        "watches"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "forms_watches_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "formId"
+      ],
+      "resource_path": [
+        "forms",
+        "watches"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "forms_watches_renew",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "renew",
+      "required": [
+        "formId",
+        "watchId"
+      ],
+      "resource_path": [
+        "forms",
+        "watches"
+      ],
+      "supports_media_upload": false
+    }
+  ],
+  "revision": "20260629",
+  "version": "v1"
+}

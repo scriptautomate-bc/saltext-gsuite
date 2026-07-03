@@ -1,0 +1,497 @@
+{
+  "api": "calendar",
+  "methods": [
+    {
+      "fn": "acl_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "calendarId",
+        "ruleId"
+      ],
+      "resource_path": [
+        "acl"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "acl_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "calendarId",
+        "ruleId"
+      ],
+      "resource_path": [
+        "acl"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "acl_insert",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "insert",
+      "required": [
+        "calendarId"
+      ],
+      "resource_path": [
+        "acl"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "acl_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "calendarId"
+      ],
+      "resource_path": [
+        "acl"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "acl_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "calendarId",
+        "ruleId"
+      ],
+      "resource_path": [
+        "acl"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "acl_update",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "update",
+      "required": [
+        "calendarId",
+        "ruleId"
+      ],
+      "resource_path": [
+        "acl"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "acl_watch",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "watch",
+      "required": [
+        "calendarId"
+      ],
+      "resource_path": [
+        "acl"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "calendar_list_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "calendarId"
+      ],
+      "resource_path": [
+        "calendarList"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "calendar_list_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "calendarId"
+      ],
+      "resource_path": [
+        "calendarList"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "calendar_list_insert",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "insert",
+      "required": [],
+      "resource_path": [
+        "calendarList"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "calendar_list_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [],
+      "resource_path": [
+        "calendarList"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "calendar_list_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "calendarId"
+      ],
+      "resource_path": [
+        "calendarList"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "calendar_list_update",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "update",
+      "required": [
+        "calendarId"
+      ],
+      "resource_path": [
+        "calendarList"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "calendar_list_watch",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "watch",
+      "required": [],
+      "resource_path": [
+        "calendarList"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "calendars_clear",
+      "has_body": false,
+      "http_method": "POST",
+      "method": "clear",
+      "required": [
+        "calendarId"
+      ],
+      "resource_path": [
+        "calendars"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "calendars_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "calendarId"
+      ],
+      "resource_path": [
+        "calendars"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "calendars_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "calendarId"
+      ],
+      "resource_path": [
+        "calendars"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "calendars_insert",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "insert",
+      "required": [],
+      "resource_path": [
+        "calendars"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "calendars_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "calendarId"
+      ],
+      "resource_path": [
+        "calendars"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "calendars_transfer_ownership",
+      "has_body": false,
+      "http_method": "POST",
+      "method": "transferOwnership",
+      "required": [
+        "calendarId",
+        "newDataOwner",
+        "useAdminAccess"
+      ],
+      "resource_path": [
+        "calendars"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "calendars_update",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "update",
+      "required": [
+        "calendarId"
+      ],
+      "resource_path": [
+        "calendars"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "channels_stop",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "stop",
+      "required": [],
+      "resource_path": [
+        "channels"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "colors_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [],
+      "resource_path": [
+        "colors"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "events_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "calendarId",
+        "eventId"
+      ],
+      "resource_path": [
+        "events"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "events_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "calendarId",
+        "eventId"
+      ],
+      "resource_path": [
+        "events"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "events_import",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "import",
+      "required": [
+        "calendarId"
+      ],
+      "resource_path": [
+        "events"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "events_insert",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "insert",
+      "required": [
+        "calendarId"
+      ],
+      "resource_path": [
+        "events"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "events_instances",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "instances",
+      "required": [
+        "calendarId",
+        "eventId"
+      ],
+      "resource_path": [
+        "events"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "events_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "calendarId"
+      ],
+      "resource_path": [
+        "events"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "events_move",
+      "has_body": false,
+      "http_method": "POST",
+      "method": "move",
+      "required": [
+        "calendarId",
+        "eventId",
+        "destination"
+      ],
+      "resource_path": [
+        "events"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "events_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "calendarId",
+        "eventId"
+      ],
+      "resource_path": [
+        "events"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "events_quick_add",
+      "has_body": false,
+      "http_method": "POST",
+      "method": "quickAdd",
+      "required": [
+        "calendarId",
+        "text"
+      ],
+      "resource_path": [
+        "events"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "events_update",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "update",
+      "required": [
+        "calendarId",
+        "eventId"
+      ],
+      "resource_path": [
+        "events"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "events_watch",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "watch",
+      "required": [
+        "calendarId"
+      ],
+      "resource_path": [
+        "events"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "freebusy_query",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "query",
+      "required": [],
+      "resource_path": [
+        "freebusy"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "settings_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "setting"
+      ],
+      "resource_path": [
+        "settings"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "settings_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [],
+      "resource_path": [
+        "settings"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "settings_watch",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "watch",
+      "required": [],
+      "resource_path": [
+        "settings"
+      ],
+      "supports_media_upload": false
+    }
+  ],
+  "revision": "20260629",
+  "version": "v3"
+}

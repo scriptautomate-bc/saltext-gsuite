@@ -1,0 +1,295 @@
+{
+  "api": "people",
+  "methods": [
+    {
+      "fn": "contact_groups_batch_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "batchGet",
+      "required": [],
+      "resource_path": [
+        "contactGroups"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "contact_groups_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [],
+      "resource_path": [
+        "contactGroups"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "contact_groups_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "resourceName"
+      ],
+      "resource_path": [
+        "contactGroups"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "contact_groups_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "resourceName"
+      ],
+      "resource_path": [
+        "contactGroups"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "contact_groups_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [],
+      "resource_path": [
+        "contactGroups"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "contact_groups_update",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "update",
+      "required": [
+        "resourceName"
+      ],
+      "resource_path": [
+        "contactGroups"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "contact_groups_members_modify",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "modify",
+      "required": [
+        "resourceName"
+      ],
+      "resource_path": [
+        "contactGroups",
+        "members"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "other_contacts_copy_other_contact_to_my_contacts_group",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "copyOtherContactToMyContactsGroup",
+      "required": [
+        "resourceName"
+      ],
+      "resource_path": [
+        "otherContacts"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "other_contacts_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [],
+      "resource_path": [
+        "otherContacts"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "other_contacts_search",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "search",
+      "required": [],
+      "resource_path": [
+        "otherContacts"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "people_batch_create_contacts",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "batchCreateContacts",
+      "required": [],
+      "resource_path": [
+        "people"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "people_batch_delete_contacts",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "batchDeleteContacts",
+      "required": [],
+      "resource_path": [
+        "people"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "people_batch_update_contacts",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "batchUpdateContacts",
+      "required": [],
+      "resource_path": [
+        "people"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "people_create_contact",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "createContact",
+      "required": [],
+      "resource_path": [
+        "people"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "people_delete_contact",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "deleteContact",
+      "required": [
+        "resourceName"
+      ],
+      "resource_path": [
+        "people"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "people_delete_contact_photo",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "deleteContactPhoto",
+      "required": [
+        "resourceName"
+      ],
+      "resource_path": [
+        "people"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "people_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "resourceName"
+      ],
+      "resource_path": [
+        "people"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "people_get_batch_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "getBatchGet",
+      "required": [],
+      "resource_path": [
+        "people"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "people_list_directory_people",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "listDirectoryPeople",
+      "required": [],
+      "resource_path": [
+        "people"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "people_search_contacts",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "searchContacts",
+      "required": [],
+      "resource_path": [
+        "people"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "people_search_directory_people",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "searchDirectoryPeople",
+      "required": [],
+      "resource_path": [
+        "people"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "people_update_contact",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "updateContact",
+      "required": [
+        "resourceName"
+      ],
+      "resource_path": [
+        "people"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "people_update_contact_photo",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "updateContactPhoto",
+      "required": [
+        "resourceName"
+      ],
+      "resource_path": [
+        "people"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "people_connections_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "resourceName"
+      ],
+      "resource_path": [
+        "people",
+        "connections"
+      ],
+      "supports_media_upload": false
+    }
+  ],
+  "revision": "20260629",
+  "version": "v1"
+}

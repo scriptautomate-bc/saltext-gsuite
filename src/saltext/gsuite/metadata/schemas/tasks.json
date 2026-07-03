@@ -1,0 +1,190 @@
+{
+  "api": "tasks",
+  "methods": [
+    {
+      "fn": "tasklists_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "tasklist"
+      ],
+      "resource_path": [
+        "tasklists"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasklists_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "tasklist"
+      ],
+      "resource_path": [
+        "tasklists"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasklists_insert",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "insert",
+      "required": [],
+      "resource_path": [
+        "tasklists"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasklists_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [],
+      "resource_path": [
+        "tasklists"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasklists_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "tasklist"
+      ],
+      "resource_path": [
+        "tasklists"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasklists_update",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "update",
+      "required": [
+        "tasklist"
+      ],
+      "resource_path": [
+        "tasklists"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasks_clear",
+      "has_body": false,
+      "http_method": "POST",
+      "method": "clear",
+      "required": [
+        "tasklist"
+      ],
+      "resource_path": [
+        "tasks"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasks_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "tasklist",
+        "task"
+      ],
+      "resource_path": [
+        "tasks"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasks_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "tasklist",
+        "task"
+      ],
+      "resource_path": [
+        "tasks"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasks_insert",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "insert",
+      "required": [
+        "tasklist"
+      ],
+      "resource_path": [
+        "tasks"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasks_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "tasklist"
+      ],
+      "resource_path": [
+        "tasks"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasks_move",
+      "has_body": false,
+      "http_method": "POST",
+      "method": "move",
+      "required": [
+        "tasklist",
+        "task"
+      ],
+      "resource_path": [
+        "tasks"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasks_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "tasklist",
+        "task"
+      ],
+      "resource_path": [
+        "tasks"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "tasks_update",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "update",
+      "required": [
+        "tasklist",
+        "task"
+      ],
+      "resource_path": [
+        "tasks"
+      ],
+      "supports_media_upload": false
+    }
+  ],
+  "revision": "20260630",
+  "version": "v1"
+}

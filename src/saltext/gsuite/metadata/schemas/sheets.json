@@ -1,0 +1,245 @@
+{
+  "api": "sheets",
+  "methods": [
+    {
+      "fn": "spreadsheets_batch_update",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "batchUpdate",
+      "required": [
+        "spreadsheetId"
+      ],
+      "resource_path": [
+        "spreadsheets"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spreadsheets_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [],
+      "resource_path": [
+        "spreadsheets"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spreadsheets_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "spreadsheetId"
+      ],
+      "resource_path": [
+        "spreadsheets"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spreadsheets_get_by_data_filter",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "getByDataFilter",
+      "required": [
+        "spreadsheetId"
+      ],
+      "resource_path": [
+        "spreadsheets"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spreadsheets_developer_metadata_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "spreadsheetId",
+        "metadataId"
+      ],
+      "resource_path": [
+        "spreadsheets",
+        "developerMetadata"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spreadsheets_developer_metadata_search",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "search",
+      "required": [
+        "spreadsheetId"
+      ],
+      "resource_path": [
+        "spreadsheets",
+        "developerMetadata"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spreadsheets_sheets_copy_to",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "copyTo",
+      "required": [
+        "spreadsheetId",
+        "sheetId"
+      ],
+      "resource_path": [
+        "spreadsheets",
+        "sheets"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spreadsheets_values_append",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "append",
+      "required": [
+        "spreadsheetId",
+        "range"
+      ],
+      "resource_path": [
+        "spreadsheets",
+        "values"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spreadsheets_values_batch_clear",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "batchClear",
+      "required": [
+        "spreadsheetId"
+      ],
+      "resource_path": [
+        "spreadsheets",
+        "values"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spreadsheets_values_batch_clear_by_data_filter",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "batchClearByDataFilter",
+      "required": [
+        "spreadsheetId"
+      ],
+      "resource_path": [
+        "spreadsheets",
+        "values"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spreadsheets_values_batch_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "batchGet",
+      "required": [
+        "spreadsheetId"
+      ],
+      "resource_path": [
+        "spreadsheets",
+        "values"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spreadsheets_values_batch_get_by_data_filter",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "batchGetByDataFilter",
+      "required": [
+        "spreadsheetId"
+      ],
+      "resource_path": [
+        "spreadsheets",
+        "values"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spreadsheets_values_batch_update",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "batchUpdate",
+      "required": [
+        "spreadsheetId"
+      ],
+      "resource_path": [
+        "spreadsheets",
+        "values"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spreadsheets_values_batch_update_by_data_filter",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "batchUpdateByDataFilter",
+      "required": [
+        "spreadsheetId"
+      ],
+      "resource_path": [
+        "spreadsheets",
+        "values"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spreadsheets_values_clear",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "clear",
+      "required": [
+        "spreadsheetId",
+        "range"
+      ],
+      "resource_path": [
+        "spreadsheets",
+        "values"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spreadsheets_values_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "spreadsheetId",
+        "range"
+      ],
+      "resource_path": [
+        "spreadsheets",
+        "values"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spreadsheets_values_update",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "update",
+      "required": [
+        "spreadsheetId",
+        "range"
+      ],
+      "resource_path": [
+        "spreadsheets",
+        "values"
+      ],
+      "supports_media_upload": false
+    }
+  ],
+  "revision": "20260624",
+  "version": "v4"
+}

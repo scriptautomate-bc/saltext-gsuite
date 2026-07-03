@@ -1,0 +1,23 @@
+{
+  "_comment": "Generator input: maps each gws service to its Discovery API + version and flags. 'cli' is the gws command/alias; 'module' is the sanitized suffix for gsuite_<module>.py; 'discovery' false means the service has no Discovery REST doc (curated helpers only).",
+  "services": [
+    {"cli": "drive", "module": "drive", "api": "drive", "version": "v3", "description": "Manage files, folders, and shared drives", "discovery": true},
+    {"cli": "sheets", "module": "sheets", "api": "sheets", "version": "v4", "description": "Read and write spreadsheets", "discovery": true},
+    {"cli": "gmail", "module": "gmail", "api": "gmail", "version": "v1", "description": "Send, read, and manage email", "discovery": true},
+    {"cli": "calendar", "module": "calendar", "api": "calendar", "version": "v3", "description": "Manage calendars and events", "discovery": true},
+    {"cli": "admin-reports", "module": "admin_reports", "api": "admin", "version": "reports_v1", "description": "Audit logs and usage reports", "discovery": true},
+    {"cli": "docs", "module": "docs", "api": "docs", "version": "v1", "description": "Read and write Google Docs", "discovery": true},
+    {"cli": "slides", "module": "slides", "api": "slides", "version": "v1", "description": "Read and write presentations", "discovery": true},
+    {"cli": "tasks", "module": "tasks", "api": "tasks", "version": "v1", "description": "Manage task lists and tasks", "discovery": true},
+    {"cli": "people", "module": "people", "api": "people", "version": "v1", "description": "Manage contacts and profiles", "discovery": true},
+    {"cli": "chat", "module": "chat", "api": "chat", "version": "v1", "description": "Manage Chat spaces and messages", "discovery": true},
+    {"cli": "classroom", "module": "classroom", "api": "classroom", "version": "v1", "description": "Manage classes, rosters, and coursework", "discovery": true},
+    {"cli": "forms", "module": "forms", "api": "forms", "version": "v1", "description": "Read and write Google Forms", "discovery": true},
+    {"cli": "keep", "module": "keep", "api": "keep", "version": "v1", "description": "Manage Google Keep notes", "discovery": true},
+    {"cli": "meet", "module": "meet", "api": "meet", "version": "v2", "description": "Manage Google Meet conferences", "discovery": true},
+    {"cli": "events", "module": "events", "api": "workspaceevents", "version": "v1", "description": "Subscribe to Google Workspace events", "discovery": true},
+    {"cli": "modelarmor", "module": "modelarmor", "api": "modelarmor", "version": "v1", "description": "Filter user-generated content for safety", "discovery": true},
+    {"cli": "workflow", "module": "workflow", "api": "workflow", "version": "v1", "description": "Cross-service productivity workflows", "discovery": false},
+    {"cli": "script", "module": "script", "api": "script", "version": "v1", "description": "Manage Google Apps Script projects", "discovery": true}
+  ]
+}

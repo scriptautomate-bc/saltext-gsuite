@@ -1,0 +1,253 @@
+{
+  "api": "meet",
+  "methods": [
+    {
+      "fn": "conference_records_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "conferenceRecords"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "conference_records_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [],
+      "resource_path": [
+        "conferenceRecords"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "conference_records_participants_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "conferenceRecords",
+        "participants"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "conference_records_participants_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "conferenceRecords",
+        "participants"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "conference_records_participants_participant_sessions_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "conferenceRecords",
+        "participants",
+        "participantSessions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "conference_records_participants_participant_sessions_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "conferenceRecords",
+        "participants",
+        "participantSessions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "conference_records_recordings_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "conferenceRecords",
+        "recordings"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "conference_records_recordings_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "conferenceRecords",
+        "recordings"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "conference_records_smart_notes_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "conferenceRecords",
+        "smartNotes"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "conference_records_smart_notes_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "conferenceRecords",
+        "smartNotes"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "conference_records_transcripts_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "conferenceRecords",
+        "transcripts"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "conference_records_transcripts_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "conferenceRecords",
+        "transcripts"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "conference_records_transcripts_entries_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "conferenceRecords",
+        "transcripts",
+        "entries"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "conference_records_transcripts_entries_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "conferenceRecords",
+        "transcripts",
+        "entries"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [],
+      "resource_path": [
+        "spaces"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_end_active_conference",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "endActiveConference",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "spaces"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "spaces"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "spaces_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "spaces"
+      ],
+      "supports_media_upload": false
+    }
+  ],
+  "revision": "20260630",
+  "version": "v2"
+}

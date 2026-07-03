@@ -1,0 +1,1579 @@
+{
+  "api": "classroom",
+  "methods": [
+    {
+      "fn": "courses_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [],
+      "resource_path": [
+        "courses"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "id"
+      ],
+      "resource_path": [
+        "courses"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "id"
+      ],
+      "resource_path": [
+        "courses"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_get_grading_period_settings",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "getGradingPeriodSettings",
+      "required": [
+        "courseId"
+      ],
+      "resource_path": [
+        "courses"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [],
+      "resource_path": [
+        "courses"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "id"
+      ],
+      "resource_path": [
+        "courses"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_update",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "update",
+      "required": [
+        "id"
+      ],
+      "resource_path": [
+        "courses"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_update_grading_period_settings",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "updateGradingPeriodSettings",
+      "required": [
+        "courseId"
+      ],
+      "resource_path": [
+        "courses"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_aliases_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "courseId"
+      ],
+      "resource_path": [
+        "courses",
+        "aliases"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_aliases_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "courseId",
+        "alias"
+      ],
+      "resource_path": [
+        "courses",
+        "aliases"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_aliases_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "courseId"
+      ],
+      "resource_path": [
+        "courses",
+        "aliases"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_announcements_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "courseId"
+      ],
+      "resource_path": [
+        "courses",
+        "announcements"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_announcements_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "courseId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "announcements"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_announcements_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "courseId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "announcements"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_announcements_get_add_on_context",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "getAddOnContext",
+      "required": [
+        "courseId",
+        "itemId"
+      ],
+      "resource_path": [
+        "courses",
+        "announcements"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_announcements_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "courseId"
+      ],
+      "resource_path": [
+        "courses",
+        "announcements"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_announcements_modify_assignees",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "modifyAssignees",
+      "required": [
+        "courseId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "announcements"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_announcements_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "courseId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "announcements"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_announcements_add_on_attachments_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "courseId",
+        "itemId"
+      ],
+      "resource_path": [
+        "courses",
+        "announcements",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_announcements_add_on_attachments_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "courseId",
+        "itemId",
+        "attachmentId"
+      ],
+      "resource_path": [
+        "courses",
+        "announcements",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_announcements_add_on_attachments_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "courseId",
+        "itemId",
+        "attachmentId"
+      ],
+      "resource_path": [
+        "courses",
+        "announcements",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_announcements_add_on_attachments_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "courseId",
+        "itemId"
+      ],
+      "resource_path": [
+        "courses",
+        "announcements",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_announcements_add_on_attachments_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "courseId",
+        "itemId",
+        "attachmentId"
+      ],
+      "resource_path": [
+        "courses",
+        "announcements",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "courseId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "courseId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "courseId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_get_add_on_context",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "getAddOnContext",
+      "required": [
+        "courseId",
+        "itemId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "courseId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_modify_assignees",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "modifyAssignees",
+      "required": [
+        "courseId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "courseId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_update_rubric",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "updateRubric",
+      "required": [
+        "courseId",
+        "courseWorkId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_add_on_attachments_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "courseId",
+        "itemId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_add_on_attachments_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "courseId",
+        "itemId",
+        "attachmentId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_add_on_attachments_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "courseId",
+        "itemId",
+        "attachmentId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_add_on_attachments_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "courseId",
+        "itemId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_add_on_attachments_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "courseId",
+        "itemId",
+        "attachmentId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_add_on_attachments_student_submissions_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "courseId",
+        "itemId",
+        "attachmentId",
+        "submissionId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork",
+        "addOnAttachments",
+        "studentSubmissions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_add_on_attachments_student_submissions_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "courseId",
+        "itemId",
+        "attachmentId",
+        "submissionId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork",
+        "addOnAttachments",
+        "studentSubmissions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_rubrics_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "courseId",
+        "courseWorkId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork",
+        "rubrics"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_rubrics_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "courseId",
+        "courseWorkId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork",
+        "rubrics"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_rubrics_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "courseId",
+        "courseWorkId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork",
+        "rubrics"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_rubrics_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "courseId",
+        "courseWorkId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork",
+        "rubrics"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_rubrics_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "courseId",
+        "courseWorkId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork",
+        "rubrics"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_student_submissions_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "courseId",
+        "courseWorkId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork",
+        "studentSubmissions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_student_submissions_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "courseId",
+        "courseWorkId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork",
+        "studentSubmissions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_student_submissions_modify_attachments",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "modifyAttachments",
+      "required": [
+        "courseId",
+        "courseWorkId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork",
+        "studentSubmissions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_student_submissions_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "courseId",
+        "courseWorkId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork",
+        "studentSubmissions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_student_submissions_reclaim",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "reclaim",
+      "required": [
+        "courseId",
+        "courseWorkId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork",
+        "studentSubmissions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_student_submissions_return",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "return",
+      "required": [
+        "courseId",
+        "courseWorkId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork",
+        "studentSubmissions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_student_submissions_turn_in",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "turnIn",
+      "required": [
+        "courseId",
+        "courseWorkId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWork",
+        "studentSubmissions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_materials_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "courseId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWorkMaterials"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_materials_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "courseId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWorkMaterials"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_materials_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "courseId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWorkMaterials"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_materials_get_add_on_context",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "getAddOnContext",
+      "required": [
+        "courseId",
+        "itemId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWorkMaterials"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_materials_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "courseId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWorkMaterials"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_materials_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "courseId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWorkMaterials"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_materials_add_on_attachments_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "courseId",
+        "itemId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWorkMaterials",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_materials_add_on_attachments_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "courseId",
+        "itemId",
+        "attachmentId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWorkMaterials",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_materials_add_on_attachments_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "courseId",
+        "itemId",
+        "attachmentId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWorkMaterials",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_materials_add_on_attachments_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "courseId",
+        "itemId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWorkMaterials",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_course_work_materials_add_on_attachments_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "courseId",
+        "itemId",
+        "attachmentId"
+      ],
+      "resource_path": [
+        "courses",
+        "courseWorkMaterials",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_posts_get_add_on_context",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "getAddOnContext",
+      "required": [
+        "courseId",
+        "postId"
+      ],
+      "resource_path": [
+        "courses",
+        "posts"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_posts_add_on_attachments_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "courseId",
+        "postId"
+      ],
+      "resource_path": [
+        "courses",
+        "posts",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_posts_add_on_attachments_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "courseId",
+        "postId",
+        "attachmentId"
+      ],
+      "resource_path": [
+        "courses",
+        "posts",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_posts_add_on_attachments_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "courseId",
+        "postId",
+        "attachmentId"
+      ],
+      "resource_path": [
+        "courses",
+        "posts",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_posts_add_on_attachments_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "courseId",
+        "postId"
+      ],
+      "resource_path": [
+        "courses",
+        "posts",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_posts_add_on_attachments_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "courseId",
+        "postId",
+        "attachmentId"
+      ],
+      "resource_path": [
+        "courses",
+        "posts",
+        "addOnAttachments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_posts_add_on_attachments_student_submissions_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "courseId",
+        "postId",
+        "attachmentId",
+        "submissionId"
+      ],
+      "resource_path": [
+        "courses",
+        "posts",
+        "addOnAttachments",
+        "studentSubmissions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_posts_add_on_attachments_student_submissions_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "courseId",
+        "postId",
+        "attachmentId",
+        "submissionId"
+      ],
+      "resource_path": [
+        "courses",
+        "posts",
+        "addOnAttachments",
+        "studentSubmissions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_student_groups_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "courseId"
+      ],
+      "resource_path": [
+        "courses",
+        "studentGroups"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_student_groups_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "courseId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "studentGroups"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_student_groups_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "courseId"
+      ],
+      "resource_path": [
+        "courses",
+        "studentGroups"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_student_groups_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "courseId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "studentGroups"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_student_groups_student_group_members_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "courseId",
+        "studentGroupId"
+      ],
+      "resource_path": [
+        "courses",
+        "studentGroups",
+        "studentGroupMembers"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_student_groups_student_group_members_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "courseId",
+        "studentGroupId",
+        "userId"
+      ],
+      "resource_path": [
+        "courses",
+        "studentGroups",
+        "studentGroupMembers"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_student_groups_student_group_members_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "courseId",
+        "studentGroupId"
+      ],
+      "resource_path": [
+        "courses",
+        "studentGroups",
+        "studentGroupMembers"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_students_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "courseId"
+      ],
+      "resource_path": [
+        "courses",
+        "students"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_students_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "courseId",
+        "userId"
+      ],
+      "resource_path": [
+        "courses",
+        "students"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_students_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "courseId",
+        "userId"
+      ],
+      "resource_path": [
+        "courses",
+        "students"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_students_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "courseId"
+      ],
+      "resource_path": [
+        "courses",
+        "students"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_teachers_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "courseId"
+      ],
+      "resource_path": [
+        "courses",
+        "teachers"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_teachers_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "courseId",
+        "userId"
+      ],
+      "resource_path": [
+        "courses",
+        "teachers"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_teachers_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "courseId",
+        "userId"
+      ],
+      "resource_path": [
+        "courses",
+        "teachers"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_teachers_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "courseId"
+      ],
+      "resource_path": [
+        "courses",
+        "teachers"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_topics_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "courseId"
+      ],
+      "resource_path": [
+        "courses",
+        "topics"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_topics_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "courseId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "topics"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_topics_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "courseId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "topics"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_topics_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "courseId"
+      ],
+      "resource_path": [
+        "courses",
+        "topics"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "courses_topics_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "courseId",
+        "id"
+      ],
+      "resource_path": [
+        "courses",
+        "topics"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "invitations_accept",
+      "has_body": false,
+      "http_method": "POST",
+      "method": "accept",
+      "required": [
+        "id"
+      ],
+      "resource_path": [
+        "invitations"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "invitations_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [],
+      "resource_path": [
+        "invitations"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "invitations_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "id"
+      ],
+      "resource_path": [
+        "invitations"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "invitations_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "id"
+      ],
+      "resource_path": [
+        "invitations"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "invitations_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [],
+      "resource_path": [
+        "invitations"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "registrations_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [],
+      "resource_path": [
+        "registrations"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "registrations_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "registrationId"
+      ],
+      "resource_path": [
+        "registrations"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "user_profiles_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "userId"
+      ],
+      "resource_path": [
+        "userProfiles"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "user_profiles_guardian_invitations_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "studentId"
+      ],
+      "resource_path": [
+        "userProfiles",
+        "guardianInvitations"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "user_profiles_guardian_invitations_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "studentId",
+        "invitationId"
+      ],
+      "resource_path": [
+        "userProfiles",
+        "guardianInvitations"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "user_profiles_guardian_invitations_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "studentId"
+      ],
+      "resource_path": [
+        "userProfiles",
+        "guardianInvitations"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "user_profiles_guardian_invitations_patch",
+      "has_body": true,
+      "http_method": "PATCH",
+      "method": "patch",
+      "required": [
+        "studentId",
+        "invitationId"
+      ],
+      "resource_path": [
+        "userProfiles",
+        "guardianInvitations"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "user_profiles_guardians_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "studentId",
+        "guardianId"
+      ],
+      "resource_path": [
+        "userProfiles",
+        "guardians"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "user_profiles_guardians_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "studentId",
+        "guardianId"
+      ],
+      "resource_path": [
+        "userProfiles",
+        "guardians"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "user_profiles_guardians_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "studentId"
+      ],
+      "resource_path": [
+        "userProfiles",
+        "guardians"
+      ],
+      "supports_media_upload": false
+    }
+  ],
+  "revision": "20260622",
+  "version": "v1"
+}

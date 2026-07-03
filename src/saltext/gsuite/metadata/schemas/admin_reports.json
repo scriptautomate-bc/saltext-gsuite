@@ -1,0 +1,88 @@
+{
+  "api": "admin",
+  "methods": [
+    {
+      "fn": "activities_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "userKey",
+        "applicationName"
+      ],
+      "resource_path": [
+        "activities"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "activities_watch",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "watch",
+      "required": [
+        "userKey",
+        "applicationName"
+      ],
+      "resource_path": [
+        "activities"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "channels_stop",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "stop",
+      "required": [],
+      "resource_path": [
+        "channels"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "customer_usage_reports_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "date"
+      ],
+      "resource_path": [
+        "customerUsageReports"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "entity_usage_reports_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "entityType",
+        "entityKey",
+        "date"
+      ],
+      "resource_path": [
+        "entityUsageReports"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "user_usage_report_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "userKey",
+        "date"
+      ],
+      "resource_path": [
+        "userUsageReport"
+      ],
+      "supports_media_upload": false
+    }
+  ],
+  "revision": "20260619",
+  "version": "reports_v1"
+}

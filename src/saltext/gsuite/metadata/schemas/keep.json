@@ -1,0 +1,96 @@
+{
+  "api": "keep",
+  "methods": [
+    {
+      "fn": "media_download",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "download",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "media"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "notes_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [],
+      "resource_path": [
+        "notes"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "notes_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "notes"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "notes_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "name"
+      ],
+      "resource_path": [
+        "notes"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "notes_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [],
+      "resource_path": [
+        "notes"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "notes_permissions_batch_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "batchCreate",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "notes",
+        "permissions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "notes_permissions_batch_delete",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "batchDelete",
+      "required": [
+        "parent"
+      ],
+      "resource_path": [
+        "notes",
+        "permissions"
+      ],
+      "supports_media_upload": false
+    }
+  ],
+  "revision": "20260617",
+  "version": "v1"
+}

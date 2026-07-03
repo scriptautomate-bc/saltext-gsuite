@@ -1,0 +1,62 @@
+{{ header }}
+from unittest.mock import patch
+
+import pytest
+
+import saltext.gsuite.modules.{{ pymodule }} as mod
+
+
+@pytest.fixture
+def configure_loader_modules():
+    return {mod: {"__opts__": {"test": False}, "__pillar__": {}}}
+
+
+METHOD_CASES = {{ method_cases }}
+
+HELPER_CASES = {{ helper_cases }}
+
+
+def test_virtual_available():
+    with patch.object(mod._binary, "is_available", return_value=True):
+        assert mod.__virtual__() == "{{ virtualname }}"
+
+
+def test_virtual_unavailable():
+    with patch.object(mod._binary, "is_available", return_value=False):
+        result = mod.__virtual__()
+    assert result[0] is False
+
+
+{% if method_cases_nonempty %}
+@pytest.mark.parametrize("case", METHOD_CASES, ids=[c["fn"] for c in METHOD_CASES])
+def test_method_dispatch(case):
+    with patch.object(mod._gws, "call", return_value={"ok": True}) as call:
+        result = getattr(mod, case["fn"])(**case["required"])
+    assert result == {"ok": True}
+    args = call.call_args.args
+    assert args[2] == case["service"]
+    assert args[3] == case["path"]
+    assert args[4] == case["method"]
+    sent = call.call_args.kwargs.get("params") or {}
+    for key, value in case["orig_required"].items():
+        assert sent.get(key) == value
+
+
+@pytest.mark.parametrize("case", METHOD_CASES, ids=[c["fn"] for c in METHOD_CASES])
+def test_method_dry_run(case):
+    with patch.object(mod._gws, "call", return_value={}) as call:
+        getattr(mod, case["fn"])(test=True, **case["required"])
+    sent = call.call_args.kwargs.get("params") or {}
+    assert sent.get("test") is True
+{% endif %}
+
+{% if helper_cases_nonempty %}
+@pytest.mark.parametrize("case", HELPER_CASES, ids=[c["fn"] for c in HELPER_CASES])
+def test_helper_dispatch(case):
+    with patch.object(mod._gws, "run_helper", return_value={"ok": True}) as call:
+        result = getattr(mod, case["fn"])(**case["required"])
+    assert result == {"ok": True}
+    args = call.call_args.args
+    assert args[2] == case["service"]
+    assert args[3] == case["command"]
+{% endif %}

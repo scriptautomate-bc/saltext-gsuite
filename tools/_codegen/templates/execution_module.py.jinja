@@ -1,0 +1,88 @@
+{{ header }}
+# Parameter names mirror the Google API reference verbatim (often camelCase); long Discovery
+# descriptions and URLs live in the docstrings.
+# pylint: disable=invalid-name,line-too-long,redefined-builtin,redefined-outer-name,too-many-lines
+"""
+{{ title }} execution module.
+
+{{ description }}
+
+This module is generated from the Google Discovery document for ``{{ api }}/{{ version }}``
+and drives the bundled ``gws`` CLI. Parameter names match the Google API reference verbatim;
+optional parameters are passed through ``**params``.
+"""
+import logging
+
+from saltext.gsuite import _binary
+from saltext.gsuite import _gws
+
+log = logging.getLogger(__name__)
+
+__virtualname__ = "{{ virtualname }}"
+
+
+def __virtual__():
+    if not _binary.is_available(opts=__opts__, pillar=__pillar__):
+        return (
+            False,
+            "The 'gws' binary is not available; install the platform-specific "
+            "saltext.gsuite wheel or set gsuite:binary_path.",
+        )
+    return __virtualname__
+
+{% for m in methods %}
+
+def {{ m.fn_name }}({{ m.signature }}):
+    """
+{{ m.docstring }}
+    """
+    _params = dict(params)
+{%- for p in m.required %}
+    _params[{{ p.orig | tojson }}] = {{ p.py }}
+{%- endfor %}
+    return _gws.call(
+        __opts__,
+        __pillar__,
+        {{ service | tojson }},
+        {{ m.resource_path_repr }},
+        {{ m.method_name | tojson }},
+        params=_params or None,
+{%- if m.has_body %}
+        body=body,
+{%- endif %}
+{%- if m.has_upload %}
+        upload=upload,
+{%- endif %}
+    )
+{% endfor %}
+{%- for h in helpers %}
+
+def {{ h.fn_name }}({{ h.signature }}):
+    """
+{{ h.docstring }}
+    """
+    return _gws.run_helper(
+        __opts__,
+        __pillar__,
+        {{ service | tojson }},
+        {{ h.command | tojson }},
+{%- if h.positionals %}
+        positionals=[{{ h.positionals_repr }}],
+{%- endif %}
+{%- if h.flags %}
+        flags={
+{%- for f in h.flags %}
+            {{ f.long | tojson }}: {{ f.py }},
+{%- endfor %}
+        },
+{%- endif %}
+{%- if h.switches %}
+        switches={
+{%- for s in h.switches %}
+            {{ s.long | tojson }}: {{ s.py }},
+{%- endfor %}
+        },
+{%- endif %}
+        test=test,
+    )
+{% endfor %}

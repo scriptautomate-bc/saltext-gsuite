@@ -1,0 +1,3 @@
+# Vendored gws binary is injected at wheel-build time, never committed.
+/gws
+/gws.exe

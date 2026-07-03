@@ -1,0 +1,84 @@
+name: gws-autoupdate
+
+# Detect new googleworkspace/cli releases, regenerate the module surface, and open a PR.
+on:
+  schedule:
+    - cron: "17 6 * * *"  # daily
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Force a specific gws version (e.g. 0.22.6)"
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  autoupdate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Determine target gws version
+        id: ver
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          current=$(python -c "import json;print(json.load(open('src/saltext/gsuite/metadata/gws_release.json'))['gws_version'])")
+          if [ -n "${{ github.event.inputs.version }}" ]; then
+            latest="${{ github.event.inputs.version }}"
+          else
+            latest=$(gh release view --repo googleworkspace/cli --json tagName -q .tagName | sed 's/^v//')
+          fi
+          echo "current=$current" >> "$GITHUB_OUTPUT"
+          echo "latest=$latest" >> "$GITHUB_OUTPUT"
+          if [ "$current" != "$latest" ]; then echo "changed=true" >> "$GITHUB_OUTPUT"; else echo "changed=false" >> "$GITHUB_OUTPUT"; fi
+          echo "Current gws: $current  Latest: $latest"
+
+      - name: Set up dev env
+        if: steps.ver.outputs.changed == 'true'
+        run: |
+          uv venv .venv
+          uv pip install --python .venv/bin/python -e ".[tests,lint]" jinja2 black==26.5.1 isort==8.0.1
+
+      - name: Bump + regenerate
+        if: steps.ver.outputs.changed == 'true'
+        run: |
+          .venv/bin/python tools/update_gws.py "${{ steps.ver.outputs.latest }}" --no-generate
+          .venv/bin/python tools/generate_modules.py --all --report /tmp/genreport.json
+
+      - name: Run hermetic unit tests
+        if: steps.ver.outputs.changed == 'true'
+        run: just test -q
+
+      - name: Add changelog fragment
+        if: steps.ver.outputs.changed == 'true'
+        run: |
+          echo "Bumped bundled gws CLI to v${{ steps.ver.outputs.latest }} and regenerated the Google Workspace module surface from Discovery." \
+            > "changelog/gws-${{ steps.ver.outputs.latest }}.changed.md"
+
+      - name: Open pull request
+        if: steps.ver.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: "gws-bump/${{ steps.ver.outputs.latest }}"
+          title: "Bump bundled gws to v${{ steps.ver.outputs.latest }}"
+          labels: automated
+          commit-message: "Bump bundled gws to v${{ steps.ver.outputs.latest }}"
+          body: |
+            Automated update: bundled `gws` CLI `${{ steps.ver.outputs.current }}` → `${{ steps.ver.outputs.latest }}`.
+
+            The module surface was regenerated with `tools/generate_modules.py --all`.
+            Proposed release tag once merged: **v${{ steps.ver.outputs.latest }}.1** (4th segment
+            reset to 1 because the gws version changed).
+
+            Review the diff + generation report, then tag to cut the release.

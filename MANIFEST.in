@@ -1,0 +1,11 @@
+# The gws binary is bundled only in platform-specific wheels (via package-data), never in the
+# sdist. Prune it so `python -m build --sdist` stays source-only.
+recursive-exclude src/saltext/gsuite/_vendor gws gws.exe
+
+# Ship the generator, its templates, and metadata in the sdist so the surface can be rebuilt.
+include src/saltext/gsuite/metadata/*.json
+recursive-include src/saltext/gsuite/metadata/schemas *.json
+recursive-include tools *.py
+recursive-include tools/_codegen/templates *.jinja
+include justfile
+include NOTICE

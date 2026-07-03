@@ -1,0 +1,221 @@
+{
+  "api": "script",
+  "methods": [
+    {
+      "fn": "processes_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [],
+      "resource_path": [
+        "processes"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "processes_list_script_processes",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "listScriptProcesses",
+      "required": [],
+      "resource_path": [
+        "processes"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "projects_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [],
+      "resource_path": [
+        "projects"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "projects_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "scriptId"
+      ],
+      "resource_path": [
+        "projects"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "projects_get_content",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "getContent",
+      "required": [
+        "scriptId"
+      ],
+      "resource_path": [
+        "projects"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "projects_get_metrics",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "getMetrics",
+      "required": [
+        "scriptId"
+      ],
+      "resource_path": [
+        "projects"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "projects_update_content",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "updateContent",
+      "required": [
+        "scriptId"
+      ],
+      "resource_path": [
+        "projects"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "projects_deployments_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "scriptId"
+      ],
+      "resource_path": [
+        "projects",
+        "deployments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "projects_deployments_delete",
+      "has_body": false,
+      "http_method": "DELETE",
+      "method": "delete",
+      "required": [
+        "scriptId",
+        "deploymentId"
+      ],
+      "resource_path": [
+        "projects",
+        "deployments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "projects_deployments_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "scriptId",
+        "deploymentId"
+      ],
+      "resource_path": [
+        "projects",
+        "deployments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "projects_deployments_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "scriptId"
+      ],
+      "resource_path": [
+        "projects",
+        "deployments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "projects_deployments_update",
+      "has_body": true,
+      "http_method": "PUT",
+      "method": "update",
+      "required": [
+        "scriptId",
+        "deploymentId"
+      ],
+      "resource_path": [
+        "projects",
+        "deployments"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "projects_versions_create",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "create",
+      "required": [
+        "scriptId"
+      ],
+      "resource_path": [
+        "projects",
+        "versions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "projects_versions_get",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "get",
+      "required": [
+        "scriptId",
+        "versionNumber"
+      ],
+      "resource_path": [
+        "projects",
+        "versions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "projects_versions_list",
+      "has_body": false,
+      "http_method": "GET",
+      "method": "list",
+      "required": [
+        "scriptId"
+      ],
+      "resource_path": [
+        "projects",
+        "versions"
+      ],
+      "supports_media_upload": false
+    },
+    {
+      "fn": "scripts_run",
+      "has_body": true,
+      "http_method": "POST",
+      "method": "run",
+      "required": [
+        "scriptId"
+      ],
+      "resource_path": [
+        "scripts"
+      ],
+      "supports_media_upload": false
+    }
+  ],
+  "revision": "20260629",
+  "version": "v1"
+}
