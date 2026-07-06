@@ -7,6 +7,7 @@ Execution Modules
     gsuite_admin_reports
     gsuite_calendar
     gsuite_chat
+    gsuite_chat_webhook
     gsuite_classroom
     gsuite_docs
     gsuite_drive

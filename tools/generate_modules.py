@@ -538,6 +538,14 @@ def main(argv=None):
         produced,
     )
 
+    # gsuite_chat_webhook is hand-written (auth-free Chat webhook posting) but owns a
+    # doc page so the index is complete.
+    _write(
+        os.path.join(DOCS_M, "gsuite_chat_webhook.rst"),
+        _autodoc_rst("gsuite_chat_webhook", "saltext.gsuite.modules.gsuite_chat_webhook"),
+        produced,
+    )
+
     for service in services:
         try:
             generate_service(service, binary, not args.no_cache, produced, report)
