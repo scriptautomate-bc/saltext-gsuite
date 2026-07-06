@@ -35,9 +35,21 @@ jobs:
           NOX_VERSION: '2026.4.10'
           UV_VERSION: '0.11.26'
 
+      - name: Cache Nox Environments
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830  # v4.3.0
+        with:
+          path: |
+            .nox
+            .uv-cache
+          key: test-${{ runner.os }}-py${{ matrix.python-version }}-${{ matrix.salt-version }}-${{ hashFiles('noxfile.py', 'pyproject.toml', '.github/workflows/test-action.yml') }}
+          restore-keys: |
+            test-${{ runner.os }}-py${{ matrix.python-version }}-${{ matrix.salt-version }}-
+            test-${{ runner.os }}-py${{ matrix.python-version }}-
+
       - name: Install Test Requirements
         env:
           SALT_REQUIREMENT: salt==${{ matrix.salt-version }}
+          UV_CACHE_DIR: ${{ github.workspace }}/.uv-cache
         run: |
           nox --force-color -e tests-3 --install-only
 
@@ -45,6 +57,7 @@ jobs:
         env:
           SALT_REQUIREMENT: salt==${{ matrix.salt-version }}
           SKIP_REQUIREMENTS_INSTALL: true
+          UV_CACHE_DIR: ${{ github.workspace }}/.uv-cache
         run: |
           nox --force-color -e tests-3 -- -vv --instafail tests/
 
@@ -118,10 +131,22 @@ jobs:
           NOX_VERSION: '2026.4.10'
           UV_VERSION: '0.11.26'
 
+      - name: Cache Nox Environments
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830  # v4.3.0
+        with:
+          path: |
+            .nox
+            .uv-cache
+          key: test-${{ runner.os }}-py${{ matrix.python-version }}-${{ matrix.salt-version }}-${{ hashFiles('noxfile.py', 'pyproject.toml', '.github/workflows/test-action.yml') }}
+          restore-keys: |
+            test-${{ runner.os }}-py${{ matrix.python-version }}-${{ matrix.salt-version }}-
+            test-${{ runner.os }}-py${{ matrix.python-version }}-
+
       - name: Install Test Requirements
         shell: bash
         env:
           SALT_REQUIREMENT: salt==${{ matrix.salt-version }}
+          UV_CACHE_DIR: ${{ github.workspace }}/.uv-cache
           # EXTRA_REQUIREMENTS_INSTALL: Cython
         run: |
           export PATH="/C/Program Files (x86)/Windows Kits/10/bin/10.0.18362.0/x64;$PATH"
@@ -132,6 +157,7 @@ jobs:
         env:
           SALT_REQUIREMENT: salt==${{ matrix.salt-version }}
           SKIP_REQUIREMENTS_INSTALL: true
+          UV_CACHE_DIR: ${{ github.workspace }}/.uv-cache
         run: |
           export PATH="/C/Program Files (x86)/Windows Kits/10/bin/10.0.18362.0/x64;$PATH"
           nox --force-color -e tests-3 -- -vv --instafail tests/
@@ -206,9 +232,21 @@ jobs:
           NOX_VERSION: '2026.4.10'
           UV_VERSION: '0.11.26'
 
+      - name: Cache Nox Environments
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830  # v4.3.0
+        with:
+          path: |
+            .nox
+            .uv-cache
+          key: test-${{ runner.os }}-py${{ matrix.python-version }}-${{ matrix.salt-version }}-${{ hashFiles('noxfile.py', 'pyproject.toml', '.github/workflows/test-action.yml') }}
+          restore-keys: |
+            test-${{ runner.os }}-py${{ matrix.python-version }}-${{ matrix.salt-version }}-
+            test-${{ runner.os }}-py${{ matrix.python-version }}-
+
       - name: Install Test Requirements
         env:
           SALT_REQUIREMENT: salt==${{ matrix.salt-version }}
+          UV_CACHE_DIR: ${{ github.workspace }}/.uv-cache
         run: |
           nox --force-color -e tests-3 --install-only
 
@@ -216,6 +254,7 @@ jobs:
         env:
           SALT_REQUIREMENT: salt==${{ matrix.salt-version }}
           SKIP_REQUIREMENTS_INSTALL: true
+          UV_CACHE_DIR: ${{ github.workspace }}/.uv-cache
         run: |
           nox --force-color -e tests-3 -- -vv --instafail tests/
 
