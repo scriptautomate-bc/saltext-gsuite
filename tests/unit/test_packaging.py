@@ -75,9 +75,7 @@ def test_next_tag_same_gws_increments(monkeypatch):
 
 
 def test_generated_manifest_exists_and_lists_files():
-    manifest = os.path.join(
-        ROOT, "src", "saltext", "gsuite", "metadata", "generated_manifest.json"
-    )
+    manifest = os.path.join(ROOT, "src", "saltext", "gsuite", "metadata", "generated_manifest.json")
     with open(manifest, encoding="utf-8") as handle:
         files = json.load(handle)["files"]
     assert any(f.endswith("modules/gsuite_drive.py") for f in files)

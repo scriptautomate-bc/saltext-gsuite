@@ -46,7 +46,7 @@ def media_download(name, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``mimeType`` (str): The IANA MIME type format requested. The requested MIME type must be one specified in the attachment.mime\_type. Required when downloading attachment media and ignored otherwise.
+    * ``mimeType`` (str): The IANA MIME type format requested. The requested MIME type must be one specified in the attachment.mime\\_type. Required when downloading attachment media and ignored otherwise.
 
     CLI Example:
 
@@ -94,9 +94,9 @@ def notes_create(body=None, **params):
 
 def notes_delete(name, **params):
     """
-    Deletes a note. Caller must have the \`OWNER\` role on the note to delete. Deleting
-    a note removes the resource immediately and cannot be undone. Any collaborators will
-    lose access to the note.
+    Deletes a note. Caller must have the \\`OWNER\\` role on the note to delete.
+    Deleting a note removes the resource immediately and cannot be undone. Any
+    collaborators will lose access to the note.
 
     HTTP: ``DELETE``  Discovery: ``notes.delete``
 
@@ -152,23 +152,23 @@ def notes_get(name, **params):
 
 def notes_list(**params):
     """
-    Lists notes. Every list call returns a page of results with \`page\_size\` as the
-    upper bound of returned items. A \`page\_size\` of zero allows the server to choose
-    the upper bound. The ListNotesResponse contains at most \`page\_size\` entries. If
-    there are more things left to list, it provides a \`next\_page\_token\` value. (Page
-    tokens are opaque values.) To get the next page of results, copy the result's
-    \`next\_page\_token\` into the next request's \`page\_token\`. Repeat until the
-    \`next\_page\_token\` returned with a page of results is empty. ListNotes return
-    consistent results in the face of concurrent changes, or signals that it cannot with
-    an ABORTED error.
+    Lists notes. Every list call returns a page of results with \\`page\\_size\\` as the
+    upper bound of returned items. A \\`page\\_size\\` of zero allows the server to
+    choose the upper bound. The ListNotesResponse contains at most \\`page\\_size\\`
+    entries. If there are more things left to list, it provides a
+    \\`next\\_page\\_token\\` value. (Page tokens are opaque values.) To get the next
+    page of results, copy the result's \\`next\\_page\\_token\\` into the next request's
+    \\`page\\_token\\`. Repeat until the \\`next\\_page\\_token\\` returned with a page
+    of results is empty. ListNotes return consistent results in the face of concurrent
+    changes, or signals that it cannot with an ABORTED error.
 
     HTTP: ``GET``  Discovery: ``notes.list``
 
     Optional parameters (pass via keyword args):
 
-    * ``filter`` (str): Filter for list results. If no filter is supplied, the \`trashed\` filter is applied by default. Valid fields to filter by are: \`create\_time\`, \`update\_time\`, \`trash\_time\`, and \`trashed\`. Filter syntax…
+    * ``filter`` (str): Filter for list results. If no filter is supplied, the \\`trashed\\` filter is applied by default. Valid fields to filter by are: \\`create\\_time\\`, \\`update\\_time\\`, \\`trash\\_time\\`, and \\`trashed\\`. Filter syntax…
     * ``pageSize`` (int): The maximum number of results to return.
-    * ``pageToken`` (str): The previous page's \`next\_page\_token\` field.
+    * ``pageToken`` (str): The previous page's \\`next\\_page\\_token\\` field.
 
     CLI Example:
 
@@ -189,7 +189,7 @@ def notes_list(**params):
 
 def notes_permissions_batch_create(parent, body=None, **params):
     """
-    Creates one or more permissions on the note. Only permissions with the \`WRITER\`
+    Creates one or more permissions on the note. Only permissions with the \\`WRITER\\`
     role may be created. If adding any permission fails, then the entire request fails
     and no changes are made.
 
@@ -197,7 +197,7 @@ def notes_permissions_batch_create(parent, body=None, **params):
 
     Required parameters:
 
-    * ``parent`` (str): The parent resource shared by all Permissions being created. Format: \`notes/{note}\` If this is set, the parent field in the CreatePermission messages must either be empty or match this field.
+    * ``parent`` (str): The parent resource shared by all Permissions being created. Format: \\`notes/{note}\\` If this is set, the parent field in the CreatePermission messages must either be empty or match this field.
 
     * ``body`` (dict): request body payload.
 
@@ -223,7 +223,7 @@ def notes_permissions_batch_create(parent, body=None, **params):
 def notes_permissions_batch_delete(parent, body=None, **params):
     """
     Deletes one or more permissions on the note. The specified entities will immediately
-    lose access. A permission with the \`OWNER\` role can't be removed. If removing a
+    lose access. A permission with the \\`OWNER\\` role can't be removed. If removing a
     permission fails, then the entire request fails and no changes are made. Returns a
     400 bad request error if a specified permission does not exist on the note.
 
@@ -231,7 +231,7 @@ def notes_permissions_batch_delete(parent, body=None, **params):
 
     Required parameters:
 
-    * ``parent`` (str): The parent resource shared by all permissions being deleted. Format: \`notes/{note}\` If this is set, the parent of all of the permissions specified in the DeletePermissionRequest messages must match t…
+    * ``parent`` (str): The parent resource shared by all permissions being deleted. Format: \\`notes/{note}\\` If this is set, the parent of all of the permissions specified in the DeletePermissionRequest messages must match t…
 
     * ``body`` (dict): request body payload.
 

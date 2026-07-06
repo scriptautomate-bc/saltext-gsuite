@@ -37,7 +37,7 @@ def about_get(**params):
     Gets information about the user, the user's Drive, and system capabilities. For more
     information, see [Return user
     info](https://developers.google.com/workspace/drive/api/guides/user-info). Required:
-    The \`fields\` parameter must be set. To return the exact fields you need, see
+    The \\`fields\\` parameter must be set. To return the exact fields you need, see
     [Return specific
     fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).
 
@@ -94,9 +94,10 @@ def accessproposals_get(fileId, proposalId, **params):
 def accessproposals_list(fileId, **params):
     """
     List the access proposals on a file. For more information, see [Manage pending
-    access proposals](https://developers.google.com/workspace/drive/api/guides/pending-
-    access). Note: Only approvers are able to list access proposals on a file. If the
-    user isn't an approver, a 403 error is returned.
+    access
+    proposals](https://developers.google.com/workspace/drive/api/guides/pending-access).
+    Note: Only approvers are able to list access proposals on a file. If the user isn't
+    an approver, a 403 error is returned.
 
     HTTP: ``GET``  Discovery: ``accessproposals.list``
 
@@ -130,8 +131,8 @@ def accessproposals_list(fileId, **params):
 def accessproposals_resolve(fileId, proposalId, body=None, **params):
     """
     Approves or denies an access proposal. For more information, see [Manage pending
-    access proposals](https://developers.google.com/workspace/drive/api/guides/pending-
-    access).
+    access
+    proposals](https://developers.google.com/workspace/drive/api/guides/pending-access).
 
     HTTP: ``POST``  Discovery: ``accessproposals.resolve``
 
@@ -167,8 +168,8 @@ def approvals_approve(fileId, approvalId, body=None, **params):
     Approves an approval. For more information, see [Manage
     approvals](https://developers.google.com/workspace/drive/api/guides/approvals). This
     is used to update the ReviewerResponse of the requesting user with a Response of
-    \`APPROVED\`. If this is the last required reviewer response, this also completes
-    the approval and sets the approval Status to \`APPROVED\`.
+    \\`APPROVED\\`. If this is the last required reviewer response, this also completes
+    the approval and sets the approval Status to \\`APPROVED\\`.
 
     HTTP: ``POST``  Discovery: ``approvals.approve``
 
@@ -203,8 +204,9 @@ def approvals_cancel(fileId, approvalId, body=None, **params):
     """
     Cancels an approval. For more information, see [Manage
     approvals](https://developers.google.com/workspace/drive/api/guides/approvals).
-    Updates the approval Status to \`CANCELLED\`. This can be called by any user with
-    the \`writer\` permission on the file while the approval Status is \`IN\_PROGRESS\`.
+    Updates the approval Status to \\`CANCELLED\\`. This can be called by any user with
+    the \\`writer\\` permission on the file while the approval Status is
+    \\`IN\\_PROGRESS\\`.
 
     HTTP: ``POST``  Discovery: ``approvals.cancel``
 
@@ -276,8 +278,8 @@ def approvals_decline(fileId, approvalId, body=None, **params):
     Declines an approval. For more information, see [Manage
     approvals](https://developers.google.com/workspace/drive/api/guides/approvals). This
     is used to update the ReviewerResponse of the requesting user with a Response of
-    \`DECLINED\`. This also completes the approval and sets the approval Status to
-    \`DECLINED\`.
+    \\`DECLINED\\`. This also completes the approval and sets the approval Status to
+    \\`DECLINED\\`.
 
     HTTP: ``POST``  Discovery: ``approvals.decline``
 
@@ -353,7 +355,7 @@ def approvals_list(fileId, **params):
     Optional parameters (pass via keyword args):
 
     * ``pageSize`` (int): The maximum number of approvals to return. When not set, at most 100 approvals are returned.
-    * ``pageToken`` (str): The token for continuing a previous list request on the next page. This should be set to the value of \`nextPageToken\` from a previous response.
+    * ``pageToken`` (str): The token for continuing a previous list request on the next page. This should be set to the value of \\`nextPageToken\\` from a previous response.
 
     CLI Example:
 
@@ -378,9 +380,9 @@ def approvals_reassign(fileId, approvalId, body=None, **params):
     Reassigns the reviewers on an approval. For more information, see [Manage
     approvals](https://developers.google.com/workspace/drive/api/guides/approvals). Adds
     or replaces reviewers in the ReviewerResponse of the approval. This can be called by
-    any user with the \`writer\` permission on the file while the approval Status is
-    \`IN\_PROGRESS\` and the Response for the reviewer being reassigned is
-    \`NO\_RESPONSE\`. A user with the \`reader\` permission can only reassign an
+    any user with the \\`writer\\` permission on the file while the approval Status is
+    \\`IN\\_PROGRESS\\` and the Response for the reviewer being reassigned is
+    \\`NO\\_RESPONSE\\`. A user with the \\`reader\\` permission can only reassign an
     approval that's assigned to themselves. Removing a reviewer isn't allowed.
 
     HTTP: ``POST``  Discovery: ``approvals.reassign``
@@ -482,8 +484,8 @@ def apps_list(**params):
 
     Optional parameters (pass via keyword args):
 
-    * ``appFilterExtensions`` (str): A comma-separated list of file extensions to limit returned results. All results within the given app query scope which can open any of the given file extensions are included in the response. If \`app…
-    * ``appFilterMimeTypes`` (str): A comma-separated list of file extensions to limit returned results. All results within the given app query scope which can open any of the given MIME types will be included in the response. If \`appF…
+    * ``appFilterExtensions`` (str): A comma-separated list of file extensions to limit returned results. All results within the given app query scope which can open any of the given file extensions are included in the response. If \\`app…
+    * ``appFilterMimeTypes`` (str): A comma-separated list of file extensions to limit returned results. All results within the given app query scope which can open any of the given MIME types will be included in the response. If \\`appF…
     * ``languageCode`` (str): A language or locale code, as defined by BCP 47, with some extensions from Unicode's LDML format (http://www.unicode.org/reports/tr35/).
 
     CLI Example:
@@ -506,8 +508,8 @@ def apps_list(**params):
 def changes_get_start_page_token(**params):
     """
     Gets the starting pageToken for listing future changes. For more information, see
-    [Retrieve changes](https://developers.google.com/workspace/drive/api/guides/manage-
-    changes).
+    [Retrieve
+    changes](https://developers.google.com/workspace/drive/api/guides/manage-changes).
 
     HTTP: ``GET``  Discovery: ``changes.getStartPageToken``
 
@@ -515,8 +517,8 @@ def changes_get_start_page_token(**params):
 
     * ``driveId`` (str): The ID of the shared drive for which the starting pageToken for listing future changes from that shared drive will be returned.
     * ``supportsAllDrives`` (bool): Whether the requesting application supports both My Drives and shared drives.
-    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \`supportsAllDrives\` instead.
-    * ``teamDriveId`` (str) *(deprecated)*: Deprecated: Use \`driveId\` instead.
+    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \\`supportsAllDrives\\` instead.
+    * ``teamDriveId`` (str) *(deprecated)*: Deprecated: Use \\`driveId\\` instead.
 
     CLI Example:
 
@@ -551,16 +553,16 @@ def changes_list(pageToken, **params):
     * ``driveId`` (str): The shared drive from which changes will be returned. If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier.
     * ``includeCorpusRemovals`` (bool): Whether changes should include the file resource if the file is still accessible by the user at the time of the request, even when a file was removed from the list of changes and there will be no fur…
     * ``includeItemsFromAllDrives`` (bool): Whether both My Drive and shared drive items should be included in results.
-    * ``includeLabels`` (str): A comma-separated list of IDs of labels to include in the \`labelInfo\` part of the response.
+    * ``includeLabels`` (str): A comma-separated list of IDs of labels to include in the \\`labelInfo\\` part of the response.
     * ``includePermissionsForView`` (str): Specifies which additional view's permissions to include in the response. Only 'published' is supported.
     * ``includeRemoved`` (bool): Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access.
-    * ``includeTeamDriveItems`` (bool) *(deprecated)*: Deprecated: Use \`includeItemsFromAllDrives\` instead.
+    * ``includeTeamDriveItems`` (bool) *(deprecated)*: Deprecated: Use \\`includeItemsFromAllDrives\\` instead.
     * ``pageSize`` (int): The maximum number of changes to return per page.
     * ``restrictToMyDrive`` (bool): Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Driv…
     * ``spaces`` (str): A comma-separated list of spaces to query within the corpora. Supported values are 'drive' and 'appDataFolder'.
     * ``supportsAllDrives`` (bool): Whether the requesting application supports both My Drives and shared drives.
-    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \`supportsAllDrives\` instead.
-    * ``teamDriveId`` (str) *(deprecated)*: Deprecated: Use \`driveId\` instead.
+    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \\`supportsAllDrives\\` instead.
+    * ``teamDriveId`` (str) *(deprecated)*: Deprecated: Use \\`driveId\\` instead.
 
     CLI Example:
 
@@ -598,16 +600,16 @@ def changes_watch(pageToken, body=None, **params):
     * ``driveId`` (str): The shared drive from which changes will be returned. If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier.
     * ``includeCorpusRemovals`` (bool): Whether changes should include the file resource if the file is still accessible by the user at the time of the request, even when a file was removed from the list of changes and there will be no fur…
     * ``includeItemsFromAllDrives`` (bool): Whether both My Drive and shared drive items should be included in results.
-    * ``includeLabels`` (str): A comma-separated list of IDs of labels to include in the \`labelInfo\` part of the response.
+    * ``includeLabels`` (str): A comma-separated list of IDs of labels to include in the \\`labelInfo\\` part of the response.
     * ``includePermissionsForView`` (str): Specifies which additional view's permissions to include in the response. Only 'published' is supported.
     * ``includeRemoved`` (bool): Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access.
-    * ``includeTeamDriveItems`` (bool) *(deprecated)*: Deprecated: Use \`includeItemsFromAllDrives\` instead.
+    * ``includeTeamDriveItems`` (bool) *(deprecated)*: Deprecated: Use \\`includeItemsFromAllDrives\\` instead.
     * ``pageSize`` (int): The maximum number of changes to return per page.
     * ``restrictToMyDrive`` (bool): Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Driv…
     * ``spaces`` (str): A comma-separated list of spaces to query within the corpora. Supported values are 'drive' and 'appDataFolder'.
     * ``supportsAllDrives`` (bool): Whether the requesting application supports both My Drives and shared drives.
-    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \`supportsAllDrives\` instead.
-    * ``teamDriveId`` (str) *(deprecated)*: Deprecated: Use \`driveId\` instead.
+    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \\`supportsAllDrives\\` instead.
+    * ``teamDriveId`` (str) *(deprecated)*: Deprecated: Use \\`driveId\\` instead.
 
     CLI Example:
 
@@ -660,8 +662,8 @@ def comments_create(fileId, body=None, **params):
     """
     Creates a comment on a file. For more information, see [Manage comments and
     replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).
-    Required: The \`fields\` parameter must be set. To return the exact fields you need,
-    see [Return specific
+    Required: The \\`fields\\` parameter must be set. To return the exact fields you
+    need, see [Return specific
     fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).
 
     HTTP: ``POST``  Discovery: ``comments.create``
@@ -726,8 +728,8 @@ def comments_get(fileId, commentId, **params):
     """
     Gets a comment by ID. For more information, see [Manage comments and
     replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).
-    Required: The \`fields\` parameter must be set. To return the exact fields you need,
-    see [Return specific
+    Required: The \\`fields\\` parameter must be set. To return the exact fields you
+    need, see [Return specific
     fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).
 
     HTTP: ``GET``  Discovery: ``comments.get``
@@ -764,8 +766,8 @@ def comments_list(fileId, **params):
     """
     Lists a file's comments. For more information, see [Manage comments and
     replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).
-    Required: The \`fields\` parameter must be set. To return the exact fields you need,
-    see [Return specific
+    Required: The \\`fields\\` parameter must be set. To return the exact fields you
+    need, see [Return specific
     fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).
 
     HTTP: ``GET``  Discovery: ``comments.list``
@@ -802,9 +804,10 @@ def comments_list(fileId, **params):
 def comments_update(fileId, commentId, body=None, **params):
     """
     Updates a comment with patch semantics. For more information, see [Manage comments
-    and replies](https://developers.google.com/workspace/drive/api/guides/manage-
-    comments). Required: The \`fields\` parameter must be set. To return the exact
-    fields you need, see [Return specific
+    and
+    replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).
+    Required: The \\`fields\\` parameter must be set. To return the exact fields you
+    need, see [Return specific
     fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).
 
     HTTP: ``PATCH``  Discovery: ``comments.update``
@@ -839,8 +842,7 @@ def comments_update(fileId, commentId, body=None, **params):
 def drives_create(requestId, body=None, **params):
     """
     Creates a shared drive. For more information, see [Manage shared
-    drives](https://developers.google.com/workspace/drive/api/guides/manage-
-    shareddrives).
+    drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).
 
     HTTP: ``POST``  Discovery: ``drives.create``
 
@@ -871,10 +873,10 @@ def drives_create(requestId, body=None, **params):
 
 def drives_delete(driveId, **params):
     """
-    Permanently deletes a shared drive for which the user is an \`organizer\`. The
+    Permanently deletes a shared drive for which the user is an \\`organizer\\`. The
     shared drive cannot contain any untrashed items. For more information, see [Manage
-    shared drives](https://developers.google.com/workspace/drive/api/guides/manage-
-    shareddrives).
+    shared
+    drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).
 
     HTTP: ``DELETE``  Discovery: ``drives.delete``
 
@@ -884,7 +886,7 @@ def drives_delete(driveId, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``allowItemDeletion`` (bool): Whether any items inside the shared drive should also be deleted. This option is only supported when \`useDomainAdminAccess\` is also set to \`true\`.
+    * ``allowItemDeletion`` (bool): Whether any items inside the shared drive should also be deleted. This option is only supported when \\`useDomainAdminAccess\\` is also set to \\`true\\`.
     * ``useDomainAdminAccess`` (bool): Issue the request as a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to which the shared drive belongs.
 
     CLI Example:
@@ -908,8 +910,7 @@ def drives_delete(driveId, **params):
 def drives_get(driveId, **params):
     """
     Gets a shared drive's metadata by ID. For more information, see [Manage shared
-    drives](https://developers.google.com/workspace/drive/api/guides/manage-
-    shareddrives).
+    drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).
 
     HTTP: ``GET``  Discovery: ``drives.get``
 
@@ -942,8 +943,7 @@ def drives_get(driveId, **params):
 def drives_hide(driveId, **params):
     """
     Hides a shared drive from the default view. For more information, see [Manage shared
-    drives](https://developers.google.com/workspace/drive/api/guides/manage-
-    shareddrives).
+    drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).
 
     HTTP: ``POST``  Discovery: ``drives.hide``
 
@@ -971,11 +971,11 @@ def drives_hide(driveId, **params):
 
 def drives_list(**params):
     """
-    Lists the user's shared drives. This method accepts the \`q\` parameter, which is a
-    search query combining one or more search terms. For more information, see the
+    Lists the user's shared drives. This method accepts the \\`q\\` parameter, which is
+    a search query combining one or more search terms. For more information, see the
     [Search for shared
-    drives](https://developers.google.com/workspace/drive/api/guides/search-
-    shareddrives) guide.
+    drives](https://developers.google.com/workspace/drive/api/guides/search-shareddrives)
+    guide.
 
     HTTP: ``GET``  Discovery: ``drives.list``
 
@@ -1006,8 +1006,8 @@ def drives_list(**params):
 def drives_unhide(driveId, **params):
     """
     Restores a shared drive to the default view. For more information, see [Manage
-    shared drives](https://developers.google.com/workspace/drive/api/guides/manage-
-    shareddrives).
+    shared
+    drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).
 
     HTTP: ``POST``  Discovery: ``drives.unhide``
 
@@ -1036,8 +1036,7 @@ def drives_unhide(driveId, **params):
 def drives_update(driveId, body=None, **params):
     """
     Updates the metadata for a shared drive. For more information, see [Manage shared
-    drives](https://developers.google.com/workspace/drive/api/guides/manage-
-    shareddrives).
+    drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).
 
     HTTP: ``PATCH``  Discovery: ``drives.update``
 
@@ -1088,12 +1087,12 @@ def files_copy(fileId, body=None, **params):
 
     * ``enforceSingleParent`` (bool) *(deprecated)*: Deprecated: Copying files into multiple folders is no longer supported. Use shortcuts instead.
     * ``ignoreDefaultVisibility`` (bool): Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses…
-    * ``includeLabels`` (str): A comma-separated list of IDs of labels to include in the \`labelInfo\` part of the response.
-    * ``includePermissionsForView`` (str): Specifies which additional view's permissions to include in the response. Only \`published\` is supported.
-    * ``keepRevisionForever`` (bool): Whether to set the \`keepForever\` field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limi…
+    * ``includeLabels`` (str): A comma-separated list of IDs of labels to include in the \\`labelInfo\\` part of the response.
+    * ``includePermissionsForView`` (str): Specifies which additional view's permissions to include in the response. Only \\`published\\` is supported.
+    * ``keepRevisionForever`` (bool): Whether to set the \\`keepForever\\` field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limi…
     * ``ocrLanguage`` (str): A language hint for OCR processing during image import (ISO 639-1 code).
     * ``supportsAllDrives`` (bool): Whether the requesting application supports both My Drives and shared drives.
-    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \`supportsAllDrives\` instead.
+    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \\`supportsAllDrives\\` instead.
 
     CLI Example:
 
@@ -1118,24 +1117,25 @@ def files_create(body=None, upload=None, **params):
     """
     Creates a file. For more information, see [Create and manage
     files](https://developers.google.com/workspace/drive/api/guides/create-file). This
-    method supports an \*/upload\* URI and accepts uploaded media with the following
-    characteristics: - \*Maximum file size:\* 5,120 GB - \*Accepted Media MIME types:\*
-    \`\*/\*\` (Specify a valid MIME type, rather than the literal \`\*/\*\` value. The
-    literal \`\*/\*\` is only used to indicate that any valid MIME type can be uploaded.
-    For more information, see [Google Workspace and Google Drive supported MIME
+    method supports an \\*/upload\\* URI and accepts uploaded media with the following
+    characteristics: - \\*Maximum file size:\\* 5,120 GB - \\*Accepted Media MIME
+    types:\\* \\`\\*/\\*\\` (Specify a valid MIME type, rather than the literal
+    \\`\\*/\\*\\` value. The literal \\`\\*/\\*\\` is only used to indicate that any
+    valid MIME type can be uploaded. For more information, see [Google Workspace and
+    Google Drive supported MIME
     types](https://developers.google.com/workspace/drive/api/guides/mime-types).) For
     more information on uploading files, see [Upload file
     data](https://developers.google.com/workspace/drive/api/guides/manage-uploads). Apps
-    creating shortcuts with the \`create\` method must specify the MIME type
-    \`application/vnd.google-apps.shortcut\`. Apps should specify a file extension in
-    the \`name\` property when inserting files with the API. For example, an operation
-    to insert a JPEG file should specify something like \`"name": "cat.jpg"\` in the
-    metadata. Subsequent \`GET\` requests include the read-only \`fileExtension\`
-    property populated with the extension originally specified in the \`name\` property.
-    When a Google Drive user requests to download a file, or when the file is downloaded
-    through the sync client, Drive builds a full filename (with extension) based on the
-    name. In cases where the extension is missing, Drive attempts to determine the
-    extension based on the file's MIME type.
+    creating shortcuts with the \\`create\\` method must specify the MIME type
+    \\`application/vnd.google-apps.shortcut\\`. Apps should specify a file extension in
+    the \\`name\\` property when inserting files with the API. For example, an operation
+    to insert a JPEG file should specify something like \\`"name": "cat.jpg"\\` in the
+    metadata. Subsequent \\`GET\\` requests include the read-only \\`fileExtension\\`
+    property populated with the extension originally specified in the \\`name\\`
+    property. When a Google Drive user requests to download a file, or when the file is
+    downloaded through the sync client, Drive builds a full filename (with extension)
+    based on the name. In cases where the extension is missing, Drive attempts to
+    determine the extension based on the file's MIME type.
 
     HTTP: ``POST``  Discovery: ``files.create``
 
@@ -1147,12 +1147,12 @@ def files_create(body=None, upload=None, **params):
 
     * ``enforceSingleParent`` (bool) *(deprecated)*: Deprecated: Creating files in multiple folders is no longer supported.
     * ``ignoreDefaultVisibility`` (bool): Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses…
-    * ``includeLabels`` (str): A comma-separated list of IDs of labels to include in the \`labelInfo\` part of the response.
-    * ``includePermissionsForView`` (str): Specifies which additional view's permissions to include in the response. Only \`published\` is supported.
-    * ``keepRevisionForever`` (bool): Whether to set the \`keepForever\` field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limi…
+    * ``includeLabels`` (str): A comma-separated list of IDs of labels to include in the \\`labelInfo\\` part of the response.
+    * ``includePermissionsForView`` (str): Specifies which additional view's permissions to include in the response. Only \\`published\\` is supported.
+    * ``keepRevisionForever`` (bool): Whether to set the \\`keepForever\\` field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limi…
     * ``ocrLanguage`` (str): A language hint for OCR processing during image import (ISO 639-1 code).
     * ``supportsAllDrives`` (bool): Whether the requesting application supports both My Drives and shared drives.
-    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \`supportsAllDrives\` instead.
+    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \\`supportsAllDrives\\` instead.
     * ``useContentAsIndexableText`` (bool): Whether to use the uploaded content as indexable text.
 
     CLI Example:
@@ -1179,7 +1179,7 @@ def files_delete(fileId, **params):
     Permanently deletes a file owned by the user without moving it to the trash. For
     more information, see [Trash or delete files and
     folders](https://developers.google.com/workspace/drive/api/guides/delete). If the
-    file belongs to a shared drive, the user must be an \`organizer\` on the parent
+    file belongs to a shared drive, the user must be an \\`organizer\\` on the parent
     folder. If the target is a folder, all descendants owned by the user are also
     deleted.
 
@@ -1193,7 +1193,7 @@ def files_delete(fileId, **params):
 
     * ``enforceSingleParent`` (bool) *(deprecated)*: Deprecated: If an item isn't in a shared drive and its last parent is deleted but the item itself isn't, the item will be placed under its owner's root.
     * ``supportsAllDrives`` (bool): Whether the requesting application supports both My Drives and shared drives.
-    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \`supportsAllDrives\` instead.
+    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \\`supportsAllDrives\\` instead.
 
     CLI Example:
 
@@ -1228,7 +1228,7 @@ def files_download(fileId, **params):
     Optional parameters (pass via keyword args):
 
     * ``mimeType`` (str): Optional. The MIME type the file should be downloaded as. This field can only be set when downloading Google Workspace documents. For a list of supported MIME types, see [Export MIME types for Google…
-    * ``revisionId`` (str): Optional. The revision ID of the file to download. This field can only be set when downloading blob files, Google Docs, and Google Sheets. Returns \`INVALID\_ARGUMENT\` if downloading a specific revisio…
+    * ``revisionId`` (str): Optional. The revision ID of the file to download. This field can only be set when downloading blob files, Google Docs, and Google Sheets. Returns \\`INVALID\\_ARGUMENT\\` if downloading a specific revisio…
 
     CLI Example:
 
@@ -1350,8 +1350,8 @@ def files_generate_ids(**params):
     Optional parameters (pass via keyword args):
 
     * ``count`` (int): The number of IDs to return.
-    * ``space`` (str): The space in which the IDs can be used to create files. Supported values are \`drive\` and \`appDataFolder\`. (Default: \`drive\`.) For more information, see [File organization](https://developers.google.c…
-    * ``type`` (str): The type of items which the IDs can be used for. Supported values are \`files\` and \`shortcuts\`. Note that \`shortcuts\` are only supported in the \`drive\` \`space\`. (Default: \`files\`.) For more informatio…
+    * ``space`` (str): The space in which the IDs can be used to create files. Supported values are \\`drive\\` and \\`appDataFolder\\`. (Default: \\`drive\\`.) For more information, see [File organization](https://developers.google.c…
+    * ``type`` (str): The type of items which the IDs can be used for. Supported values are \\`files\\` and \\`shortcuts\\`. Note that \\`shortcuts\\` are only supported in the \\`drive\\` \\`space\\`. (Default: \\`files\\`.) For more informatio…
 
     CLI Example:
 
@@ -1374,11 +1374,12 @@ def files_get(fileId, **params):
     """
     Gets a file's metadata or content by ID. For more information, see [Search for files
     and folders](https://developers.google.com/workspace/drive/api/guides/search-files).
-    If you provide the URL parameter \`alt=media\`, then the response includes the file
-    contents in the response body. Downloading content with \`alt=media\` only works if
-    the file is stored in Drive. To download Google Docs, Sheets, and Slides use [\`file
-    s.export\`](https://developers.google.com/workspace/drive/api/reference/rest/v3/file
-    s/export) instead. For more information, see [Download and export
+    If you provide the URL parameter \\`alt=media\\`, then the response includes the
+    file contents in the response body. Downloading content with \\`alt=media\\` only
+    works if the file is stored in Drive. To download Google Docs, Sheets, and Slides
+    use
+    [\\`files.export\\`](https://developers.google.com/workspace/drive/api/reference/rest/v3/files/export)
+    instead. For more information, see [Download and export
     files](https://developers.google.com/workspace/drive/api/guides/manage-downloads).
 
     HTTP: ``GET``  Discovery: ``files.get``
@@ -1389,11 +1390,11 @@ def files_get(fileId, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``acknowledgeAbuse`` (bool): Whether the user is acknowledging the risk of downloading known malware or other abusive files. This is only applicable when the \`alt\` parameter is set to \`media\` and the user is the owner of the fil…
-    * ``includeLabels`` (str): A comma-separated list of IDs of labels to include in the \`labelInfo\` part of the response.
-    * ``includePermissionsForView`` (str): Specifies which additional view's permissions to include in the response. Only \`published\` is supported.
+    * ``acknowledgeAbuse`` (bool): Whether the user is acknowledging the risk of downloading known malware or other abusive files. This is only applicable when the \\`alt\\` parameter is set to \\`media\\` and the user is the owner of the fil…
+    * ``includeLabels`` (str): A comma-separated list of IDs of labels to include in the \\`labelInfo\\` part of the response.
+    * ``includePermissionsForView`` (str): Specifies which additional view's permissions to include in the response. Only \\`published\\` is supported.
     * ``supportsAllDrives`` (bool): Whether the requesting application supports both My Drives and shared drives.
-    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \`supportsAllDrives\` instead.
+    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \\`supportsAllDrives\\` instead.
 
     CLI Example:
 
@@ -1417,30 +1418,30 @@ def files_list(**params):
     """
     Lists the user's files. For more information, see [Search for files and
     folders](https://developers.google.com/workspace/drive/api/guides/search-files).
-    This method accepts the \`q\` parameter, which is a search query combining one or
-    more search terms. This method returns \*all\* files by default, including trashed
+    This method accepts the \\`q\\` parameter, which is a search query combining one or
+    more search terms. This method returns \\*all\\* files by default, including trashed
     files. If you don't want trashed files to appear in the list, use the
-    \`trashed=false\` query parameter to remove trashed files from the results.
+    \\`trashed=false\\` query parameter to remove trashed files from the results.
 
     HTTP: ``GET``  Discovery: ``files.list``
 
     Optional parameters (pass via keyword args):
 
-    * ``corpora`` (str): Specifies a collection of items (files or documents) to which the query applies. Supported items include: \* \`user\` \* \`domain\` \* \`drive\` \* \`allDrives\` Prefer \`user\` or \`drive\` to \`allDrives\` for effic…
-    * ``corpus`` (str) *(deprecated)*: Deprecated: The source of files to list. Use \`corpora\` instead.
+    * ``corpora`` (str): Specifies a collection of items (files or documents) to which the query applies. Supported items include: \\* \\`user\\` \\* \\`domain\\` \\* \\`drive\\` \\* \\`allDrives\\` Prefer \\`user\\` or \\`drive\\` to \\`allDrives\\` for effic…
+    * ``corpus`` (str) *(deprecated)*: Deprecated: The source of files to list. Use \\`corpora\\` instead.
     * ``driveId`` (str): ID of the shared drive to search.
     * ``includeItemsFromAllDrives`` (bool): Whether both My Drive and shared drive items should be included in results.
-    * ``includeLabels`` (str): A comma-separated list of IDs of labels to include in the \`labelInfo\` part of the response.
-    * ``includePermissionsForView`` (str): Specifies which additional view's permissions to include in the response. Only \`published\` is supported.
-    * ``includeTeamDriveItems`` (bool) *(deprecated)*: Deprecated: Use \`includeItemsFromAllDrives\` instead.
-    * ``orderBy`` (str): A comma-separated list of sort keys. Valid keys are: \* \`createdTime\`: When the file was created. Avoid using this key for queries on large item collections as it might result in timeouts or other iss…
+    * ``includeLabels`` (str): A comma-separated list of IDs of labels to include in the \\`labelInfo\\` part of the response.
+    * ``includePermissionsForView`` (str): Specifies which additional view's permissions to include in the response. Only \\`published\\` is supported.
+    * ``includeTeamDriveItems`` (bool) *(deprecated)*: Deprecated: Use \\`includeItemsFromAllDrives\\` instead.
+    * ``orderBy`` (str): A comma-separated list of sort keys. Valid keys are: \\* \\`createdTime\\`: When the file was created. Avoid using this key for queries on large item collections as it might result in timeouts or other iss…
     * ``pageSize`` (int): The maximum number of files to return per page. Pages may be partial or empty even before reaching the end of the file list. If unspecified, at most 100 files are returned for shared drives, and the…
-    * ``pageToken`` (str): The token for continuing a previous list request on the next page. This should be set to the value of \`nextPageToken\` from the previous response.
+    * ``pageToken`` (str): The token for continuing a previous list request on the next page. This should be set to the value of \\`nextPageToken\\` from the previous response.
     * ``q`` (str): A query for filtering the file results. For supported syntax, see [Search for files and folders](/workspace/drive/api/guides/search-files).
-    * ``spaces`` (str): A comma-separated list of spaces to query within the corpora. Supported values are \`drive\` and \`appDataFolder\`. For more information, see [File organization](https://developers.google.com/workspace/d…
+    * ``spaces`` (str): A comma-separated list of spaces to query within the corpora. Supported values are \\`drive\\` and \\`appDataFolder\\`. For more information, see [File organization](https://developers.google.com/workspace/d…
     * ``supportsAllDrives`` (bool): Whether the requesting application supports both My Drives and shared drives.
-    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \`supportsAllDrives\` instead.
-    * ``teamDriveId`` (str) *(deprecated)*: Deprecated: Use \`driveId\` instead.
+    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \\`supportsAllDrives\\` instead.
+    * ``teamDriveId`` (str) *(deprecated)*: Deprecated: Use \\`driveId\\` instead.
 
     CLI Example:
 
@@ -1473,7 +1474,7 @@ def files_list_labels(fileId, **params):
     Optional parameters (pass via keyword args):
 
     * ``maxResults`` (int): The maximum number of labels to return per page. When not set, defaults to 100.
-    * ``pageToken`` (str): The token for continuing a previous list request on the next page. This should be set to the value of \`nextPageToken\` from the previous response.
+    * ``pageToken`` (str): The token for continuing a previous list request on the next page. This should be set to the value of \\`nextPageToken\\` from the previous response.
 
     CLI Example:
 
@@ -1496,8 +1497,9 @@ def files_list_labels(fileId, **params):
 def files_modify_labels(fileId, body=None, **params):
     """
     Modifies the set of labels applied to a file. For more information, see [Set a label
-    field on a file](https://developers.google.com/workspace/drive/api/guides/set-
-    label). Returns a list of the labels that were added or modified.
+    field on a
+    file](https://developers.google.com/workspace/drive/api/guides/set-label). Returns a
+    list of the labels that were added or modified.
 
     HTTP: ``POST``  Discovery: ``files.modifyLabels``
 
@@ -1530,14 +1532,15 @@ def files_update(fileId, body=None, upload=None, **params):
     """
     Updates a file's metadata, content, or both. When calling this method, only populate
     fields in the request that you want to modify. When updating fields, some fields
-    might be changed automatically, such as \`modifiedDate\`. This method supports patch
-    semantics. This method supports an \*/upload\* URI and accepts uploaded media with
-    the following characteristics: - \*Maximum file size:\* 5,120 GB - \*Accepted Media
-    MIME types:\* \`\*/\*\` (Specify a valid MIME type, rather than the literal
-    \`\*/\*\` value. The literal \`\*/\*\` is only used to indicate that any valid MIME
-    type can be uploaded. For more information, see [Google Workspace and Google Drive
-    supported MIME types](https://developers.google.com/workspace/drive/api/guides/mime-
-    types).) For more information on uploading files, see [Upload file
+    might be changed automatically, such as \\`modifiedDate\\`. This method supports
+    patch semantics. This method supports an \\*/upload\\* URI and accepts uploaded
+    media with the following characteristics: - \\*Maximum file size:\\* 5,120 GB -
+    \\*Accepted Media MIME types:\\* \\`\\*/\\*\\` (Specify a valid MIME type, rather
+    than the literal \\`\\*/\\*\\` value. The literal \\`\\*/\\*\\` is only used to
+    indicate that any valid MIME type can be uploaded. For more information, see [Google
+    Workspace and Google Drive supported MIME
+    types](https://developers.google.com/workspace/drive/api/guides/mime-types).) For
+    more information on uploading files, see [Upload file
     data](https://developers.google.com/workspace/drive/api/guides/manage-uploads).
 
     HTTP: ``PATCH``  Discovery: ``files.update``
@@ -1554,13 +1557,13 @@ def files_update(fileId, body=None, upload=None, **params):
 
     * ``addParents`` (str): A comma-separated list of parent IDs to add.
     * ``enforceSingleParent`` (bool) *(deprecated)*: Deprecated: Adding files to multiple folders is no longer supported. Use shortcuts instead.
-    * ``includeLabels`` (str): A comma-separated list of IDs of labels to include in the \`labelInfo\` part of the response.
-    * ``includePermissionsForView`` (str): Specifies which additional view's permissions to include in the response. Only \`published\` is supported.
-    * ``keepRevisionForever`` (bool): Whether to set the \`keepForever\` field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limi…
+    * ``includeLabels`` (str): A comma-separated list of IDs of labels to include in the \\`labelInfo\\` part of the response.
+    * ``includePermissionsForView`` (str): Specifies which additional view's permissions to include in the response. Only \\`published\\` is supported.
+    * ``keepRevisionForever`` (bool): Whether to set the \\`keepForever\\` field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limi…
     * ``ocrLanguage`` (str): A language hint for OCR processing during image import (ISO 639-1 code).
     * ``removeParents`` (str): A comma-separated list of parent IDs to remove.
     * ``supportsAllDrives`` (bool): Whether the requesting application supports both My Drives and shared drives.
-    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \`supportsAllDrives\` instead.
+    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \\`supportsAllDrives\\` instead.
     * ``useContentAsIndexableText`` (bool): Whether to use the uploaded content as indexable text.
 
     CLI Example:
@@ -1598,11 +1601,11 @@ def files_watch(fileId, body=None, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``acknowledgeAbuse`` (bool): Whether the user is acknowledging the risk of downloading known malware or other abusive files. This is only applicable when the \`alt\` parameter is set to \`media\` and the user is the owner of the fil…
-    * ``includeLabels`` (str): A comma-separated list of IDs of labels to include in the \`labelInfo\` part of the response.
-    * ``includePermissionsForView`` (str): Specifies which additional view's permissions to include in the response. Only \`published\` is supported.
+    * ``acknowledgeAbuse`` (bool): Whether the user is acknowledging the risk of downloading known malware or other abusive files. This is only applicable when the \\`alt\\` parameter is set to \\`media\\` and the user is the owner of the fil…
+    * ``includeLabels`` (str): A comma-separated list of IDs of labels to include in the \\`labelInfo\\` part of the response.
+    * ``includePermissionsForView`` (str): Specifies which additional view's permissions to include in the response. Only \\`published\\` is supported.
     * ``supportsAllDrives`` (bool): Whether the requesting application supports both My Drives and shared drives.
-    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \`supportsAllDrives\` instead.
+    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \\`supportsAllDrives\\` instead.
 
     CLI Example:
 
@@ -1657,7 +1660,7 @@ def permissions_create(fileId, body=None, **params):
     Creates a permission for a file or shared drive. For more information, see [Share
     files, folders, and
     drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing).
-    \*\*Warning:\*\* Concurrent permissions operations on the same file aren't
+    \\*\\*Warning:\\*\\* Concurrent permissions operations on the same file aren't
     supported; only the last update is applied.
 
     HTTP: ``POST``  Discovery: ``permissions.create``
@@ -1672,13 +1675,13 @@ def permissions_create(fileId, body=None, **params):
 
     * ``emailMessage`` (str): A plain text custom message to include in the notification email.
     * ``enforceExpansiveAccess`` (bool) *(deprecated)*: Deprecated: All requests use the expansive access rules.
-    * ``enforceSingleParent`` (bool) *(deprecated)*: Deprecated: See \`moveToNewOwnersRoot\` for details.
-    * ``moveToNewOwnersRoot`` (bool): This parameter only takes effect if the item isn't in a shared drive and the request is attempting to transfer the ownership of the item. If set to \`true\`, the item is moved to the new owner's My Dri…
-    * ``sendNotificationEmail`` (bool): Whether to send a notification email when sharing to users or groups. This defaults to \`true\` for users and groups, and is not allowed for other requests. It must not be disabled for ownership transf…
+    * ``enforceSingleParent`` (bool) *(deprecated)*: Deprecated: See \\`moveToNewOwnersRoot\\` for details.
+    * ``moveToNewOwnersRoot`` (bool): This parameter only takes effect if the item isn't in a shared drive and the request is attempting to transfer the ownership of the item. If set to \\`true\\`, the item is moved to the new owner's My Dri…
+    * ``sendNotificationEmail`` (bool): Whether to send a notification email when sharing to users or groups. This defaults to \\`true\\` for users and groups, and is not allowed for other requests. It must not be disabled for ownership transf…
     * ``supportsAllDrives`` (bool): Whether the requesting application supports both My Drives and shared drives.
-    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \`supportsAllDrives\` instead.
+    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \\`supportsAllDrives\\` instead.
     * ``transferOwnership`` (bool): Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This parameter is required as an acknowledgement of the side effect. For more information, see [Transf…
-    * ``useDomainAdminAccess`` (bool): Issue the request as a domain administrator. If set to \`true\`, and if the following additional conditions are met, the requester is granted access: 1. The file ID parameter refers to a shared drive.…
+    * ``useDomainAdminAccess`` (bool): Issue the request as a domain administrator. If set to \\`true\\`, and if the following additional conditions are met, the requester is granted access: 1. The file ID parameter refers to a shared drive.…
 
     CLI Example:
 
@@ -1703,7 +1706,7 @@ def permissions_delete(fileId, permissionId, **params):
     """
     Deletes a permission. For more information, see [Share files, folders, and
     drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing).
-    \*\*Warning:\*\* Concurrent permissions operations on the same file aren't
+    \\*\\*Warning:\\*\\* Concurrent permissions operations on the same file aren't
     supported; only the last update is applied.
 
     HTTP: ``DELETE``  Discovery: ``permissions.delete``
@@ -1717,8 +1720,8 @@ def permissions_delete(fileId, permissionId, **params):
 
     * ``enforceExpansiveAccess`` (bool) *(deprecated)*: Deprecated: All requests use the expansive access rules.
     * ``supportsAllDrives`` (bool): Whether the requesting application supports both My Drives and shared drives.
-    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \`supportsAllDrives\` instead.
-    * ``useDomainAdminAccess`` (bool): Issue the request as a domain administrator. If set to \`true\`, and if the following additional conditions are met, the requester is granted access: 1. The file ID parameter refers to a shared drive.…
+    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \\`supportsAllDrives\\` instead.
+    * ``useDomainAdminAccess`` (bool): Issue the request as a domain administrator. If set to \\`true\\`, and if the following additional conditions are met, the requester is granted access: 1. The file ID parameter refers to a shared drive.…
 
     CLI Example:
 
@@ -1754,8 +1757,8 @@ def permissions_get(fileId, permissionId, **params):
     Optional parameters (pass via keyword args):
 
     * ``supportsAllDrives`` (bool): Whether the requesting application supports both My Drives and shared drives.
-    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \`supportsAllDrives\` instead.
-    * ``useDomainAdminAccess`` (bool): Issue the request as a domain administrator. If set to \`true\`, and if the following additional conditions are met, the requester is granted access: 1. The file ID parameter refers to a shared drive.…
+    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \\`supportsAllDrives\\` instead.
+    * ``useDomainAdminAccess`` (bool): Issue the request as a domain administrator. If set to \\`true\\`, and if the following additional conditions are met, the requester is granted access: 1. The file ID parameter refers to a shared drive.…
 
     CLI Example:
 
@@ -1790,12 +1793,12 @@ def permissions_list(fileId, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``includePermissionsForView`` (str): Specifies which additional view's permissions to include in the response. Only \`published\` is supported.
+    * ``includePermissionsForView`` (str): Specifies which additional view's permissions to include in the response. Only \\`published\\` is supported.
     * ``pageSize`` (int): The maximum number of permissions to return per page. When not set for files in a shared drive, at most 100 results will be returned. When not set for files that are not in a shared drive, the entire…
-    * ``pageToken`` (str): The token for continuing a previous list request on the next page. This should be set to the value of \`nextPageToken\` from the previous response.
+    * ``pageToken`` (str): The token for continuing a previous list request on the next page. This should be set to the value of \\`nextPageToken\\` from the previous response.
     * ``supportsAllDrives`` (bool): Whether the requesting application supports both My Drives and shared drives.
-    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \`supportsAllDrives\` instead.
-    * ``useDomainAdminAccess`` (bool): Issue the request as a domain administrator. If set to \`true\`, and if the following additional conditions are met, the requester is granted access: 1. The file ID parameter refers to a shared drive.…
+    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \\`supportsAllDrives\\` instead.
+    * ``useDomainAdminAccess`` (bool): Issue the request as a domain administrator. If set to \\`true\\`, and if the following additional conditions are met, the requester is granted access: 1. The file ID parameter refers to a shared drive.…
 
     CLI Example:
 
@@ -1820,7 +1823,7 @@ def permissions_update(fileId, permissionId, body=None, **params):
     Updates a permission with patch semantics. For more information, see [Share files,
     folders, and
     drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing).
-    \*\*Warning:\*\* Concurrent permissions operations on the same file aren't
+    \\*\\*Warning:\\*\\* Concurrent permissions operations on the same file aren't
     supported; only the last update is applied.
 
     HTTP: ``PATCH``  Discovery: ``permissions.update``
@@ -1837,9 +1840,9 @@ def permissions_update(fileId, permissionId, body=None, **params):
     * ``enforceExpansiveAccess`` (bool) *(deprecated)*: Deprecated: All requests use the expansive access rules.
     * ``removeExpiration`` (bool): Whether to remove the expiration date.
     * ``supportsAllDrives`` (bool): Whether the requesting application supports both My Drives and shared drives.
-    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \`supportsAllDrives\` instead.
+    * ``supportsTeamDrives`` (bool) *(deprecated)*: Deprecated: Use \\`supportsAllDrives\\` instead.
     * ``transferOwnership`` (bool): Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This parameter is required as an acknowledgement of the side effect. For more information, see [Transf…
-    * ``useDomainAdminAccess`` (bool): Issue the request as a domain administrator. If set to \`true\`, and if the following additional conditions are met, the requester is granted access: 1. The file ID parameter refers to a shared drive.…
+    * ``useDomainAdminAccess`` (bool): Issue the request as a domain administrator. If set to \\`true\\`, and if the following additional conditions are met, the requester is granted access: 1. The file ID parameter refers to a shared drive.…
 
     CLI Example:
 
@@ -1981,7 +1984,7 @@ def replies_list(fileId, commentId, **params):
 
     * ``includeDeleted`` (bool): Whether to include deleted replies. Deleted replies don't include their original content.
     * ``pageSize`` (int): The maximum number of replies to return per page.
-    * ``pageToken`` (str): The token for continuing a previous list request on the next page. This should be set to the value of \`nextPageToken\` from the previous response.
+    * ``pageToken`` (str): The token for continuing a previous list request on the next page. This should be set to the value of \\`nextPageToken\\` from the previous response.
 
     CLI Example:
 
@@ -2075,8 +2078,7 @@ def revisions_delete(fileId, revisionId, **params):
 def revisions_get(fileId, revisionId, **params):
     """
     Gets a revision's metadata or content by ID. For more information, see [Manage file
-    revisions](https://developers.google.com/workspace/drive/api/guides/manage-
-    revisions).
+    revisions](https://developers.google.com/workspace/drive/api/guides/manage-revisions).
 
     HTTP: ``GET``  Discovery: ``revisions.get``
 
@@ -2087,7 +2089,7 @@ def revisions_get(fileId, revisionId, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``acknowledgeAbuse`` (bool): Whether the user is acknowledging the risk of downloading known malware or other abusive files. This is only applicable when the \`alt\` parameter is set to \`media\` and the user is the owner of the fil…
+    * ``acknowledgeAbuse`` (bool): Whether the user is acknowledging the risk of downloading known malware or other abusive files. This is only applicable when the \\`alt\\` parameter is set to \\`media\\` and the user is the owner of the fil…
 
     CLI Example:
 
@@ -2111,9 +2113,9 @@ def revisions_get(fileId, revisionId, **params):
 def revisions_list(fileId, **params):
     """
     Lists a file's revisions. For more information, see [Manage file
-    revisions](https://developers.google.com/workspace/drive/api/guides/manage-
-    revisions). \*\*Important:\*\* The list of revisions returned by this method might
-    be incomplete for files with a large revision history, including frequently edited
+    revisions](https://developers.google.com/workspace/drive/api/guides/manage-revisions).
+    \\*\\*Important:\\*\\* The list of revisions returned by this method might be
+    incomplete for files with a large revision history, including frequently edited
     Google Docs, Sheets, and Slides. Older revisions might be omitted from the response,
     meaning the first revision returned may not be the oldest existing revision. The
     revision history visible in the Workspace editor user interface might be more
@@ -2151,8 +2153,7 @@ def revisions_list(fileId, **params):
 def revisions_update(fileId, revisionId, body=None, **params):
     """
     Updates a revision with patch semantics. For more information, see [Manage file
-    revisions](https://developers.google.com/workspace/drive/api/guides/manage-
-    revisions).
+    revisions](https://developers.google.com/workspace/drive/api/guides/manage-revisions).
 
     HTTP: ``PATCH``  Discovery: ``revisions.update``
 
@@ -2185,7 +2186,7 @@ def revisions_update(fileId, revisionId, body=None, **params):
 
 def teamdrives_create(requestId, body=None, **params):
     """
-    Deprecated: Use \`drives.create\` instead.
+    Deprecated: Use \\`drives.create\\` instead.
 
     HTTP: ``POST``  Discovery: ``teamdrives.create``
 
@@ -2216,7 +2217,7 @@ def teamdrives_create(requestId, body=None, **params):
 
 def teamdrives_delete(teamDriveId, **params):
     """
-    Deprecated: Use \`drives.delete\` instead.
+    Deprecated: Use \\`drives.delete\\` instead.
 
     HTTP: ``DELETE``  Discovery: ``teamdrives.delete``
 
@@ -2244,7 +2245,7 @@ def teamdrives_delete(teamDriveId, **params):
 
 def teamdrives_get(teamDriveId, **params):
     """
-    Deprecated: Use \`drives.get\` instead.
+    Deprecated: Use \\`drives.get\\` instead.
 
     HTTP: ``GET``  Discovery: ``teamdrives.get``
 
@@ -2276,7 +2277,7 @@ def teamdrives_get(teamDriveId, **params):
 
 def teamdrives_list(**params):
     """
-    Deprecated: Use \`drives.list\` instead.
+    Deprecated: Use \\`drives.list\\` instead.
 
     HTTP: ``GET``  Discovery: ``teamdrives.list``
 
@@ -2306,7 +2307,7 @@ def teamdrives_list(**params):
 
 def teamdrives_update(teamDriveId, body=None, **params):
     """
-    Deprecated: Use \`drives.update\` instead.
+    Deprecated: Use \\`drives.update\\` instead.
 
     HTTP: ``PATCH``  Discovery: ``teamdrives.update``
 

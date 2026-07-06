@@ -31,9 +31,10 @@ jobs:
         run: .venv/bin/python tools/generate_modules.py --all
       - name: Fail on drift
         run: |
-          if ! git diff --quiet; then
-            echo "::error::Generated output is out of date. Run 'just generate' and commit the result."
-            git diff --stat
+          status="$(git status --porcelain)"
+          if [ -n "$status" ]; then
+            echo "::error::Generated output is out of date (including new untracked files). Run 'just generate' and commit the result."
+            git status --short
             exit 1
           fi
           echo "No drift: generated surface is up to date."

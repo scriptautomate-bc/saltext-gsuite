@@ -7,8 +7,6 @@ meet, workspaceevents, modelarmor). Responses are cached on disk (ETag-aware wou
 network anyway; here we cache the body and reuse it within the same run / re-runs).
 """
 
-from __future__ import annotations
-
 import json
 import os
 import urllib.request

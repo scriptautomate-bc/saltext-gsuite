@@ -42,7 +42,7 @@ def processes_list(**params):
     Optional parameters (pass via keyword args):
 
     * ``pageSize`` (int): The maximum number of returned processes per page of results. Defaults to 50.
-    * ``pageToken`` (str): The token for continuing a previous list request on the next page. This should be set to the value of \`nextPageToken\` from a previous response.
+    * ``pageToken`` (str): The token for continuing a previous list request on the next page. This should be set to the value of \\`nextPageToken\\` from a previous response.
     * ``userProcessFilter.deploymentId`` (str): Optional field used to limit returned processes to those originating from projects with a specific deployment ID.
     * ``userProcessFilter.endTime`` (str): Optional field used to limit returned processes to those that completed on or before the given timestamp.
     * ``userProcessFilter.functionName`` (str): Optional field used to limit returned processes to those originating from a script function with the given function name.
@@ -80,7 +80,7 @@ def processes_list_script_processes(**params):
     Optional parameters (pass via keyword args):
 
     * ``pageSize`` (int): The maximum number of returned processes per page of results. Defaults to 50.
-    * ``pageToken`` (str): The token for continuing a previous list request on the next page. This should be set to the value of \`nextPageToken\` from a previous response.
+    * ``pageToken`` (str): The token for continuing a previous list request on the next page. This should be set to the value of \\`nextPageToken\\` from a previous response.
     * ``scriptId`` (str): The script ID of the project whose processes are listed.
     * ``scriptProcessFilter.deploymentId`` (str): Optional field used to limit returned processes to those originating from projects with a specific deployment ID.
     * ``scriptProcessFilter.endTime`` (str): Optional field used to limit returned processes to those that completed on or before the given timestamp.
@@ -365,7 +365,7 @@ def projects_deployments_list(scriptId, **params):
     Optional parameters (pass via keyword args):
 
     * ``pageSize`` (int): The maximum number of deployments on each returned page. Defaults to 50.
-    * ``pageToken`` (str): The token for continuing a previous list request on the next page. This should be set to the value of \`nextPageToken\` from a previous response.
+    * ``pageToken`` (str): The token for continuing a previous list request on the next page. This should be set to the value of \\`nextPageToken\\` from a previous response.
 
     CLI Example:
 
@@ -493,7 +493,7 @@ def projects_versions_list(scriptId, **params):
     Optional parameters (pass via keyword args):
 
     * ``pageSize`` (int): The maximum number of versions on each returned page. Defaults to 50.
-    * ``pageToken`` (str): The token for continuing a previous list request on the next page. This should be set to the value of \`nextPageToken\` from a previous response.
+    * ``pageToken`` (str): The token for continuing a previous list request on the next page. This should be set to the value of \\`nextPageToken\\` from a previous response.
 
     CLI Example:
 
@@ -519,7 +519,7 @@ def scripts_run(scriptId, body=None, **params):
 
     Required parameters:
 
-    * ``scriptId`` (str): The script ID of the script to be executed. Find the script ID on the \*\*Project settings\*\* page under "IDs." As multiple executable APIs can be deployed in new IDE for same script, this field should…
+    * ``scriptId`` (str): The script ID of the script to be executed. Find the script ID on the \\*\\*Project settings\\*\\* page under "IDs." As multiple executable APIs can be deployed in new IDE for same script, this field should…
 
     * ``body`` (dict): request body payload.
 

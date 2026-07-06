@@ -113,8 +113,8 @@ def documents_get(documentId, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``includeTabsContent`` (bool): Whether to populate the Document.tabs field instead of the text content fields like \`body\` and \`documentStyle\` on Document. - When \`True\`: Document content populates in the Document.tabs field instea…
-    * ``suggestionsViewMode`` (str): The suggestions view mode to apply to the document. This allows viewing the document with all suggestions inline, accepted or rejected. If one is not specified, DEFAULT\_FOR\_CURRENT\_ACCESS is used.
+    * ``includeTabsContent`` (bool): Whether to populate the Document.tabs field instead of the text content fields like \\`body\\` and \\`documentStyle\\` on Document. - When \\`True\\`: Document content populates in the Document.tabs field instea…
+    * ``suggestionsViewMode`` (str): The suggestions view mode to apply to the document. This allows viewing the document with all suggestions inline, accepted or rejected. If one is not specified, DEFAULT\\_FOR\\_CURRENT\\_ACCESS is used.
 
     CLI Example:
 

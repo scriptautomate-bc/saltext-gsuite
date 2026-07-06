@@ -15,8 +15,6 @@ Design choices:
   signature and are mapped back to the original when the request is built.
 """
 
-from __future__ import annotations
-
 import keyword
 import re
 
@@ -25,7 +23,16 @@ _CAMEL_2 = re.compile(r"([a-z0-9])([A-Z])")
 
 # Control kwargs consumed by saltext.gsuite._gws; an API parameter sharing one of these names
 # would be shadowed, so the generator flags it (see generate_modules.py).
-RESERVED_KWARGS = {"test", "page_all", "page_limit", "page_delay", "output", "timeout", "body", "upload"}
+RESERVED_KWARGS = {
+    "test",
+    "page_all",
+    "page_limit",
+    "page_delay",
+    "output",
+    "timeout",
+    "body",
+    "upload",
+}
 
 # Discovery JSON type -> a human-friendly label for docs.
 TYPE_LABELS = {
@@ -100,11 +107,13 @@ def rst_escape(text: str) -> str:
 
     Google descriptions freely use single backticks, asterisks and pipes as Markdown, which
     Sphinx (built with ``-W``) rejects as malformed inline markup. Backslash-escaping keeps the
-    prose rendering verbatim.
+    prose rendering verbatim. The result is embedded in plain (non-raw) triple-quoted Python
+    docstrings, so the backslash itself is doubled: a single ``\\`` before the markup character
+    is not a valid Python string escape and trips ``SyntaxWarning: invalid escape sequence``.
     """
     if not text:
         return ""
-    return _RST_SPECIAL.sub(r"\\\1", text)
+    return _RST_SPECIAL.sub(lambda m: "\\\\" + m.group(1), text)
 
 
 def required_params(method) -> list:

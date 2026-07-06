@@ -35,10 +35,11 @@ lint:
 generate *args:
     {{python}} tools/generate_modules.py --all {{args}}
 
-# Verify the generator is deterministic (re-run must produce no diff).
+# Verify the generator is deterministic (re-run must produce no diff, tracked or untracked).
 check-determinism:
     {{python}} tools/generate_modules.py --all
     git diff --exit-code -- src/saltext/gsuite/modules src/saltext/gsuite/states src/saltext/gsuite/metadata/schemas tests/unit docs/ref
+    test -z "$(git status --porcelain -- src/saltext/gsuite/modules src/saltext/gsuite/states src/saltext/gsuite/metadata/schemas tests/unit docs/ref)"
 
 # Bump the bundled gws version and regenerate (see tools/update_gws.py).
 update-gws version:

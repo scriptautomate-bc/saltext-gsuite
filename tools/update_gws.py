@@ -16,8 +16,6 @@ Usage::
     python tools/update_gws.py --next-tag        # print the next tag for the current gws
 """
 
-from __future__ import annotations
-
 import argparse
 import json
 import os

@@ -13,8 +13,6 @@ Usage::
     python tools/fetch_binary.py --list
 """
 
-from __future__ import annotations
-
 import argparse
 import hashlib
 import io

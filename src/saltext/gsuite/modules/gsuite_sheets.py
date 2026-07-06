@@ -103,20 +103,20 @@ def spreadsheets_get(spreadsheetId, **params):
     """
     Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID.
     By default, data within grids is not returned. You can include grid data in one of 2
-    ways: \* Specify a [field
+    ways: \\* Specify a [field
     mask](https://developers.google.com/workspace/sheets/api/guides/field-masks) listing
-    your desired fields using the \`fields\` URL parameter in HTTP \* Set the
+    your desired fields using the \\`fields\\` URL parameter in HTTP \\* Set the
     includeGridData URL parameter to true. If a field mask is set, the
-    \`includeGridData\` parameter is ignored For large spreadsheets, as a best practice,
-    retrieve only the specific spreadsheet fields that you want. To retrieve only
-    subsets of spreadsheet data, use the ranges URL parameter. Ranges are specified
+    \\`includeGridData\\` parameter is ignored For large spreadsheets, as a best
+    practice, retrieve only the specific spreadsheet fields that you want. To retrieve
+    only subsets of spreadsheet data, use the ranges URL parameter. Ranges are specified
     using [A1
     notation](https://developers.google.com/workspace/sheets/api/guides/concepts#cell).
-    You can define a single cell (for example, \`A1\`) or multiple cells (for example,
-    \`A1:D5\`). You can also get cells from other sheets within the same spreadsheet
-    (for example, \`Sheet2!A1:C4\`) or retrieve multiple ranges at once (for example,
-    \`?ranges=A1:D5&ranges=Sheet2!A1:C4\`). Limiting the range returns only the portions
-    of the spreadsheet that intersect the requested ranges.
+    You can define a single cell (for example, \\`A1\\`) or multiple cells (for example,
+    \\`A1:D5\\`). You can also get cells from other sheets within the same spreadsheet
+    (for example, \\`Sheet2!A1:C4\\`) or retrieve multiple ranges at once (for example,
+    \\`?ranges=A1:D5&ranges=Sheet2!A1:C4\\`). Limiting the range returns only the
+    portions of the spreadsheet that intersect the requested ranges.
 
     HTTP: ``GET``  Discovery: ``spreadsheets.get``
 
@@ -158,11 +158,11 @@ def spreadsheets_get_by_data_filter(spreadsheetId, body=None, **params):
     DataFilters can be specified. Specifying one or more data filters returns the
     portions of the spreadsheet that intersect ranges matched by any of the filters. By
     default, data within grids is not returned. You can include grid data in one of two
-    ways: \* Specify a [field
+    ways: \\* Specify a [field
     mask](https://developers.google.com/workspace/sheets/api/guides/field-masks) listing
-    your desired fields using the \`fields\` URL parameter in HTTP. \* Set the
-    includeGridData parameter to \`true\`. If a field mask is set, the
-    \`includeGridData\` parameter is ignored. For large spreadsheets, as a best
+    your desired fields using the \\`fields\\` URL parameter in HTTP. \\* Set the
+    includeGridData parameter to \\`true\\`. If a field mask is set, the
+    \\`includeGridData\\` parameter is ignored. For large spreadsheets, as a best
     practice, retrieve only the specific spreadsheet fields that you want.
 
     HTTP: ``POST``  Discovery: ``spreadsheets.getByDataFilter``
@@ -300,12 +300,13 @@ def spreadsheets_values_append(spreadsheetId, range, body=None, **params):
     """
     Appends values to a spreadsheet. The input range is used to search for existing data
     and find a "table" within that range. Values will be appended to the next row of the
-    table, starting with the first column of the table. See the [guide](https://develope
-    rs.google.com/workspace/sheets/api/guides/values#appending\_values) and [sample code
-    ](https://developers.google.com/workspace/sheets/api/samples/writing#append\_values)
+    table, starting with the first column of the table. See the
+    [guide](https://developers.google.com/workspace/sheets/api/guides/values#appending\\_values)
+    and [sample
+    code](https://developers.google.com/workspace/sheets/api/samples/writing#append\\_values)
     for specific details of how tables are detected and data is appended. The caller
     must specify the spreadsheet ID, range, and a valueInputOption. The
-    \`valueInputOption\` only controls how the input data will be added to the sheet
+    \\`valueInputOption\\` only controls how the input data will be added to the sheet
     (column-wise or row-wise), it does not influence what cell the data starts being
     written to.
 
@@ -322,8 +323,8 @@ def spreadsheets_values_append(spreadsheetId, range, body=None, **params):
 
     * ``includeValuesInResponse`` (bool): Determines if the update response should include the values of the cells that were appended. By default, responses do not include the updated values.
     * ``insertDataOption`` (str): How the input data should be inserted.
-    * ``responseDateTimeRenderOption`` (str): Determines how dates, times, and durations in the response should be rendered. This is ignored if response\_value\_render\_option is FORMATTED\_VALUE. The default dateTime render option is SERIAL\_NUMBER.
-    * ``responseValueRenderOption`` (str): Determines how values in the response should be rendered. The default render option is FORMATTED\_VALUE.
+    * ``responseDateTimeRenderOption`` (str): Determines how dates, times, and durations in the response should be rendered. This is ignored if response\\_value\\_render\\_option is FORMATTED\\_VALUE. The default dateTime render option is SERIAL\\_NUMBER.
+    * ``responseValueRenderOption`` (str): Determines how values in the response should be rendered. The default render option is FORMATTED\\_VALUE.
     * ``valueInputOption`` (str): How the input data should be interpreted.
 
     CLI Example:
@@ -428,10 +429,10 @@ def spreadsheets_values_batch_get(spreadsheetId, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``dateTimeRenderOption`` (str): How dates, times, and durations should be represented in the output. This is ignored if value\_render\_option is FORMATTED\_VALUE. The default dateTime render option is SERIAL\_NUMBER.
-    * ``majorDimension`` (str): The major dimension that results should use. For example, if the spreadsheet data is: \`A1=1,B1=2,A2=3,B2=4\`, then requesting \`ranges=["A1:B2"],majorDimension=ROWS\` returns \`[[1,2],[3,4]]\`, whereas re…
+    * ``dateTimeRenderOption`` (str): How dates, times, and durations should be represented in the output. This is ignored if value\\_render\\_option is FORMATTED\\_VALUE. The default dateTime render option is SERIAL\\_NUMBER.
+    * ``majorDimension`` (str): The major dimension that results should use. For example, if the spreadsheet data is: \\`A1=1,B1=2,A2=3,B2=4\\`, then requesting \\`ranges=["A1:B2"],majorDimension=ROWS\\` returns \\`[[1,2],[3,4]]\\`, whereas re…
     * ``ranges`` (str): The [A1 notation or R1C1 notation](https://developers.google.com/workspace/sheets/api/guides/concepts#cell) of the range to retrieve values from.
-    * ``valueRenderOption`` (str): How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED\_VALUE.
+    * ``valueRenderOption`` (str): How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED\\_VALUE.
 
     CLI Example:
 
@@ -602,9 +603,9 @@ def spreadsheets_values_get(spreadsheetId, range, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``dateTimeRenderOption`` (str): How dates, times, and durations should be represented in the output. This is ignored if value\_render\_option is FORMATTED\_VALUE. The default dateTime render option is SERIAL\_NUMBER.
-    * ``majorDimension`` (str): The major dimension that results should use. For example, if the spreadsheet data in Sheet1 is: \`A1=1,B1=2,A2=3,B2=4\`, then requesting \`range=Sheet1!A1:B2?majorDimension=ROWS\` returns \`[[1,2],[3,4]]\`…
-    * ``valueRenderOption`` (str): How values should be represented in the output. The default render option is FORMATTED\_VALUE.
+    * ``dateTimeRenderOption`` (str): How dates, times, and durations should be represented in the output. This is ignored if value\\_render\\_option is FORMATTED\\_VALUE. The default dateTime render option is SERIAL\\_NUMBER.
+    * ``majorDimension`` (str): The major dimension that results should use. For example, if the spreadsheet data in Sheet1 is: \\`A1=1,B1=2,A2=3,B2=4\\`, then requesting \\`range=Sheet1!A1:B2?majorDimension=ROWS\\` returns \\`[[1,2],[3,4]]\\`…
+    * ``valueRenderOption`` (str): How values should be represented in the output. The default render option is FORMATTED\\_VALUE.
 
     CLI Example:
 
@@ -642,8 +643,8 @@ def spreadsheets_values_update(spreadsheetId, range, body=None, **params):
     Optional parameters (pass via keyword args):
 
     * ``includeValuesInResponse`` (bool): Determines if the update response should include the values of the cells that were updated. By default, responses do not include the updated values. If the range to write was larger than the range ac…
-    * ``responseDateTimeRenderOption`` (str): Determines how dates, times, and durations in the response should be rendered. This is ignored if response\_value\_render\_option is FORMATTED\_VALUE. The default dateTime render option is SERIAL\_NUMBER.
-    * ``responseValueRenderOption`` (str): Determines how values in the response should be rendered. The default render option is FORMATTED\_VALUE.
+    * ``responseDateTimeRenderOption`` (str): Determines how dates, times, and durations in the response should be rendered. This is ignored if response\\_value\\_render\\_option is FORMATTED\\_VALUE. The default dateTime render option is SERIAL\\_NUMBER.
+    * ``responseValueRenderOption`` (str): Determines how values in the response should be rendered. The default render option is FORMATTED\\_VALUE.
     * ``valueInputOption`` (str): How the input data should be interpreted.
 
     CLI Example:

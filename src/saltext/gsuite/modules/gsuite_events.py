@@ -92,17 +92,16 @@ def subscriptions_create(body=None, **params):
     """
     Creates a Google Workspace subscription. To learn how to use this method, see
     [Create a Google Workspace
-    subscription](https://developers.google.com/workspace/events/guides/create-
-    subscription). For a subscription on a [Chat target
+    subscription](https://developers.google.com/workspace/events/guides/create-subscription).
+    For a subscription on a [Chat target
     resource](https://developers.google.com/workspace/events/guides/events-chat), you
     can create a subscription as: - A Chat app by specifying an authorization scope that
-    begins with \`chat.app\` and getting one-time administrator approval. To learn more,
-    see [Authorize as a Chat app with administrator
-    approval](https://developers.google.com/workspace/chat/authenticate-authorize-chat-
-    app). - A user by specifying an authorization scope that doesn't include \`app\` in
-    its name. To learn more, see [Authorize as a Chat
-    user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-
-    user).
+    begins with \\`chat.app\\` and getting one-time administrator approval. To learn
+    more, see [Authorize as a Chat app with administrator
+    approval](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+    - A user by specifying an authorization scope that doesn't include \\`app\\` in its
+    name. To learn more, see [Authorize as a Chat
+    user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
 
     HTTP: ``POST``  Discovery: ``subscriptions.create``
 
@@ -110,7 +109,7 @@ def subscriptions_create(body=None, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``validateOnly`` (bool): Optional. If set to \`true\`, validates and previews the request, but doesn't create the subscription.
+    * ``validateOnly`` (bool): Optional. If set to \\`true\\`, validates and previews the request, but doesn't create the subscription.
 
     CLI Example:
 
@@ -134,20 +133,19 @@ def subscriptions_delete(name, **params):
     """
     Deletes a Google Workspace subscription. To learn how to use this method, see
     [Delete a Google Workspace
-    subscription](https://developers.google.com/workspace/events/guides/delete-
-    subscription).
+    subscription](https://developers.google.com/workspace/events/guides/delete-subscription).
 
     HTTP: ``DELETE``  Discovery: ``subscriptions.delete``
 
     Required parameters:
 
-    * ``name`` (str): Required. Resource name of the subscription to delete. Format: \`subscriptions/{subscription}\`
+    * ``name`` (str): Required. Resource name of the subscription to delete. Format: \\`subscriptions/{subscription}\\`
 
     Optional parameters (pass via keyword args):
 
-    * ``allowMissing`` (bool): Optional. If set to \`true\` and the subscription isn't found, the request succeeds but doesn't delete the subscription.
-    * ``etag`` (str): Optional. Etag of the subscription. If present, it must match with the server's etag. Otherwise, request fails with the status \`ABORTED\`.
-    * ``validateOnly`` (bool): Optional. If set to \`true\`, validates and previews the request, but doesn't delete the subscription.
+    * ``allowMissing`` (bool): Optional. If set to \\`true\\` and the subscription isn't found, the request succeeds but doesn't delete the subscription.
+    * ``etag`` (str): Optional. Etag of the subscription. If present, it must match with the server's etag. Otherwise, request fails with the status \\`ABORTED\\`.
+    * ``validateOnly`` (bool): Optional. If set to \\`true\\`, validates and previews the request, but doesn't delete the subscription.
 
     CLI Example:
 
@@ -171,14 +169,13 @@ def subscriptions_get(name, **params):
     """
     Gets details about a Google Workspace subscription. To learn how to use this method,
     see [Get details about a Google Workspace
-    subscription](https://developers.google.com/workspace/events/guides/get-
-    subscription).
+    subscription](https://developers.google.com/workspace/events/guides/get-subscription).
 
     HTTP: ``GET``  Discovery: ``subscriptions.get``
 
     Required parameters:
 
-    * ``name`` (str): Required. Resource name of the subscription. Format: \`subscriptions/{subscription}\`
+    * ``name`` (str): Required. Resource name of the subscription. Format: \\`subscriptions/{subscription}\\`
 
     CLI Example:
 
@@ -202,15 +199,14 @@ def subscriptions_list(**params):
     """
     Lists Google Workspace subscriptions. To learn how to use this method, see [List
     Google Workspace
-    subscriptions](https://developers.google.com/workspace/events/guides/list-
-    subscriptions).
+    subscriptions](https://developers.google.com/workspace/events/guides/list-subscriptions).
 
     HTTP: ``GET``  Discovery: ``subscriptions.list``
 
     Optional parameters (pass via keyword args):
 
-    * ``filter`` (str): Required. A query filter. You can filter subscriptions by event type (\`event\_types\`) and target resource (\`target\_resource\`). You must specify at least one event type in your query. To filter for mul…
-    * ``pageSize`` (int): Optional. The maximum number of subscriptions to return. The service might return fewer than this value. If unspecified or set to \`0\`, up to 50 subscriptions are returned. The maximum value is 100. I…
+    * ``filter`` (str): Required. A query filter. You can filter subscriptions by event type (\\`event\\_types\\`) and target resource (\\`target\\_resource\\`). You must specify at least one event type in your query. To filter for mul…
+    * ``pageSize`` (int): Optional. The maximum number of subscriptions to return. The service might return fewer than this value. If unspecified or set to \\`0\\`, up to 50 subscriptions are returned. The maximum value is 100. I…
     * ``pageToken`` (str): Optional. A page token, received from a previous list subscriptions call. Provide this parameter to retrieve the subsequent page. When paginating, the filter value should match the call that provided…
 
     CLI Example:
@@ -234,30 +230,29 @@ def subscriptions_patch(name, body=None, **params):
     """
     Updates or renews a Google Workspace subscription. To learn how to use this method,
     see [Update or renew a Google Workspace
-    subscription](https://developers.google.com/workspace/events/guides/update-
-    subscription). For a subscription on a [Chat target
+    subscription](https://developers.google.com/workspace/events/guides/update-subscription).
+    For a subscription on a [Chat target
     resource](https://developers.google.com/workspace/events/guides/events-chat), you
     can update a subscription as: - A Chat app by specifying an authorization scope that
-    begins with \`chat.app\` and getting one-time administrator approval. To learn more,
-    see [Authorize as a Chat app with administrator
-    approval](https://developers.google.com/workspace/chat/authenticate-authorize-chat-
-    app). - A user by specifying an authorization scope that doesn't include \`app\` in
-    its name. To learn more, see [Authorize as a Chat
-    user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-
-    user).
+    begins with \\`chat.app\\` and getting one-time administrator approval. To learn
+    more, see [Authorize as a Chat app with administrator
+    approval](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+    - A user by specifying an authorization scope that doesn't include \\`app\\` in its
+    name. To learn more, see [Authorize as a Chat
+    user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
 
     HTTP: ``PATCH``  Discovery: ``subscriptions.patch``
 
     Required parameters:
 
-    * ``name`` (str): Identifier. Resource name of the subscription. Format: \`subscriptions/{subscription}\`
+    * ``name`` (str): Identifier. Resource name of the subscription. Format: \\`subscriptions/{subscription}\\`
 
     * ``body`` (dict): request body payload.
 
     Optional parameters (pass via keyword args):
 
-    * ``updateMask`` (str): Optional. The field to update. If omitted, updates any fields included in the request. You can update one of the following fields in a subscription: \* \`expire\_time\`: The timestamp when the subscripti…
-    * ``validateOnly`` (bool): Optional. If set to \`true\`, validates and previews the request, but doesn't update the subscription.
+    * ``updateMask`` (str): Optional. The field to update. If omitted, updates any fields included in the request. You can update one of the following fields in a subscription: \\* \\`expire\\_time\\`: The timestamp when the subscripti…
+    * ``validateOnly`` (bool): Optional. If set to \\`true\\`, validates and previews the request, but doesn't update the subscription.
 
     CLI Example:
 
@@ -281,27 +276,26 @@ def subscriptions_patch(name, body=None, **params):
 def subscriptions_reactivate(name, body=None, **params):
     """
     Reactivates a suspended Google Workspace subscription. This method resets your
-    subscription's \`State\` field to \`ACTIVE\`. Before you use this method, you must
-    fix the error that suspended the subscription. This method will ignore or reject any
-    subscription that isn't currently in a suspended state. To learn how to use this
-    method, see [Reactivate a Google Workspace
-    subscription](https://developers.google.com/workspace/events/guides/reactivate-
-    subscription). For a subscription on a [Chat target
+    subscription's \\`State\\` field to \\`ACTIVE\\`. Before you use this method, you
+    must fix the error that suspended the subscription. This method will ignore or
+    reject any subscription that isn't currently in a suspended state. To learn how to
+    use this method, see [Reactivate a Google Workspace
+    subscription](https://developers.google.com/workspace/events/guides/reactivate-subscription).
+    For a subscription on a [Chat target
     resource](https://developers.google.com/workspace/events/guides/events-chat), you
     can reactivate a subscription as: - A Chat app by specifying an authorization scope
-    that begins with \`chat.app\` and getting one-time administrator approval. To learn
-    more, see [Authorize as a Chat app with administrator
-    approval](https://developers.google.com/workspace/chat/authenticate-authorize-chat-
-    app). - A user by specifying an authorization scope that doesn't include \`app\` in
-    its name. To learn more, see [Authorize as a Chat
-    user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-
-    user).
+    that begins with \\`chat.app\\` and getting one-time administrator approval. To
+    learn more, see [Authorize as a Chat app with administrator
+    approval](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+    - A user by specifying an authorization scope that doesn't include \\`app\\` in its
+    name. To learn more, see [Authorize as a Chat
+    user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
 
     HTTP: ``POST``  Discovery: ``subscriptions.reactivate``
 
     Required parameters:
 
-    * ``name`` (str): Required. Resource name of the subscription. Format: \`subscriptions/{subscription}\`
+    * ``name`` (str): Required. Resource name of the subscription. Format: \\`subscriptions/{subscription}\\`
 
     * ``body`` (dict): request body payload.
 
@@ -333,7 +327,7 @@ def tasks_cancel(name, body=None, **params):
 
     Required parameters:
 
-    * ``name`` (str): The resource name of the task to cancel. Format: tasks/{task\_id}
+    * ``name`` (str): The resource name of the task to cancel. Format: tasks/{task\\_id}
 
     * ``body`` (dict): request body payload.
 
@@ -364,7 +358,7 @@ def tasks_get(name, **params):
 
     Required parameters:
 
-    * ``name`` (str): Required. The resource name of the task. Format: tasks/{task\_id}
+    * ``name`` (str): Required. The resource name of the task. Format: tasks/{task\\_id}
 
     Optional parameters (pass via keyword args):
 
@@ -400,7 +394,7 @@ def tasks_subscribe(name, **params):
 
     Required parameters:
 
-    * ``name`` (str): The resource name of the task to subscribe to. Format: tasks/{task\_id}
+    * ``name`` (str): The resource name of the task to subscribe to. Format: tasks/{task\\_id}
 
     Optional parameters (pass via keyword args):
 
@@ -432,7 +426,7 @@ def tasks_push_notification_configs_create(parent, body=None, **params):
 
     Required parameters:
 
-    * ``parent`` (str): Required. The parent task resource for this config. Format: tasks/{task\_id}
+    * ``parent`` (str): Required. The parent task resource for this config. Format: tasks/{task\\_id}
 
     * ``body`` (dict): request body payload.
 
@@ -468,7 +462,7 @@ def tasks_push_notification_configs_delete(name, **params):
 
     Required parameters:
 
-    * ``name`` (str): The resource name of the config to delete. Format: tasks/{task\_id}/pushNotificationConfigs/{config\_id}
+    * ``name`` (str): The resource name of the config to delete. Format: tasks/{task\\_id}/pushNotificationConfigs/{config\\_id}
 
     Optional parameters (pass via keyword args):
 
@@ -500,7 +494,7 @@ def tasks_push_notification_configs_get(name, **params):
 
     Required parameters:
 
-    * ``name`` (str): The resource name of the config to retrieve. Format: tasks/{task\_id}/pushNotificationConfigs/{config\_id}
+    * ``name`` (str): The resource name of the config to retrieve. Format: tasks/{task\\_id}/pushNotificationConfigs/{config\\_id}
 
     Optional parameters (pass via keyword args):
 
@@ -532,12 +526,12 @@ def tasks_push_notification_configs_list(parent, **params):
 
     Required parameters:
 
-    * ``parent`` (str): The parent task resource. Format: tasks/{task\_id}
+    * ``parent`` (str): The parent task resource. Format: tasks/{task\\_id}
 
     Optional parameters (pass via keyword args):
 
     * ``pageSize`` (int): For AIP-158 these fields are present. Usually not used/needed. The maximum number of configurations to return. If unspecified, all configs will be returned.
-    * ``pageToken`` (str): A page token received from a previous ListTaskPushNotificationConfigRequest call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to \`ListTaskPushNotifica…
+    * ``pageToken`` (str): A page token received from a previous ListTaskPushNotificationConfigRequest call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to \\`ListTaskPushNotifica…
     * ``tenant`` (str): Optional tenant, provided as a path parameter. Experimental, might still change for 1.0 release.
 
     CLI Example:
@@ -565,7 +559,7 @@ def renew(all=None, name=None, within=None, test=False):
     Options:
 
     * ``all`` (optional flag): Renew all subscriptions expiring within --within window
-    * ``name`` (optional value): Subscription name to reactivate (e.g., subscriptions/SUB\_ID)
+    * ``name`` (optional value): Subscription name to reactivate (e.g., subscriptions/SUB\\_ID)
     * ``within`` (optional value): Time window for --all (e.g., 1h, 30m, 2d) [default: 1h]
 
     CLI Example:
@@ -617,7 +611,7 @@ def subscribe(
     * ``poll_interval`` (optional value): Seconds between pulls (default: 5) [default: 5]
     * ``project`` (optional value): GCP project ID for Pub/Sub resources
     * ``subscription`` (optional value): Existing Pub/Sub subscription name (skip setup)
-    * ``target`` (optional value): Workspace resource URI (e.g., //chat.googleapis.com/spaces/SPACE\_ID)
+    * ``target`` (optional value): Workspace resource URI (e.g., //chat.googleapis.com/spaces/SPACE\\_ID)
 
     CLI Example:
 

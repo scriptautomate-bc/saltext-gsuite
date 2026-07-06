@@ -41,7 +41,7 @@ def contact_groups_batch_get(**params):
 
     Optional parameters (pass via keyword args):
 
-    * ``groupFields`` (str): Optional. A field mask to restrict which fields on the group are returned. Defaults to \`metadata\`, \`groupType\`, \`memberCount\`, and \`name\` if not set or set to empty. Valid fields are: \* clientData \*…
+    * ``groupFields`` (str): Optional. A field mask to restrict which fields on the group are returned. Defaults to \\`metadata\\`, \\`groupType\\`, \\`memberCount\\`, and \\`name\\` if not set or set to empty. Valid fields are: \\* clientData \\*…
     * ``maxMembers`` (int): Optional. Specifies the maximum number of members to return for each group. Defaults to 0 if not set, which will return zero members.
     * ``resourceNames`` (str): Required. The resource names of the contact groups to get. There is a maximum of 200 resource names.
 
@@ -138,7 +138,7 @@ def contact_groups_get(resourceName, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``groupFields`` (str): Optional. A field mask to restrict which fields on the group are returned. Defaults to \`metadata\`, \`groupType\`, \`memberCount\`, and \`name\` if not set or set to empty. Valid fields are: \* clientData \*…
+    * ``groupFields`` (str): Optional. A field mask to restrict which fields on the group are returned. Defaults to \\`metadata\\`, \\`groupType\\`, \\`memberCount\\`, and \\`name\\` if not set or set to empty. Valid fields are: \\* clientData \\*…
     * ``maxMembers`` (int): Optional. Specifies the maximum number of members to return. Defaults to 0 if not set, which will return zero members.
 
     CLI Example:
@@ -168,10 +168,10 @@ def contact_groups_list(**params):
 
     Optional parameters (pass via keyword args):
 
-    * ``groupFields`` (str): Optional. A field mask to restrict which fields on the group are returned. Defaults to \`metadata\`, \`groupType\`, \`memberCount\`, and \`name\` if not set or set to empty. Valid fields are: \* clientData \*…
+    * ``groupFields`` (str): Optional. A field mask to restrict which fields on the group are returned. Defaults to \\`metadata\\`, \\`groupType\\`, \\`memberCount\\`, and \\`name\\` if not set or set to empty. Valid fields are: \\* clientData \\*…
     * ``pageSize`` (int): Optional. The maximum number of resources to return. Valid values are between 1 and 1000, inclusive. Defaults to 30 if not set or set to 0.
-    * ``pageToken`` (str): Optional. The next\_page\_token value returned from a previous call to [ListContactGroups](/people/api/rest/v1/contactgroups/list). Requests the next page of resources.
-    * ``syncToken`` (str): Optional. A sync token, returned by a previous call to \`contactgroups.list\`. Only resources changed since the sync token was created will be returned.
+    * ``pageToken`` (str): Optional. The next\\_page\\_token value returned from a previous call to [ListContactGroups](/people/api/rest/v1/contactgroups/list). Requests the next page of resources.
+    * ``syncToken`` (str): Optional. A sync token, returned by a previous call to \\`contactgroups.list\\`. Only resources changed since the sync token was created will be returned.
 
     CLI Example:
 
@@ -202,7 +202,7 @@ def contact_groups_update(resourceName, body=None, **params):
 
     Required parameters:
 
-    * ``resourceName`` (str): The resource name for the contact group, assigned by the server. An ASCII string, in the form of \`contactGroups/{contact\_group\_id}\`.
+    * ``resourceName`` (str): The resource name for the contact group, assigned by the server. An ASCII string, in the form of \\`contactGroups/{contact\\_group\\_id}\\`.
 
     * ``body`` (dict): request body payload.
 
@@ -228,8 +228,8 @@ def contact_groups_update(resourceName, body=None, **params):
 def contact_groups_members_modify(resourceName, body=None, **params):
     """
     Modify the members of a contact group owned by the authenticated user. The only
-    system contact groups that can have members added are \`contactGroups/myContacts\`
-    and \`contactGroups/starred\`. Other system contact groups are deprecated and can
+    system contact groups that can have members added are \\`contactGroups/myContacts\\`
+    and \\`contactGroups/starred\\`. Other system contact groups are deprecated and can
     only have contacts removed.
 
     HTTP: ``POST``  Discovery: ``contactGroups.members.modify``
@@ -298,29 +298,29 @@ def other_contacts_list(**params):
     contacts" are typically auto created contacts from interactions. Sync tokens expire
     7 days after the full sync. A request with an expired sync token will get an error
     with an
-    [google.rpc.ErrorInfo](https://cloud.google.com/apis/design/errors#error\_info) with
-    reason "EXPIRED\_SYNC\_TOKEN". In the case of such an error clients should make a
-    full sync request without a \`sync\_token\`. The first page of a full sync request
-    has an additional quota. If the quota is exceeded, a 429 error will be returned.
-    This quota is fixed and can not be increased. When the \`sync\_token\` is specified,
-    resources deleted since the last sync will be returned as a person with
-    \`PersonMetadata.deleted\` set to true. When the \`page\_token\` or \`sync\_token\`
-    is specified, all other request parameters must match the first call. Writes may
-    have a propagation delay of several minutes for sync requests. Incremental syncs are
-    not intended for read-after-write use cases. See example usage at [List the user's
-    other contacts that have changed](/people/v1/other-
-    contacts#list\_the\_users\_other\_contacts\_that\_have\_changed).
+    [google.rpc.ErrorInfo](https://cloud.google.com/apis/design/errors#error\\_info)
+    with reason "EXPIRED\\_SYNC\\_TOKEN". In the case of such an error clients should
+    make a full sync request without a \\`sync\\_token\\`. The first page of a full sync
+    request has an additional quota. If the quota is exceeded, a 429 error will be
+    returned. This quota is fixed and can not be increased. When the \\`sync\\_token\\`
+    is specified, resources deleted since the last sync will be returned as a person
+    with \\`PersonMetadata.deleted\\` set to true. When the \\`page\\_token\\` or
+    \\`sync\\_token\\` is specified, all other request parameters must match the first
+    call. Writes may have a propagation delay of several minutes for sync requests.
+    Incremental syncs are not intended for read-after-write use cases. See example usage
+    at [List the user's other contacts that have
+    changed](/people/v1/other-contacts#list\\_the\\_users\\_other\\_contacts\\_that\\_have\\_changed).
 
     HTTP: ``GET``  Discovery: ``otherContacts.list``
 
     Optional parameters (pass via keyword args):
 
     * ``pageSize`` (int): Optional. The number of "Other contacts" to include in the response. Valid values are between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0.
-    * ``pageToken`` (str): Optional. A page token, received from a previous response \`next\_page\_token\`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to \`otherContacts.list\` must…
+    * ``pageToken`` (str): Optional. A page token, received from a previous response \\`next\\_page\\_token\\`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to \\`otherContacts.list\\` must…
     * ``readMask`` (str): Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. What values are valid depend on what ReadSourceType is us…
-    * ``requestSyncToken`` (bool): Optional. Whether the response should return \`next\_sync\_token\` on the last page of results. It can be used to get incremental changes since the last request by setting it on the request \`sync\_token\`.…
-    * ``sources`` (str): Optional. A mask of what source types to return. Defaults to READ\_SOURCE\_TYPE\_CONTACT if not set. Possible values for this field are: \* READ\_SOURCE\_TYPE\_CONTACT \* READ\_SOURCE\_TYPE\_CONTACT,READ\_SOURCE…
-    * ``syncToken`` (str): Optional. A sync token, received from a previous response \`next\_sync\_token\` Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to…
+    * ``requestSyncToken`` (bool): Optional. Whether the response should return \\`next\\_sync\\_token\\` on the last page of results. It can be used to get incremental changes since the last request by setting it on the request \\`sync\\_token\\`.…
+    * ``sources`` (str): Optional. A mask of what source types to return. Defaults to READ\\_SOURCE\\_TYPE\\_CONTACT if not set. Possible values for this field are: \\* READ\\_SOURCE\\_TYPE\\_CONTACT \\* READ\\_SOURCE\\_TYPE\\_CONTACT,READ\\_SOURCE…
+    * ``syncToken`` (str): Optional. A sync token, received from a previous response \\`next\\_sync\\_token\\` Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to…
 
     CLI Example:
 
@@ -342,11 +342,11 @@ def other_contacts_list(**params):
 def other_contacts_search(**params):
     """
     Provides a list of contacts in the authenticated user's other contacts that matches
-    the search query. The query matches on a contact's \`names\`, \`emailAddresses\`,
-    and \`phoneNumbers\` fields that are from the OTHER\_CONTACT source.
-    \*\*IMPORTANT\*\*: Before searching, clients should send a warmup request with an
-    empty query to update the cache. See https://developers.google.com/people/v1/other-
-    contacts#search\_the\_users\_other\_contacts
+    the search query. The query matches on a contact's \\`names\\`,
+    \\`emailAddresses\\`, and \\`phoneNumbers\\` fields that are from the
+    OTHER\\_CONTACT source. \\*\\*IMPORTANT\\*\\*: Before searching, clients should send
+    a warmup request with an empty query to update the cache. See
+    https://developers.google.com/people/v1/other-contacts#search\\_the\\_users\\_other\\_contacts
 
     HTTP: ``GET``  Discovery: ``otherContacts.search``
 
@@ -354,7 +354,7 @@ def other_contacts_search(**params):
 
     * ``pageSize`` (int): Optional. The number of results to return. Defaults to 10 if field is not set, or set to 0. Values greater than 30 will be capped to 30.
     * ``query`` (str): Required. The plain-text query for the request. The query is used to match prefix phrases of the fields on a person. For example, a person with name "foo name" matches queries such as "f", "fo", "foo…
-    * ``readMask`` (str): Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: \* emailAddresses \* metadata \* names \* p…
+    * ``readMask`` (str): Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: \\* emailAddresses \\* metadata \\* names \\* p…
 
     CLI Example:
 
@@ -461,7 +461,7 @@ def people_create_contact(body=None, **params):
     """
     Create a new contact and return the person resource for that contact. The request
     returns a 400 error if more than one field is specified on a field that is a
-    singleton for contact sources: \* biographies \* birthdays \* genders \* names
+    singleton for contact sources: \\* biographies \\* birthdays \\* genders \\* names
     Mutate requests for the same user should be sent sequentially to avoid increased
     latency and failures.
 
@@ -471,8 +471,8 @@ def people_create_contact(body=None, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``personFields`` (str): Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Defaults to all fields if not set. Valid values are: \* ad…
-    * ``sources`` (str): Optional. A mask of what source types to return. Defaults to READ\_SOURCE\_TYPE\_CONTACT and READ\_SOURCE\_TYPE\_PROFILE if not set.
+    * ``personFields`` (str): Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Defaults to all fields if not set. Valid values are: \\* ad…
+    * ``sources`` (str): Optional. A mask of what source types to return. Defaults to READ\\_SOURCE\\_TYPE\\_CONTACT and READ\\_SOURCE\\_TYPE\\_PROFILE if not set.
 
     CLI Example:
 
@@ -536,7 +536,7 @@ def people_delete_contact_photo(resourceName, **params):
     Optional parameters (pass via keyword args):
 
     * ``personFields`` (str): Optional. A field mask to restrict which fields on the person are returned. Multiple fields can be specified by separating them with commas. Defaults to empty if not set, which will skip the post mut…
-    * ``sources`` (str): Optional. A mask of what source types to return. Defaults to READ\_SOURCE\_TYPE\_CONTACT and READ\_SOURCE\_TYPE\_PROFILE if not set.
+    * ``sources`` (str): Optional. A mask of what source types to return. Defaults to READ\\_SOURCE\\_TYPE\\_CONTACT and READ\\_SOURCE\\_TYPE\\_PROFILE if not set.
 
     CLI Example:
 
@@ -558,21 +558,21 @@ def people_delete_contact_photo(resourceName, **params):
 
 def people_get(resourceName, **params):
     """
-    Provides information about a person by specifying a resource name. Use \`people/me\`
-    to indicate the authenticated user. The request returns a 400 error if
-    'personFields' is not specified.
+    Provides information about a person by specifying a resource name. Use
+    \\`people/me\\` to indicate the authenticated user. The request returns a 400 error
+    if 'personFields' is not specified.
 
     HTTP: ``GET``  Discovery: ``people.get``
 
     Required parameters:
 
-    * ``resourceName`` (str): Required. The resource name of the person to provide information about. - To get information about the authenticated user, specify \`people/me\`. - To get information about a google account, specify \`p…
+    * ``resourceName`` (str): Required. The resource name of the person to provide information about. - To get information about the authenticated user, specify \\`people/me\\`. - To get information about a google account, specify \\`p…
 
     Optional parameters (pass via keyword args):
 
-    * ``personFields`` (str): Required. A field mask to restrict which fields on the person are returned. Multiple fields can be specified by separating them with commas. Valid values are: \* addresses \* ageRanges \* biographies \*…
-    * ``requestMask.includeField`` (str): Required. Comma-separated list of person fields to be included in the response. Each path should start with \`person.\`: for example, \`person.names\` or \`person.photos\`.
-    * ``sources`` (str): Optional. A mask of what source types to return. Defaults to READ\_SOURCE\_TYPE\_PROFILE and READ\_SOURCE\_TYPE\_CONTACT if not set.
+    * ``personFields`` (str): Required. A field mask to restrict which fields on the person are returned. Multiple fields can be specified by separating them with commas. Valid values are: \\* addresses \\* ageRanges \\* biographies \\*…
+    * ``requestMask.includeField`` (str): Required. Comma-separated list of person fields to be included in the response. Each path should start with \\`person.\\`: for example, \\`person.names\\` or \\`person.photos\\`.
+    * ``sources`` (str): Optional. A mask of what source types to return. Defaults to READ\\_SOURCE\\_TYPE\\_PROFILE and READ\\_SOURCE\\_TYPE\\_CONTACT if not set.
 
     CLI Example:
 
@@ -595,17 +595,17 @@ def people_get(resourceName, **params):
 def people_get_batch_get(**params):
     """
     Provides information about a list of specific people by specifying a list of
-    requested resource names. Use \`people/me\` to indicate the authenticated user. The
-    request returns a 400 error if 'personFields' is not specified.
+    requested resource names. Use \\`people/me\\` to indicate the authenticated user.
+    The request returns a 400 error if 'personFields' is not specified.
 
     HTTP: ``GET``  Discovery: ``people.getBatchGet``
 
     Optional parameters (pass via keyword args):
 
-    * ``personFields`` (str): Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: \* addresses \* ageRanges \* biographies \*…
-    * ``requestMask.includeField`` (str): Required. Comma-separated list of person fields to be included in the response. Each path should start with \`person.\`: for example, \`person.names\` or \`person.photos\`.
+    * ``personFields`` (str): Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: \\* addresses \\* ageRanges \\* biographies \\*…
+    * ``requestMask.includeField`` (str): Required. Comma-separated list of person fields to be included in the response. Each path should start with \\`person.\\`: for example, \\`person.names\\` or \\`person.photos\\`.
     * ``resourceNames`` (str): Required. The resource names of the people to provide information about. It's repeatable. The URL query parameter should be resourceNames=<name1>&resourceNames=<name2>&... - To get information about…
-    * ``sources`` (str): Optional. A mask of what source types to return. Defaults to READ\_SOURCE\_TYPE\_CONTACT and READ\_SOURCE\_TYPE\_PROFILE if not set.
+    * ``sources`` (str): Optional. A mask of what source types to return. Defaults to READ\\_SOURCE\\_TYPE\\_CONTACT and READ\\_SOURCE\\_TYPE\\_PROFILE if not set.
 
     CLI Example:
 
@@ -627,13 +627,14 @@ def people_get_batch_get(**params):
 def people_list_directory_people(**params):
     """
     Provides a list of domain profiles and domain contacts in the authenticated user's
-    domain directory. When the \`sync\_token\` is specified, resources deleted since the
-    last sync will be returned as a person with \`PersonMetadata.deleted\` set to true.
-    When the \`page\_token\` or \`sync\_token\` is specified, all other request
-    parameters must match the first call. Writes may have a propagation delay of several
-    minutes for sync requests. Incremental syncs are not intended for read-after-write
-    use cases. See example usage at [List the directory people that have
-    changed](/people/v1/directory#list\_the\_directory\_people\_that\_have\_changed).
+    domain directory. When the \\`sync\\_token\\` is specified, resources deleted since
+    the last sync will be returned as a person with \\`PersonMetadata.deleted\\` set to
+    true. When the \\`page\\_token\\` or \\`sync\\_token\\` is specified, all other
+    request parameters must match the first call. Writes may have a propagation delay of
+    several minutes for sync requests. Incremental syncs are not intended for
+    read-after-write use cases. See example usage at [List the directory people that
+    have
+    changed](/people/v1/directory#list\\_the\\_directory\\_people\\_that\\_have\\_changed).
 
     HTTP: ``GET``  Discovery: ``people.listDirectoryPeople``
 
@@ -641,11 +642,11 @@ def people_list_directory_people(**params):
 
     * ``mergeSources`` (str): Optional. Additional data to merge into the directory sources if they are connected through verified join keys such as email addresses or phone numbers.
     * ``pageSize`` (int): Optional. The number of people to include in the response. Valid values are between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0.
-    * ``pageToken`` (str): Optional. A page token, received from a previous response \`next\_page\_token\`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to \`people.listDirectoryPeopl…
-    * ``readMask`` (str): Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: \* addresses \* ageRanges \* biographies \*…
-    * ``requestSyncToken`` (bool): Optional. Whether the response should return \`next\_sync\_token\`. It can be used to get incremental changes since the last request by setting it on the request \`sync\_token\`. More details about sync beh…
+    * ``pageToken`` (str): Optional. A page token, received from a previous response \\`next\\_page\\_token\\`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to \\`people.listDirectoryPeopl…
+    * ``readMask`` (str): Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: \\* addresses \\* ageRanges \\* biographies \\*…
+    * ``requestSyncToken`` (bool): Optional. Whether the response should return \\`next\\_sync\\_token\\`. It can be used to get incremental changes since the last request by setting it on the request \\`sync\\_token\\`. More details about sync beh…
     * ``sources`` (str): Required. Directory sources to return.
-    * ``syncToken`` (str): Optional. A sync token, received from a previous response \`next\_sync\_token\` Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to…
+    * ``syncToken`` (str): Optional. A sync token, received from a previous response \\`next\\_sync\\_token\\` Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to…
 
     CLI Example:
 
@@ -667,11 +668,11 @@ def people_list_directory_people(**params):
 def people_search_contacts(**params):
     """
     Provides a list of contacts in the authenticated user's grouped contacts that
-    matches the search query. The query matches on a contact's \`names\`, \`nickNames\`,
-    \`emailAddresses\`, \`phoneNumbers\`, and \`organizations\` fields that are from the
-    CONTACT source. \*\*IMPORTANT\*\*: Before searching, clients should send a warmup
-    request with an empty query to update the cache. See
-    https://developers.google.com/people/v1/contacts#search\_the\_users\_contacts
+    matches the search query. The query matches on a contact's \\`names\\`,
+    \\`nickNames\\`, \\`emailAddresses\\`, \\`phoneNumbers\\`, and \\`organizations\\`
+    fields that are from the CONTACT source. \\*\\*IMPORTANT\\*\\*: Before searching,
+    clients should send a warmup request with an empty query to update the cache. See
+    https://developers.google.com/people/v1/contacts#search\\_the\\_users\\_contacts
 
     HTTP: ``GET``  Discovery: ``people.searchContacts``
 
@@ -679,8 +680,8 @@ def people_search_contacts(**params):
 
     * ``pageSize`` (int): Optional. The number of results to return. Defaults to 10 if field is not set, or set to 0. Values greater than 30 will be capped to 30.
     * ``query`` (str): Required. The plain-text query for the request. The query is used to match prefix phrases of the fields on a person. For example, a person with name "foo name" matches queries such as "f", "fo", "foo…
-    * ``readMask`` (str): Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: \* addresses \* ageRanges \* biographies \*…
-    * ``sources`` (str): Optional. A mask of what source types to return. Defaults to READ\_SOURCE\_TYPE\_CONTACT if not set.
+    * ``readMask`` (str): Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: \\* addresses \\* ageRanges \\* biographies \\*…
+    * ``sources`` (str): Optional. A mask of what source types to return. Defaults to READ\\_SOURCE\\_TYPE\\_CONTACT if not set.
 
     CLI Example:
 
@@ -710,9 +711,9 @@ def people_search_directory_people(**params):
 
     * ``mergeSources`` (str): Optional. Additional data to merge into the directory sources if they are connected through verified join keys such as email addresses or phone numbers.
     * ``pageSize`` (int): Optional. The number of people to include in the response. Valid values are between 1 and 500, inclusive. Defaults to 100 if not set or set to 0.
-    * ``pageToken`` (str): Optional. A page token, received from a previous response \`next\_page\_token\`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to \`SearchDirectoryPeople\` mu…
-    * ``query`` (str): Required. Prefix query that matches fields in the person. Does NOT use the read\_mask for determining what fields to match.
-    * ``readMask`` (str): Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: \* addresses \* ageRanges \* biographies \*…
+    * ``pageToken`` (str): Optional. A page token, received from a previous response \\`next\\_page\\_token\\`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to \\`SearchDirectoryPeople\\` mu…
+    * ``query`` (str): Required. Prefix query that matches fields in the person. Does NOT use the read\\_mask for determining what fields to match.
+    * ``readMask`` (str): Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: \\* addresses \\* ageRanges \\* biographies \\*…
     * ``sources`` (str): Required. Directory sources to return.
 
     CLI Example:
@@ -736,33 +737,33 @@ def people_update_contact(resourceName, body=None, **params):
     """
     Update contact data for an existing contact person. Any non-contact data will not be
     modified. Any non-contact data in the person to update will be ignored. All fields
-    specified in the \`update\_mask\` will be replaced. The server returns a 400 error
-    if \`person.metadata.sources\` is not specified for the contact to be updated or if
-    there is no contact source. The server returns a 400 error with reason
-    \`"failedPrecondition"\` if \`person.metadata.sources.etag\` is different than the
-    contact's etag, which indicates the contact has changed since its data was read.
+    specified in the \\`update\\_mask\\` will be replaced. The server returns a 400
+    error if \\`person.metadata.sources\\` is not specified for the contact to be
+    updated or if there is no contact source. The server returns a 400 error with reason
+    \\`"failedPrecondition"\\` if \\`person.metadata.sources.etag\\` is different than
+    the contact's etag, which indicates the contact has changed since its data was read.
     Clients should get the latest person and merge their updates into the latest person.
-    If making sequential updates to the same person, the etag from the \`updateContact\`
-    response should be used to avoid failures. The server returns a 400 error if
-    \`memberships\` are being updated and there are no contact group memberships
-    specified on the person. The server returns a 400 error if more than one field is
-    specified on a field that is a singleton for contact sources: \* biographies \*
-    birthdays \* genders \* names Mutate requests for the same user should be sent
-    sequentially to avoid increased latency and failures.
+    If making sequential updates to the same person, the etag from the
+    \\`updateContact\\` response should be used to avoid failures. The server returns a
+    400 error if \\`memberships\\` are being updated and there are no contact group
+    memberships specified on the person. The server returns a 400 error if more than one
+    field is specified on a field that is a singleton for contact sources: \\*
+    biographies \\* birthdays \\* genders \\* names Mutate requests for the same user
+    should be sent sequentially to avoid increased latency and failures.
 
     HTTP: ``PATCH``  Discovery: ``people.updateContact``
 
     Required parameters:
 
-    * ``resourceName`` (str): The resource name for the person, assigned by the server. An ASCII string in the form of \`people/{person\_id}\`.
+    * ``resourceName`` (str): The resource name for the person, assigned by the server. An ASCII string in the form of \\`people/{person\\_id}\\`.
 
     * ``body`` (dict): request body payload.
 
     Optional parameters (pass via keyword args):
 
-    * ``personFields`` (str): Optional. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Defaults to all fields if not set. Valid values are: \* ad…
-    * ``sources`` (str): Optional. A mask of what source types to return. Defaults to READ\_SOURCE\_TYPE\_CONTACT and READ\_SOURCE\_TYPE\_PROFILE if not set.
-    * ``updatePersonFields`` (str): Required. A field mask to restrict which fields on the person are updated. Multiple fields can be specified by separating them with commas. All updated fields will be replaced. Valid values are: \* ad…
+    * ``personFields`` (str): Optional. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Defaults to all fields if not set. Valid values are: \\* ad…
+    * ``sources`` (str): Optional. A mask of what source types to return. Defaults to READ\\_SOURCE\\_TYPE\\_CONTACT and READ\\_SOURCE\\_TYPE\\_PROFILE if not set.
+    * ``updatePersonFields`` (str): Required. A field mask to restrict which fields on the person are updated. Multiple fields can be specified by separating them with commas. All updated fields will be replaced. Valid values are: \\* ad…
 
     CLI Example:
 
@@ -819,35 +820,35 @@ def people_connections_list(resourceName, **params):
     """
     Provides a list of the authenticated user's contacts. Sync tokens expire 7 days
     after the full sync. A request with an expired sync token will get an error with an
-    [google.rpc.ErrorInfo](https://cloud.google.com/apis/design/errors#error\_info) with
-    reason "EXPIRED\_SYNC\_TOKEN". In the case of such an error clients should make a
-    full sync request without a \`sync\_token\`. The first page of a full sync request
-    has an additional quota. If the quota is exceeded, a 429 error will be returned.
-    This quota is fixed and can not be increased. When the \`sync\_token\` is specified,
-    resources deleted since the last sync will be returned as a person with
-    \`PersonMetadata.deleted\` set to true. When the \`page\_token\` or \`sync\_token\`
-    is specified, all other request parameters must match the first call. Writes may
-    have a propagation delay of several minutes for sync requests. Incremental syncs are
-    not intended for read-after-write use cases. See example usage at [List the user's
-    contacts that have
-    changed](/people/v1/contacts#list\_the\_users\_contacts\_that\_have\_changed).
+    [google.rpc.ErrorInfo](https://cloud.google.com/apis/design/errors#error\\_info)
+    with reason "EXPIRED\\_SYNC\\_TOKEN". In the case of such an error clients should
+    make a full sync request without a \\`sync\\_token\\`. The first page of a full sync
+    request has an additional quota. If the quota is exceeded, a 429 error will be
+    returned. This quota is fixed and can not be increased. When the \\`sync\\_token\\`
+    is specified, resources deleted since the last sync will be returned as a person
+    with \\`PersonMetadata.deleted\\` set to true. When the \\`page\\_token\\` or
+    \\`sync\\_token\\` is specified, all other request parameters must match the first
+    call. Writes may have a propagation delay of several minutes for sync requests.
+    Incremental syncs are not intended for read-after-write use cases. See example usage
+    at [List the user's contacts that have
+    changed](/people/v1/contacts#list\\_the\\_users\\_contacts\\_that\\_have\\_changed).
 
     HTTP: ``GET``  Discovery: ``people.connections.list``
 
     Required parameters:
 
-    * ``resourceName`` (str): Required. The resource name to return connections for. Only \`people/me\` is valid.
+    * ``resourceName`` (str): Required. The resource name to return connections for. Only \\`people/me\\` is valid.
 
     Optional parameters (pass via keyword args):
 
     * ``pageSize`` (int): Optional. The number of connections to include in the response. Valid values are between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0.
-    * ``pageToken`` (str): Optional. A page token, received from a previous response \`next\_page\_token\`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to \`people.connections.list\`…
-    * ``personFields`` (str): Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: \* addresses \* ageRanges \* biographies \*…
-    * ``requestMask.includeField`` (str): Required. Comma-separated list of person fields to be included in the response. Each path should start with \`person.\`: for example, \`person.names\` or \`person.photos\`.
-    * ``requestSyncToken`` (bool): Optional. Whether the response should return \`next\_sync\_token\` on the last page of results. It can be used to get incremental changes since the last request by setting it on the request \`sync\_token\`.…
-    * ``sortOrder`` (str): Optional. The order in which the connections should be sorted. Defaults to \`LAST\_MODIFIED\_ASCENDING\`.
-    * ``sources`` (str): Optional. A mask of what source types to return. Defaults to READ\_SOURCE\_TYPE\_CONTACT and READ\_SOURCE\_TYPE\_PROFILE if not set.
-    * ``syncToken`` (str): Optional. A sync token, received from a previous response \`next\_sync\_token\` Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to…
+    * ``pageToken`` (str): Optional. A page token, received from a previous response \\`next\\_page\\_token\\`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to \\`people.connections.list\\`…
+    * ``personFields`` (str): Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: \\* addresses \\* ageRanges \\* biographies \\*…
+    * ``requestMask.includeField`` (str): Required. Comma-separated list of person fields to be included in the response. Each path should start with \\`person.\\`: for example, \\`person.names\\` or \\`person.photos\\`.
+    * ``requestSyncToken`` (bool): Optional. Whether the response should return \\`next\\_sync\\_token\\` on the last page of results. It can be used to get incremental changes since the last request by setting it on the request \\`sync\\_token\\`.…
+    * ``sortOrder`` (str): Optional. The order in which the connections should be sorted. Defaults to \\`LAST\\_MODIFIED\\_ASCENDING\\`.
+    * ``sources`` (str): Optional. A mask of what source types to return. Defaults to READ\\_SOURCE\\_TYPE\\_CONTACT and READ\\_SOURCE\\_TYPE\\_PROFILE if not set.
+    * ``syncToken`` (str): Optional. A sync token, received from a previous response \\`next\\_sync\\_token\\` Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to…
 
     CLI Example:
 

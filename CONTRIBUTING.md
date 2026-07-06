@@ -72,6 +72,13 @@ surface, and creates, updates, or deletes generated files so the repo matches th
 exactly. Hand-tuned behavior does not belong in the generated files themselves — it lives in
 `src/saltext/gsuite/states/overrides/`.
 
+A small number of execution modules (currently `gsuite_util` and `gsuite_chat_webhook`) are
+entirely hand-written rather than generated, but still need a `docs/ref` page and must be
+protected from the reconciler's pruning. Register any such module in
+[`tools/_codegen/hand_written.toml`](tools/_codegen/hand_written.toml); the generator reads
+that file to write its doc page, and the `check-docs` pre-commit hook fails if a hand-written
+module under `modules/`/`states/` isn't registered there.
+
 ```bash
 just generate                  # regenerate everything against the currently pinned gws version
 just generate --service drive  # regenerate a single service (repeatable)

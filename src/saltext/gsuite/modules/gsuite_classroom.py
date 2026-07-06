@@ -34,16 +34,16 @@ def __virtual__():
 
 def courses_create(body=None, **params):
     """
-    Creates a course. The user specified in \`ownerId\` is the owner of the created
+    Creates a course. The user specified in \\`ownerId\\` is the owner of the created
     course and added as a teacher. A non-admin requesting user can only create a course
     with themselves as the owner. Domain admins can create courses owned by any user
-    within their domain. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to create courses or
-    for access errors. \* \`NOT\_FOUND\` if the primary teacher is not a valid user. \*
-    \`FAILED\_PRECONDITION\` if the course owner's account is disabled or for the
-    following request errors: \* UserCannotOwnCourse \* UserGroupsMembershipLimitReached
-    \* CourseTitleCannotContainUrl \* \`ALREADY\_EXISTS\` if an alias was specified in
-    the \`id\` and already exists.
+    within their domain. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to create courses
+    or for access errors. \\* \\`NOT\\_FOUND\\` if the primary teacher is not a valid
+    user. \\* \\`FAILED\\_PRECONDITION\\` if the course owner's account is disabled or
+    for the following request errors: \\* UserCannotOwnCourse \\*
+    UserGroupsMembershipLimitReached \\* CourseTitleCannotContainUrl \\*
+    \\`ALREADY\\_EXISTS\\` if an alias was specified in the \\`id\\` and already exists.
 
     HTTP: ``POST``  Discovery: ``courses.create``
 
@@ -69,10 +69,10 @@ def courses_create(body=None, **params):
 
 def courses_delete(id, **params):
     """
-    Deletes a course. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to delete the
-    requested course or for access errors. \* \`NOT\_FOUND\` if no course exists with
-    the requested ID.
+    Deletes a course. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to delete the
+    requested course or for access errors. \\* \\`NOT\\_FOUND\\` if no course exists
+    with the requested ID.
 
     HTTP: ``DELETE``  Discovery: ``courses.delete``
 
@@ -100,10 +100,10 @@ def courses_delete(id, **params):
 
 def courses_get(id, **params):
     """
-    Returns a course. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to access the
-    requested course or for access errors. \* \`NOT\_FOUND\` if no course exists with
-    the requested ID.
+    Returns a course. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to access the
+    requested course or for access errors. \\* \\`NOT\\_FOUND\\` if no course exists
+    with the requested ID.
 
     HTTP: ``GET``  Discovery: ``courses.get``
 
@@ -132,9 +132,9 @@ def courses_get(id, **params):
 def courses_get_grading_period_settings(courseId, **params):
     """
     Returns the grading period settings in a course. This method returns the following
-    error codes: \* \`PERMISSION\_DENIED\` if the requesting user isn't permitted to
-    access the grading period settings in the requested course or for access errors. \*
-    \`NOT\_FOUND\` if the requested course does not exist.
+    error codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting user isn't permitted to
+    access the grading period settings in the requested course or for access errors. \\*
+    \\`NOT\\_FOUND\\` if the requested course does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.getGradingPeriodSettings``
 
@@ -165,9 +165,9 @@ def courses_list(**params):
     Returns a list of courses that the requesting user is permitted to view, restricted
     to those that match the request. Returned courses are ordered by creation time, with
     the most recently created coming first. This method returns the following error
-    codes: \* \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the
-    query argument is malformed. \* \`NOT\_FOUND\` if any users specified in the query
-    arguments do not exist.
+    codes: \\* \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\`
+    if the query argument is malformed. \\* \\`NOT\\_FOUND\\` if any users specified in
+    the query arguments do not exist.
 
     HTTP: ``GET``  Discovery: ``courses.list``
 
@@ -176,8 +176,8 @@ def courses_list(**params):
     * ``courseStates`` (str): Restricts returned courses to those in one of the specified states. If unspecified, Courses in any state are returned.
     * ``pageSize`` (int): Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
     * ``pageToken`` (str): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in thi…
-    * ``studentId`` (str): Restricts returned courses to those having a student with the specified identifier. The identifier can be one of the following: \* the numeric identifier for the user \* the email address of the user \*…
-    * ``teacherId`` (str): Restricts returned courses to those having a teacher with the specified identifier. The identifier can be one of the following: \* the numeric identifier for the user \* the email address of the user \*…
+    * ``studentId`` (str): Restricts returned courses to those having a student with the specified identifier. The identifier can be one of the following: \\* the numeric identifier for the user \\* the email address of the user \\*…
+    * ``teacherId`` (str): Restricts returned courses to those having a teacher with the specified identifier. The identifier can be one of the following: \\* the numeric identifier for the user \\* the email address of the user \\*…
 
     CLI Example:
 
@@ -199,12 +199,13 @@ def courses_list(**params):
 def courses_patch(id, body=None, **params):
     """
     Updates one or more fields in a course. This method returns the following error
-    codes: \* \`PERMISSION\_DENIED\` if the requesting user is not permitted to modify
-    the requested course or for access errors. \* \`NOT\_FOUND\` if no course exists
-    with the requested ID. \* \`INVALID\_ARGUMENT\` if invalid fields are specified in
-    the update mask or if no update mask is supplied. \* \`FAILED\_PRECONDITION\` for
-    the following request errors: \* CourseNotModifiable \* InactiveCourseOwner \*
-    IneligibleOwner \* CourseTitleCannotContainUrl
+    codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to
+    modify the requested course or for access errors. \\* \\`NOT\\_FOUND\\` if no course
+    exists with the requested ID. \\* \\`INVALID\\_ARGUMENT\\` if invalid fields are
+    specified in the update mask or if no update mask is supplied. \\*
+    \\`FAILED\\_PRECONDITION\\` for the following request errors: \\*
+    CourseNotModifiable \\* InactiveCourseOwner \\* IneligibleOwner \\*
+    CourseTitleCannotContainUrl
 
     HTTP: ``PATCH``  Discovery: ``courses.patch``
 
@@ -216,7 +217,7 @@ def courses_patch(id, body=None, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``updateMask`` (str): Mask that identifies which fields on the course to update. This field is required to do an update. The update will fail if invalid fields are specified. The following fields are valid: \* \`courseState…
+    * ``updateMask`` (str): Mask that identifies which fields on the course to update. This field is required to do an update. The update will fail if invalid fields are specified. The following fields are valid: \\* \\`courseState…
 
     CLI Example:
 
@@ -239,14 +240,14 @@ def courses_patch(id, body=None, **params):
 
 def courses_update(id, body=None, **params):
     """
-    Updates a course. Note: Unlike other fields, \`levels\` is not cleared if omitted
-    from the request. The \`UpdateCourse\` method only modifies \`levels\` if it is
+    Updates a course. Note: Unlike other fields, \\`levels\\` is not cleared if omitted
+    from the request. The \\`UpdateCourse\\` method only modifies \\`levels\\` if it is
     explicitly provided; otherwise, the existing value is preserved. Use the
-    \`PatchCourse\` method to clear the \`levels\` field. This method returns the
-    following error codes: \* \`PERMISSION\_DENIED\` if the requesting user is not
-    permitted to modify the requested course or for access errors. \* \`NOT\_FOUND\` if
-    no course exists with the requested ID. \* \`FAILED\_PRECONDITION\` for the
-    following request errors: \* CourseNotModifiable \* CourseTitleCannotContainUrl
+    \\`PatchCourse\\` method to clear the \\`levels\\` field. This method returns the
+    following error codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting user is not
+    permitted to modify the requested course or for access errors. \\* \\`NOT\\_FOUND\\`
+    if no course exists with the requested ID. \\* \\`FAILED\\_PRECONDITION\\` for the
+    following request errors: \\* CourseNotModifiable \\* CourseTitleCannotContainUrl
 
     HTTP: ``PUT``  Discovery: ``courses.update``
 
@@ -280,12 +281,12 @@ def courses_update_grading_period_settings(courseId, body=None, **params):
     Updates grading period settings of a course. Individual grading periods can be
     added, removed, or modified using this method. The requesting user and course owner
     must be eligible to modify Grading Periods. For details, see [licensing
-    requirements](https://developers.google.com/workspace/classroom/grading-
-    periods/manage-grading-periods#licensing\_requirements). This method returns the
-    following error codes: \* \`PERMISSION\_DENIED\` if the requesting user is not
-    permitted to modify the grading period settings in a course or for access errors: \*
-    UserIneligibleToUpdateGradingPeriodSettings \* \`INVALID\_ARGUMENT\` if the request
-    is malformed. \* \`NOT\_FOUND\` if the requested course does not exist.
+    requirements](https://developers.google.com/workspace/classroom/grading-periods/manage-grading-periods#licensing\\_requirements).
+    This method returns the following error codes: \\* \\`PERMISSION\\_DENIED\\` if the
+    requesting user is not permitted to modify the grading period settings in a course
+    or for access errors: \\* UserIneligibleToUpdateGradingPeriodSettings \\*
+    \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\* \\`NOT\\_FOUND\\` if the
+    requested course does not exist.
 
     HTTP: ``PATCH``  Discovery: ``courses.updateGradingPeriodSettings``
 
@@ -297,7 +298,7 @@ def courses_update_grading_period_settings(courseId, body=None, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``updateMask`` (str): Mask that identifies which fields in the GradingPeriodSettings to update. The GradingPeriodSettings \`grading\_periods\` list will be fully replaced by the grading periods specified in the update reques…
+    * ``updateMask`` (str): Mask that identifies which fields in the GradingPeriodSettings to update. The GradingPeriodSettings \\`grading\\_periods\\` list will be fully replaced by the grading periods specified in the update reques…
 
     CLI Example:
 
@@ -320,12 +321,12 @@ def courses_update_grading_period_settings(courseId, body=None, **params):
 
 def courses_aliases_create(courseId, body=None, **params):
     """
-    Creates an alias for a course. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to create the alias
-    or for access errors. \* \`NOT\_FOUND\` if the course does not exist. \*
-    \`ALREADY\_EXISTS\` if the alias already exists. \* \`FAILED\_PRECONDITION\` if the
-    alias requested does not make sense for the requesting user or course (for example,
-    if a user not in a domain attempts to access a domain-scoped alias).
+    Creates an alias for a course. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to create the
+    alias or for access errors. \\* \\`NOT\\_FOUND\\` if the course does not exist. \\*
+    \\`ALREADY\\_EXISTS\\` if the alias already exists. \\* \\`FAILED\\_PRECONDITION\\`
+    if the alias requested does not make sense for the requesting user or course (for
+    example, if a user not in a domain attempts to access a domain-scoped alias).
 
     HTTP: ``POST``  Discovery: ``courses.aliases.create``
 
@@ -356,10 +357,10 @@ def courses_aliases_create(courseId, body=None, **params):
 
 def courses_aliases_delete(courseId, alias, **params):
     """
-    Deletes an alias of a course. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to remove the alias
-    or for access errors. \* \`NOT\_FOUND\` if the alias does not exist. \*
-    \`FAILED\_PRECONDITION\` if the alias requested does not make sense for the
+    Deletes an alias of a course. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to remove the
+    alias or for access errors. \\* \\`NOT\\_FOUND\\` if the alias does not exist. \\*
+    \\`FAILED\\_PRECONDITION\\` if the alias requested does not make sense for the
     requesting user or course (for example, if a user not in a domain attempts to delete
     a domain-scoped alias).
 
@@ -392,8 +393,9 @@ def courses_aliases_delete(courseId, alias, **params):
 def courses_aliases_list(courseId, **params):
     """
     Returns a list of aliases for a course. This method returns the following error
-    codes: \* \`PERMISSION\_DENIED\` if the requesting user is not permitted to access
-    the course or for access errors. \* \`NOT\_FOUND\` if the course does not exist.
+    codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to
+    access the course or for access errors. \\* \\`NOT\\_FOUND\\` if the course does not
+    exist.
 
     HTTP: ``GET``  Discovery: ``courses.aliases.list``
 
@@ -426,12 +428,13 @@ def courses_aliases_list(courseId, **params):
 
 def courses_announcements_create(courseId, body=None, **params):
     """
-    Creates an announcement. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to access the
+    Creates an announcement. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to access the
     requested course, create announcements in the requested course, share a Drive
-    attachment, or for access errors. \* \`INVALID\_ARGUMENT\` if the request is
-    malformed. \* \`NOT\_FOUND\` if the requested course does not exist. \*
-    \`FAILED\_PRECONDITION\` for the following request error: \* AttachmentNotVisible
+    attachment, or for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the request is
+    malformed. \\* \\`NOT\\_FOUND\\` if the requested course does not exist. \\*
+    \\`FAILED\\_PRECONDITION\\` for the following request error: \\*
+    AttachmentNotVisible
 
     HTTP: ``POST``  Discovery: ``courses.announcements.create``
 
@@ -465,11 +468,11 @@ def courses_announcements_delete(courseId, id, **params):
     Deletes an announcement. This request must be made by the Developer Console project
     of the [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to
     create the corresponding announcement item. This method returns the following error
-    codes: \* \`PERMISSION\_DENIED\` if the requesting developer project did not create
-    the corresponding announcement, if the requesting user is not permitted to delete
-    the requested course or for access errors. \* \`FAILED\_PRECONDITION\` if the
-    requested announcement has already been deleted. \* \`NOT\_FOUND\` if no course
-    exists with the requested ID.
+    codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting developer project did not
+    create the corresponding announcement, if the requesting user is not permitted to
+    delete the requested course or for access errors. \\* \\`FAILED\\_PRECONDITION\\` if
+    the requested announcement has already been deleted. \\* \\`NOT\\_FOUND\\` if no
+    course exists with the requested ID.
 
     HTTP: ``DELETE``  Discovery: ``courses.announcements.delete``
 
@@ -499,11 +502,11 @@ def courses_announcements_delete(courseId, id, **params):
 
 def courses_announcements_get(courseId, id, **params):
     """
-    Returns an announcement. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to access the
-    requested course or announcement, or for access errors. \* \`INVALID\_ARGUMENT\` if
-    the request is malformed. \* \`NOT\_FOUND\` if the requested course or announcement
-    does not exist.
+    Returns an announcement. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to access the
+    requested course or announcement, or for access errors. \\* \\`INVALID\\_ARGUMENT\\`
+    if the request is malformed. \\* \\`NOT\\_FOUND\\` if the requested course or
+    announcement does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.announcements.get``
 
@@ -536,23 +539,24 @@ def courses_announcements_get_add_on_context(courseId, itemId, **params):
     Gets metadata for Classroom add-ons in the context of a specific post. To maintain
     the integrity of its own data and permissions model, an add-on should call this to
     validate query parameters and the requesting user's role whenever the add-on is
-    opened in an [iframe](https://developers.google.com/workspace/classroom/add-ons/get-
-    started/iframes/iframes-overview). This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the request is
-    malformed. \* \`NOT\_FOUND\` if one of the identified resources does not exist.
+    opened in an
+    [iframe](https://developers.google.com/workspace/classroom/add-ons/get-started/iframes/iframes-overview).
+    This method returns the following error codes: \\* \\`PERMISSION\\_DENIED\\` for
+    access errors. \\* \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\*
+    \\`NOT\\_FOUND\\` if one of the identified resources does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.announcements.getAddOnContext``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\\_id.
 
     Optional parameters (pass via keyword args):
 
     * ``addOnToken`` (str): Optional. Token that authorizes the request. The token is passed as a query parameter when the user is redirected from Classroom to the add-on's URL. The authorization token is required when neither…
     * ``attachmentId`` (str): Optional. The identifier of the attachment. This field is required for all requests except when the user is in the [Attachment Discovery iframe](https://developers.google.com/workspace/classroom/add-…
-    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \\`item\\_id\\` instead.
 
     CLI Example:
 
@@ -576,11 +580,12 @@ def courses_announcements_get_add_on_context(courseId, itemId, **params):
 def courses_announcements_list(courseId, **params):
     """
     Returns a list of announcements that the requester is permitted to view. Course
-    students may only view \`PUBLISHED\` announcements. Course teachers and domain
+    students may only view \\`PUBLISHED\\` announcements. Course teachers and domain
     administrators may view all announcements. This method returns the following error
-    codes: \* \`PERMISSION\_DENIED\` if the requesting user is not permitted to access
-    the requested course or for access errors. \* \`INVALID\_ARGUMENT\` if the request
-    is malformed. \* \`NOT\_FOUND\` if the requested course does not exist.
+    codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to
+    access the requested course or for access errors. \\* \\`INVALID\\_ARGUMENT\\` if
+    the request is malformed. \\* \\`NOT\\_FOUND\\` if the requested course does not
+    exist.
 
     HTTP: ``GET``  Discovery: ``courses.announcements.list``
 
@@ -590,8 +595,8 @@ def courses_announcements_list(courseId, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``announcementStates`` (str): Restriction on the \`state\` of announcements returned. If this argument is left unspecified, the default value is \`PUBLISHED\`.
-    * ``orderBy`` (str): Optional sort ordering for results. A comma-separated list of fields with an optional sort direction keyword. Supported field is \`updateTime\`. Supported direction keywords are \`asc\` and \`desc\`. If no…
+    * ``announcementStates`` (str): Restriction on the \\`state\\` of announcements returned. If this argument is left unspecified, the default value is \\`PUBLISHED\\`.
+    * ``orderBy`` (str): Optional sort ordering for results. A comma-separated list of fields with an optional sort direction keyword. Supported field is \\`updateTime\\`. Supported direction keywords are \\`asc\\` and \\`desc\\`. If no…
     * ``pageSize`` (int): Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
     * ``pageToken`` (str): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in thi…
 
@@ -617,11 +622,11 @@ def courses_announcements_modify_assignees(courseId, id, body=None, **params):
     """
     Modifies assignee mode and options of an announcement. Only a teacher of the course
     that contains the announcement may call this method. This method returns the
-    following error codes: \* \`PERMISSION\_DENIED\` if the requesting user is not
-    permitted to access the requested course or course work or for access errors. \*
-    \`INVALID\_ARGUMENT\` if the request is malformed. \* \`NOT\_FOUND\` if the
-    requested course or course work does not exist. \* \`FAILED\_PRECONDITION\` for the
-    following request error: \* EmptyAssignees
+    following error codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting user is not
+    permitted to access the requested course or course work or for access errors. \\*
+    \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\* \\`NOT\\_FOUND\\` if the
+    requested course or course work does not exist. \\* \\`FAILED\\_PRECONDITION\\` for
+    the following request error: \\* EmptyAssignees
 
     HTTP: ``POST``  Discovery: ``courses.announcements.modifyAssignees``
 
@@ -655,11 +660,11 @@ def courses_announcements_modify_assignees(courseId, id, body=None, **params):
 def courses_announcements_patch(courseId, id, body=None, **params):
     """
     Updates one or more fields of an announcement. This method returns the following
-    error codes: \* \`PERMISSION\_DENIED\` if the requesting developer project did not
-    create the corresponding announcement or for access errors. \* \`INVALID\_ARGUMENT\`
-    if the request is malformed. \* \`FAILED\_PRECONDITION\` if the requested
-    announcement has already been deleted. \* \`NOT\_FOUND\` if the requested course or
-    announcement does not exist
+    error codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting developer project did
+    not create the corresponding announcement or for access errors. \\*
+    \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\*
+    \\`FAILED\\_PRECONDITION\\` if the requested announcement has already been deleted.
+    \\* \\`NOT\\_FOUND\\` if the requested course or announcement does not exist
 
     HTTP: ``PATCH``  Discovery: ``courses.announcements.patch``
 
@@ -698,22 +703,23 @@ def courses_announcements_add_on_attachments_create(courseId, itemId, body=None,
     """
     Creates an add-on attachment under a post. Requires the add-on to have permission to
     create new attachments on the post. This method returns the following error codes:
-    \* \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the request
-    is malformed. \* \`NOT\_FOUND\` if one of the identified resources does not exist.
+    \\* \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified resources does
+    not exist.
 
     HTTP: ``POST``  Discovery: ``courses.announcements.addOnAttachments.create``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which to create the attachment. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which to create the attachment. This field is required, but is not marked as such while we are migrating from post\\_id.
 
     * ``body`` (dict): request body payload.
 
     Optional parameters (pass via keyword args):
 
     * ``addOnToken`` (str): Optional. Token that authorizes the request. The token is passed as a query parameter when the user is redirected from Classroom to the add-on's URL. This authorization token is required for in-Class…
-    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \\`item\\_id\\` instead.
 
     CLI Example:
 
@@ -738,21 +744,22 @@ def courses_announcements_add_on_attachments_create(courseId, itemId, body=None,
 def courses_announcements_add_on_attachments_delete(courseId, itemId, attachmentId, **params):
     """
     Deletes an add-on attachment. Requires the add-on to have been the original creator
-    of the attachment. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the request is
-    malformed. \* \`NOT\_FOUND\` if one of the identified resources does not exist.
+    of the attachment. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified resources does
+    not exist.
 
     HTTP: ``DELETE``  Discovery: ``courses.announcements.addOnAttachments.delete``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\\_id.
     * ``attachmentId`` (str): Required. Identifier of the attachment.
 
     Optional parameters (pass via keyword args):
 
-    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \\`item\\_id\\` instead.
 
     CLI Example:
 
@@ -778,21 +785,21 @@ def courses_announcements_add_on_attachments_get(courseId, itemId, attachmentId,
     """
     Returns an add-on attachment. Requires the add-on requesting the attachment to be
     the original creator of the attachment. This method returns the following error
-    codes: \* \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the
-    request is malformed. \* \`NOT\_FOUND\` if one of the identified resources does not
-    exist.
+    codes: \\* \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\`
+    if the request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified
+    resources does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.announcements.addOnAttachments.get``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\\_id.
     * ``attachmentId`` (str): Required. Identifier of the attachment.
 
     Optional parameters (pass via keyword args):
 
-    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \\`item\\_id\\` instead.
 
     CLI Example:
 
@@ -818,22 +825,23 @@ def courses_announcements_add_on_attachments_list(courseId, itemId, **params):
     """
     Returns all attachments created by an add-on under the post. Requires the add-on to
     have active attachments on the post or have permission to create new attachments on
-    the post. This method returns the following error codes: \* \`PERMISSION\_DENIED\`
-    for access errors. \* \`INVALID\_ARGUMENT\` if the request is malformed. \*
-    \`NOT\_FOUND\` if one of the identified resources does not exist.
+    the post. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified resources does
+    not exist.
 
     HTTP: ``GET``  Discovery: ``courses.announcements.addOnAttachments.list``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` whose attachments should be enumerated. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` whose attachments should be enumerated. This field is required, but is not marked as such while we are migrating from post\\_id.
 
     Optional parameters (pass via keyword args):
 
     * ``pageSize`` (int): The maximum number of attachments to return. The service may return fewer than this value. If unspecified, at most 20 attachments will be returned. The maximum value is 20; values above 20 will be co…
-    * ``pageToken`` (str): A page token, received from a previous \`ListAddOnAttachments\` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to \`ListAddOnAttachments\` must match t…
-    * ``postId`` (str) *(deprecated)*: Optional. Identifier of the post under the course whose attachments to enumerate. Deprecated, use \`item\_id\` instead.
+    * ``pageToken`` (str): A page token, received from a previous \\`ListAddOnAttachments\\` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to \\`ListAddOnAttachments\\` must match t…
+    * ``postId`` (str) *(deprecated)*: Optional. Identifier of the post under the course whose attachments to enumerate. Deprecated, use \\`item\\_id\\` instead.
 
     CLI Example:
 
@@ -859,9 +867,10 @@ def courses_announcements_add_on_attachments_patch(
 ):
     """
     Updates an add-on attachment. Requires the add-on to have been the original creator
-    of the attachment. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the request is
-    malformed. \* \`NOT\_FOUND\` if one of the identified resources does not exist.
+    of the attachment. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified resources does
+    not exist.
 
     HTTP: ``PATCH``  Discovery: ``courses.announcements.addOnAttachments.patch``
 
@@ -906,11 +915,12 @@ def courses_course_work_create(courseId, body=None, **params):
     ID](https://support.google.com/cloud/answer/6158849) used to make the request.
     Classroom API requests to modify course work and student submissions must be made
     with an OAuth client ID from the associated Developer Console project. This method
-    returns the following error codes: \* \`PERMISSION\_DENIED\` if the requesting user
-    is not permitted to access the requested course, create course work in the requested
-    course, share a Drive attachment, or for access errors. \* \`INVALID\_ARGUMENT\` if
-    the request is malformed. \* \`NOT\_FOUND\` if the requested course does not exist.
-    \* \`FAILED\_PRECONDITION\` for the following request error: \* AttachmentNotVisible
+    returns the following error codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting
+    user is not permitted to access the requested course, create course work in the
+    requested course, share a Drive attachment, or for access errors. \\*
+    \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\* \\`NOT\\_FOUND\\` if the
+    requested course does not exist. \\* \\`FAILED\\_PRECONDITION\\` for the following
+    request error: \\* AttachmentNotVisible
 
     HTTP: ``POST``  Discovery: ``courses.courseWork.create``
 
@@ -944,11 +954,11 @@ def courses_course_work_delete(courseId, id, **params):
     Deletes a course work. This request must be made by the Developer Console project of
     the [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to
     create the corresponding course work item. This method returns the following error
-    codes: \* \`PERMISSION\_DENIED\` if the requesting developer project did not create
-    the corresponding course work, if the requesting user is not permitted to delete the
-    requested course or for access errors. \* \`FAILED\_PRECONDITION\` if the requested
-    course work has already been deleted. \* \`NOT\_FOUND\` if no course exists with the
-    requested ID.
+    codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting developer project did not
+    create the corresponding course work, if the requesting user is not permitted to
+    delete the requested course or for access errors. \\* \\`FAILED\\_PRECONDITION\\` if
+    the requested course work has already been deleted. \\* \\`NOT\\_FOUND\\` if no
+    course exists with the requested ID.
 
     HTTP: ``DELETE``  Discovery: ``courses.courseWork.delete``
 
@@ -978,11 +988,11 @@ def courses_course_work_delete(courseId, id, **params):
 
 def courses_course_work_get(courseId, id, **params):
     """
-    Returns course work. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to access the
-    requested course or course work, or for access errors. \* \`INVALID\_ARGUMENT\` if
-    the request is malformed. \* \`NOT\_FOUND\` if the requested course or course work
-    does not exist.
+    Returns course work. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to access the
+    requested course or course work, or for access errors. \\* \\`INVALID\\_ARGUMENT\\`
+    if the request is malformed. \\* \\`NOT\\_FOUND\\` if the requested course or course
+    work does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.courseWork.get``
 
@@ -1015,23 +1025,24 @@ def courses_course_work_get_add_on_context(courseId, itemId, **params):
     Gets metadata for Classroom add-ons in the context of a specific post. To maintain
     the integrity of its own data and permissions model, an add-on should call this to
     validate query parameters and the requesting user's role whenever the add-on is
-    opened in an [iframe](https://developers.google.com/workspace/classroom/add-ons/get-
-    started/iframes/iframes-overview). This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the request is
-    malformed. \* \`NOT\_FOUND\` if one of the identified resources does not exist.
+    opened in an
+    [iframe](https://developers.google.com/workspace/classroom/add-ons/get-started/iframes/iframes-overview).
+    This method returns the following error codes: \\* \\`PERMISSION\\_DENIED\\` for
+    access errors. \\* \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\*
+    \\`NOT\\_FOUND\\` if one of the identified resources does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.courseWork.getAddOnContext``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\\_id.
 
     Optional parameters (pass via keyword args):
 
     * ``addOnToken`` (str): Optional. Token that authorizes the request. The token is passed as a query parameter when the user is redirected from Classroom to the add-on's URL. The authorization token is required when neither…
     * ``attachmentId`` (str): Optional. The identifier of the attachment. This field is required for all requests except when the user is in the [Attachment Discovery iframe](https://developers.google.com/workspace/classroom/add-…
-    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \\`item\\_id\\` instead.
 
     CLI Example:
 
@@ -1055,11 +1066,12 @@ def courses_course_work_get_add_on_context(courseId, itemId, **params):
 def courses_course_work_list(courseId, **params):
     """
     Returns a list of course work that the requester is permitted to view. Course
-    students may only view \`PUBLISHED\` course work. Course teachers and domain
+    students may only view \\`PUBLISHED\\` course work. Course teachers and domain
     administrators may view all course work. This method returns the following error
-    codes: \* \`PERMISSION\_DENIED\` if the requesting user is not permitted to access
-    the requested course or for access errors. \* \`INVALID\_ARGUMENT\` if the request
-    is malformed. \* \`NOT\_FOUND\` if the requested course does not exist.
+    codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to
+    access the requested course or for access errors. \\* \\`INVALID\\_ARGUMENT\\` if
+    the request is malformed. \\* \\`NOT\\_FOUND\\` if the requested course does not
+    exist.
 
     HTTP: ``GET``  Discovery: ``courses.courseWork.list``
 
@@ -1069,8 +1081,8 @@ def courses_course_work_list(courseId, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``courseWorkStates`` (str): Restriction on the work status to return. Only courseWork that matches is returned. If unspecified, items with a work status of \`PUBLISHED\` is returned.
-    * ``orderBy`` (str): Optional sort ordering for results. A comma-separated list of fields with an optional sort direction keyword. Supported fields are \`updateTime\` and \`dueDate\`. Supported direction keywords are \`asc\` a…
+    * ``courseWorkStates`` (str): Restriction on the work status to return. Only courseWork that matches is returned. If unspecified, items with a work status of \\`PUBLISHED\\` is returned.
+    * ``orderBy`` (str): Optional sort ordering for results. A comma-separated list of fields with an optional sort direction keyword. Supported fields are \\`updateTime\\` and \\`dueDate\\`. Supported direction keywords are \\`asc\\` a…
     * ``pageSize`` (int): Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
     * ``pageToken`` (str): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in thi…
 
@@ -1096,11 +1108,11 @@ def courses_course_work_modify_assignees(courseId, id, body=None, **params):
     """
     Modifies assignee mode and options of a coursework. Only a teacher of the course
     that contains the coursework may call this method. This method returns the following
-    error codes: \* \`PERMISSION\_DENIED\` if the requesting user is not permitted to
-    access the requested course or course work or for access errors. \*
-    \`INVALID\_ARGUMENT\` if the request is malformed. \* \`NOT\_FOUND\` if the
-    requested course or course work does not exist. \* \`FAILED\_PRECONDITION\` for the
-    following request error: \* EmptyAssignees
+    error codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted
+    to access the requested course or course work or for access errors. \\*
+    \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\* \\`NOT\\_FOUND\\` if the
+    requested course or course work does not exist. \\* \\`FAILED\\_PRECONDITION\\` for
+    the following request error: \\* EmptyAssignees
 
     HTTP: ``POST``  Discovery: ``courses.courseWork.modifyAssignees``
 
@@ -1137,13 +1149,13 @@ def courses_course_work_patch(courseId, id, body=None, **params):
     details of which fields may be updated and who may change them. This request must be
     made by the Developer Console project of the [OAuth client
     ID](https://support.google.com/cloud/answer/6158849) used to create the
-    corresponding course work item. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting developer project did not create the
+    corresponding course work item. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting developer project did not create the
     corresponding course work, if the user is not permitted to make the requested
-    modification to the student submission, or for access errors. \*
-    \`INVALID\_ARGUMENT\` if the request is malformed. \* \`FAILED\_PRECONDITION\` if
-    the requested course work has already been deleted. \* \`NOT\_FOUND\` if the
-    requested course or course work does not exist.
+    modification to the student submission, or for access errors. \\*
+    \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\*
+    \\`FAILED\\_PRECONDITION\\` if the requested course work has already been deleted.
+    \\* \\`NOT\\_FOUND\\` if the requested course or course work does not exist.
 
     HTTP: ``PATCH``  Discovery: ``courses.courseWork.patch``
 
@@ -1183,19 +1195,19 @@ def courses_course_work_update_rubric(courseId, courseWorkId, body=None, **param
     Updates a rubric. See google.classroom.v1.Rubric for details of which fields can be
     updated. Rubric update capabilities are [limited](/classroom/rubrics/limitations)
     once grading has started. The requesting user and course owner must have rubrics
-    creation capabilities. For details, see [licensing requirements](https://developers.
-    google.com/workspace/classroom/rubrics/limitations#license-requirements). This
-    request must be made by the Google Cloud console of the [OAuth client
+    creation capabilities. For details, see [licensing
+    requirements](https://developers.google.com/workspace/classroom/rubrics/limitations#license-requirements).
+    This request must be made by the Google Cloud console of the [OAuth client
     ID](https://support.google.com/cloud/answer/6158849) used to create the parent
-    course work item. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting developer project didn't create the
+    course work item. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting developer project didn't create the
     corresponding course work, if the user isn't permitted to make the requested
     modification to the rubric, or for access errors. This error code is also returned
-    if grading has already started on the rubric. \* \`INVALID\_ARGUMENT\` if the
-    request is malformed and for the following request error: \*
-    \`RubricCriteriaInvalidFormat\` \* \`NOT\_FOUND\` if the requested course, course
-    work, or rubric doesn't exist or if the user doesn't have access to the
-    corresponding course work. \* \`INTERNAL\` if grading has already started on the
+    if grading has already started on the rubric. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed and for the following request error: \\*
+    \\`RubricCriteriaInvalidFormat\\` \\* \\`NOT\\_FOUND\\` if the requested course,
+    course work, or rubric doesn't exist or if the user doesn't have access to the
+    corresponding course work. \\* \\`INTERNAL\\` if grading has already started on the
     rubric.
 
     HTTP: ``PATCH``  Discovery: ``courses.courseWork.updateRubric``
@@ -1236,22 +1248,23 @@ def courses_course_work_add_on_attachments_create(courseId, itemId, body=None, *
     """
     Creates an add-on attachment under a post. Requires the add-on to have permission to
     create new attachments on the post. This method returns the following error codes:
-    \* \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the request
-    is malformed. \* \`NOT\_FOUND\` if one of the identified resources does not exist.
+    \\* \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified resources does
+    not exist.
 
     HTTP: ``POST``  Discovery: ``courses.courseWork.addOnAttachments.create``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which to create the attachment. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which to create the attachment. This field is required, but is not marked as such while we are migrating from post\\_id.
 
     * ``body`` (dict): request body payload.
 
     Optional parameters (pass via keyword args):
 
     * ``addOnToken`` (str): Optional. Token that authorizes the request. The token is passed as a query parameter when the user is redirected from Classroom to the add-on's URL. This authorization token is required for in-Class…
-    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \\`item\\_id\\` instead.
 
     CLI Example:
 
@@ -1276,21 +1289,22 @@ def courses_course_work_add_on_attachments_create(courseId, itemId, body=None, *
 def courses_course_work_add_on_attachments_delete(courseId, itemId, attachmentId, **params):
     """
     Deletes an add-on attachment. Requires the add-on to have been the original creator
-    of the attachment. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the request is
-    malformed. \* \`NOT\_FOUND\` if one of the identified resources does not exist.
+    of the attachment. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified resources does
+    not exist.
 
     HTTP: ``DELETE``  Discovery: ``courses.courseWork.addOnAttachments.delete``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\\_id.
     * ``attachmentId`` (str): Required. Identifier of the attachment.
 
     Optional parameters (pass via keyword args):
 
-    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \\`item\\_id\\` instead.
 
     CLI Example:
 
@@ -1316,21 +1330,21 @@ def courses_course_work_add_on_attachments_get(courseId, itemId, attachmentId, *
     """
     Returns an add-on attachment. Requires the add-on requesting the attachment to be
     the original creator of the attachment. This method returns the following error
-    codes: \* \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the
-    request is malformed. \* \`NOT\_FOUND\` if one of the identified resources does not
-    exist.
+    codes: \\* \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\`
+    if the request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified
+    resources does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.courseWork.addOnAttachments.get``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\\_id.
     * ``attachmentId`` (str): Required. Identifier of the attachment.
 
     Optional parameters (pass via keyword args):
 
-    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \\`item\\_id\\` instead.
 
     CLI Example:
 
@@ -1356,22 +1370,23 @@ def courses_course_work_add_on_attachments_list(courseId, itemId, **params):
     """
     Returns all attachments created by an add-on under the post. Requires the add-on to
     have active attachments on the post or have permission to create new attachments on
-    the post. This method returns the following error codes: \* \`PERMISSION\_DENIED\`
-    for access errors. \* \`INVALID\_ARGUMENT\` if the request is malformed. \*
-    \`NOT\_FOUND\` if one of the identified resources does not exist.
+    the post. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified resources does
+    not exist.
 
     HTTP: ``GET``  Discovery: ``courses.courseWork.addOnAttachments.list``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` whose attachments should be enumerated. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` whose attachments should be enumerated. This field is required, but is not marked as such while we are migrating from post\\_id.
 
     Optional parameters (pass via keyword args):
 
     * ``pageSize`` (int): The maximum number of attachments to return. The service may return fewer than this value. If unspecified, at most 20 attachments will be returned. The maximum value is 20; values above 20 will be co…
-    * ``pageToken`` (str): A page token, received from a previous \`ListAddOnAttachments\` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to \`ListAddOnAttachments\` must match t…
-    * ``postId`` (str) *(deprecated)*: Optional. Identifier of the post under the course whose attachments to enumerate. Deprecated, use \`item\_id\` instead.
+    * ``pageToken`` (str): A page token, received from a previous \\`ListAddOnAttachments\\` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to \\`ListAddOnAttachments\\` must match t…
+    * ``postId`` (str) *(deprecated)*: Optional. Identifier of the post under the course whose attachments to enumerate. Deprecated, use \\`item\\_id\\` instead.
 
     CLI Example:
 
@@ -1397,9 +1412,10 @@ def courses_course_work_add_on_attachments_patch(
 ):
     """
     Updates an add-on attachment. Requires the add-on to have been the original creator
-    of the attachment. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the request is
-    malformed. \* \`NOT\_FOUND\` if one of the identified resources does not exist.
+    of the attachment. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified resources does
+    not exist.
 
     HTTP: ``PATCH``  Discovery: ``courses.courseWork.addOnAttachments.patch``
 
@@ -1442,22 +1458,22 @@ def courses_course_work_add_on_attachments_student_submissions_get(
 ):
     """
     Returns a student submission for an add-on attachment. This method returns the
-    following error codes: \* \`PERMISSION\_DENIED\` for access errors. \*
-    \`INVALID\_ARGUMENT\` if the request is malformed. \* \`NOT\_FOUND\` if one of the
-    identified resources does not exist.
+    following error codes: \\* \\`PERMISSION\\_DENIED\\` for access errors. \\*
+    \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\* \\`NOT\\_FOUND\\` if one
+    of the identified resources does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.courseWork.addOnAttachments.studentSubmissions.get``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\\_id.
     * ``attachmentId`` (str): Required. Identifier of the attachment.
     * ``submissionId`` (str): Required. Identifier of the student’s submission.
 
     Optional parameters (pass via keyword args):
 
-    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \\`item\\_id\\` instead.
 
     CLI Example:
 
@@ -1486,16 +1502,17 @@ def courses_course_work_add_on_attachments_student_submissions_patch(
     """
     Updates data associated with an add-on attachment submission. Requires the add-on to
     have been the original creator of the attachment and the attachment to have a
-    positive \`max\_points\` value set. This method returns the following error codes:
-    \* \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the request
-    is malformed. \* \`NOT\_FOUND\` if one of the identified resources does not exist.
+    positive \\`max\\_points\\` value set. This method returns the following error
+    codes: \\* \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\`
+    if the request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified
+    resources does not exist.
 
     HTTP: ``PATCH``  Discovery: ``courses.courseWork.addOnAttachments.studentSubmissions.patch``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\\_id.
     * ``attachmentId`` (str): Required. Identifier of the attachment.
     * ``submissionId`` (str): Required. Identifier of the student's submission.
 
@@ -1503,7 +1520,7 @@ def courses_course_work_add_on_attachments_student_submissions_patch(
 
     Optional parameters (pass via keyword args):
 
-    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \\`item\\_id\\` instead.
     * ``updateMask`` (str): Required. Mask that identifies which fields on the attachment to update. The update fails if invalid fields are specified. If a field supports empty values, it can be cleared by specifying it in the…
 
     CLI Example:
@@ -1531,20 +1548,20 @@ def courses_course_work_add_on_attachments_student_submissions_patch(
 def courses_course_work_rubrics_create(courseId, courseWorkId, body=None, **params):
     """
     Creates a rubric. The requesting user and course owner must have rubrics creation
-    capabilities. For details, see [licensing requirements](https://developers.google.co
-    m/workspace/classroom/rubrics/limitations#license-requirements). For further
-    details, see [Rubrics structure and known
+    capabilities. For details, see [licensing
+    requirements](https://developers.google.com/workspace/classroom/rubrics/limitations#license-requirements).
+    For further details, see [Rubrics structure and known
     limitations](/classroom/rubrics/limitations). This request must be made by the
     Google Cloud console of the [OAuth client
     ID](https://support.google.com/cloud/answer/6158849) used to create the parent
-    course work item. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user isn't permitted to create rubrics for
-    course work in the requested course. \* \`INTERNAL\` if the request has insufficient
-    OAuth scopes. \* \`INVALID\_ARGUMENT\` if the request is malformed and for the
-    following request error: \* \`RubricCriteriaInvalidFormat\` \* \`NOT\_FOUND\` if the
-    requested course or course work don't exist or the user doesn't have access to the
-    course or course work. \* \`FAILED\_PRECONDITION\` for the following request error:
-    \* \`AttachmentNotVisible\`
+    course work item. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user isn't permitted to create rubrics
+    for course work in the requested course. \\* \\`INTERNAL\\` if the request has
+    insufficient OAuth scopes. \\* \\`INVALID\\_ARGUMENT\\` if the request is malformed
+    and for the following request error: \\* \\`RubricCriteriaInvalidFormat\\` \\*
+    \\`NOT\\_FOUND\\` if the requested course or course work don't exist or the user
+    doesn't have access to the course or course work. \\* \\`FAILED\\_PRECONDITION\\`
+    for the following request error: \\* \\`AttachmentNotVisible\\`
 
     HTTP: ``POST``  Discovery: ``courses.courseWork.rubrics.create``
 
@@ -1578,16 +1595,16 @@ def courses_course_work_rubrics_create(courseId, courseWorkId, body=None, **para
 def courses_course_work_rubrics_delete(courseId, courseWorkId, id, **params):
     """
     Deletes a rubric. The requesting user and course owner must have rubrics creation
-    capabilities. For details, see [licensing requirements](https://developers.google.co
-    m/workspace/classroom/rubrics/limitations#license-requirements). This request must
-    be made by the Google Cloud console of the [OAuth client
+    capabilities. For details, see [licensing
+    requirements](https://developers.google.com/workspace/classroom/rubrics/limitations#license-requirements).
+    This request must be made by the Google Cloud console of the [OAuth client
     ID](https://support.google.com/cloud/answer/6158849) used to create the
-    corresponding rubric. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting developer project didn't create the
+    corresponding rubric. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting developer project didn't create the
     corresponding rubric, or if the requesting user isn't permitted to delete the
-    requested rubric. \* \`NOT\_FOUND\` if no rubric exists with the requested ID or the
-    user does not have access to the course, course work, or rubric. \*
-    \`INVALID\_ARGUMENT\` if grading has already started on the rubric.
+    requested rubric. \\* \\`NOT\\_FOUND\\` if no rubric exists with the requested ID or
+    the user does not have access to the course, course work, or rubric. \\*
+    \\`INVALID\\_ARGUMENT\\` if grading has already started on the rubric.
 
     HTTP: ``DELETE``  Discovery: ``courses.courseWork.rubrics.delete``
 
@@ -1619,10 +1636,11 @@ def courses_course_work_rubrics_delete(courseId, courseWorkId, id, **params):
 
 def courses_course_work_rubrics_get(courseId, courseWorkId, id, **params):
     """
-    Returns a rubric. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the request is
-    malformed. \* \`NOT\_FOUND\` if the requested course, course work, or rubric doesn't
-    exist or if the user doesn't have access to the corresponding course work.
+    Returns a rubric. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed. \\* \\`NOT\\_FOUND\\` if the requested course, course work, or
+    rubric doesn't exist or if the user doesn't have access to the corresponding course
+    work.
 
     HTTP: ``GET``  Discovery: ``courses.courseWork.rubrics.get``
 
@@ -1655,10 +1673,10 @@ def courses_course_work_rubrics_get(courseId, courseWorkId, id, **params):
 def courses_course_work_rubrics_list(courseId, courseWorkId, **params):
     """
     Returns a list of rubrics that the requester is permitted to view. This method
-    returns the following error codes: \* \`PERMISSION\_DENIED\` for access errors. \*
-    \`INVALID\_ARGUMENT\` if the request is malformed. \* \`NOT\_FOUND\` if the
-    requested course or course work doesn't exist or if the user doesn't have access to
-    the corresponding course work.
+    returns the following error codes: \\* \\`PERMISSION\\_DENIED\\` for access errors.
+    \\* \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\* \\`NOT\\_FOUND\\` if
+    the requested course or course work doesn't exist or if the user doesn't have access
+    to the corresponding course work.
 
     HTTP: ``GET``  Discovery: ``courses.courseWork.rubrics.list``
 
@@ -1696,19 +1714,19 @@ def courses_course_work_rubrics_patch(courseId, courseWorkId, id, body=None, **p
     Updates a rubric. See google.classroom.v1.Rubric for details of which fields can be
     updated. Rubric update capabilities are [limited](/classroom/rubrics/limitations)
     once grading has started. The requesting user and course owner must have rubrics
-    creation capabilities. For details, see [licensing requirements](https://developers.
-    google.com/workspace/classroom/rubrics/limitations#license-requirements). This
-    request must be made by the Google Cloud console of the [OAuth client
+    creation capabilities. For details, see [licensing
+    requirements](https://developers.google.com/workspace/classroom/rubrics/limitations#license-requirements).
+    This request must be made by the Google Cloud console of the [OAuth client
     ID](https://support.google.com/cloud/answer/6158849) used to create the parent
-    course work item. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting developer project didn't create the
+    course work item. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting developer project didn't create the
     corresponding course work, if the user isn't permitted to make the requested
     modification to the rubric, or for access errors. This error code is also returned
-    if grading has already started on the rubric. \* \`INVALID\_ARGUMENT\` if the
-    request is malformed and for the following request error: \*
-    \`RubricCriteriaInvalidFormat\` \* \`NOT\_FOUND\` if the requested course, course
-    work, or rubric doesn't exist or if the user doesn't have access to the
-    corresponding course work. \* \`INTERNAL\` if grading has already started on the
+    if grading has already started on the rubric. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed and for the following request error: \\*
+    \\`RubricCriteriaInvalidFormat\\` \\* \\`NOT\\_FOUND\\` if the requested course,
+    course work, or rubric doesn't exist or if the user doesn't have access to the
+    corresponding course work. \\* \\`INTERNAL\\` if grading has already started on the
     rubric.
 
     HTTP: ``PATCH``  Discovery: ``courses.courseWork.rubrics.patch``
@@ -1748,11 +1766,11 @@ def courses_course_work_rubrics_patch(courseId, courseWorkId, id, body=None, **p
 
 def courses_course_work_student_submissions_get(courseId, courseWorkId, id, **params):
     """
-    Returns a student submission. \* \`PERMISSION\_DENIED\` if the requesting user is
-    not permitted to access the requested course, course work, or student submission or
-    for access errors. \* \`INVALID\_ARGUMENT\` if the request is malformed. \*
-    \`NOT\_FOUND\` if the requested course, course work, or student submission does not
-    exist.
+    Returns a student submission. \\* \\`PERMISSION\\_DENIED\\` if the requesting user
+    is not permitted to access the requested course, course work, or student submission
+    or for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\*
+    \\`NOT\\_FOUND\\` if the requested course, course work, or student submission does
+    not exist.
 
     HTTP: ``GET``  Discovery: ``courses.courseWork.studentSubmissions.get``
 
@@ -1785,13 +1803,13 @@ def courses_course_work_student_submissions_get(courseId, courseWorkId, id, **pa
 def courses_course_work_student_submissions_list(courseId, courseWorkId, **params):
     """
     Returns a list of student submissions that the requester is permitted to view,
-    factoring in the OAuth scopes of the request. A hyphen (\`-\`) may be specified as
-    the \`course\_work\_id\` to include student submissions for multiple course work
+    factoring in the OAuth scopes of the request. A hyphen (\\`-\\`) may be specified as
+    the \\`course\\_work\\_id\\` to include student submissions for multiple course work
     items. Course students may only view their own work. Course teachers and domain
     administrators may view all student submissions. This method returns the following
-    error codes: \* \`PERMISSION\_DENIED\` if the requesting user is not permitted to
-    access the requested course or course work, or for access errors. \*
-    \`INVALID\_ARGUMENT\` if the request is malformed. \* \`NOT\_FOUND\` if the
+    error codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted
+    to access the requested course or course work, or for access errors. \\*
+    \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\* \\`NOT\\_FOUND\\` if the
     requested course does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.courseWork.studentSubmissions.list``
@@ -1799,15 +1817,15 @@ def courses_course_work_student_submissions_list(courseId, courseWorkId, **param
     Required parameters:
 
     * ``courseId`` (str): Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
-    * ``courseWorkId`` (str): Identifier of the student work to request. This may be set to the string literal \`"-"\` to request student work for all course work in the specified course.
+    * ``courseWorkId`` (str): Identifier of the student work to request. This may be set to the string literal \\`"-"\\` to request student work for all course work in the specified course.
 
     Optional parameters (pass via keyword args):
 
-    * ``late`` (str): Requested lateness value. If specified, returned student submissions are restricted by the requested value. If unspecified, submissions are returned regardless of \`late\` value.
+    * ``late`` (str): Requested lateness value. If specified, returned student submissions are restricted by the requested value. If unspecified, submissions are returned regardless of \\`late\\` value.
     * ``pageSize`` (int): Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
     * ``pageToken`` (str): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in thi…
     * ``states`` (str): Requested submission states. If specified, returned student submissions match one of the specified submission states.
-    * ``userId`` (str): Optional argument to restrict returned student work to those owned by the student with the specified identifier. The identifier can be one of the following: \* the numeric identifier for the user \* th…
+    * ``userId`` (str): Optional argument to restrict returned student work to those owned by the student with the specified identifier. The identifier can be one of the following: \\* the numeric identifier for the user \\* th…
 
     CLI Example:
 
@@ -1833,15 +1851,15 @@ def courses_course_work_student_submissions_modify_attachments(
 ):
     """
     Modifies attachments of student submission. Attachments may only be added to student
-    submissions belonging to course work objects with a \`workType\` of \`ASSIGNMENT\`.
-    This request must be made by the Developer Console project of the [OAuth client
-    ID](https://support.google.com/cloud/answer/6158849) used to create the
-    corresponding course work item. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to access the
+    submissions belonging to course work objects with a \\`workType\\` of
+    \\`ASSIGNMENT\\`. This request must be made by the Developer Console project of the
+    [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to create
+    the corresponding course work item. This method returns the following error codes:
+    \\* \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to access the
     requested course or course work, if the user is not permitted to modify attachments
-    on the requested student submission, or for access errors. \* \`INVALID\_ARGUMENT\`
-    if the request is malformed. \* \`NOT\_FOUND\` if the requested course, course work,
-    or student submission does not exist.
+    on the requested student submission, or for access errors. \\*
+    \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\* \\`NOT\\_FOUND\\` if the
+    requested course, course work, or student submission does not exist.
 
     HTTP: ``POST``  Discovery: ``courses.courseWork.studentSubmissions.modifyAttachments``
 
@@ -1881,10 +1899,10 @@ def courses_course_work_student_submissions_patch(courseId, courseWorkId, id, bo
     who may change them. This request must be made by the Developer Console project of
     the [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to
     create the corresponding course work item. This method returns the following error
-    codes: \* \`PERMISSION\_DENIED\` if the requesting developer project did not create
-    the corresponding course work, if the user is not permitted to make the requested
-    modification to the student submission, or for access errors. \*
-    \`INVALID\_ARGUMENT\` if the request is malformed. \* \`NOT\_FOUND\` if the
+    codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting developer project did not
+    create the corresponding course work, if the user is not permitted to make the
+    requested modification to the student submission, or for access errors. \\*
+    \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\* \\`NOT\\_FOUND\\` if the
     requested course, course work, or student submission does not exist.
 
     HTTP: ``PATCH``  Discovery: ``courses.courseWork.studentSubmissions.patch``
@@ -1932,12 +1950,13 @@ def courses_course_work_student_submissions_reclaim(
     submission may call this method, and only for a student submission that has been
     turned in. This request must be made by the Developer Console project of the [OAuth
     client ID](https://support.google.com/cloud/answer/6158849) used to create the
-    corresponding course work item. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to access the
+    corresponding course work item. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to access the
     requested course or course work, unsubmit the requested student submission, or for
-    access errors. \* \`FAILED\_PRECONDITION\` if the student submission has not been
-    turned in. \* \`INVALID\_ARGUMENT\` if the request is malformed. \* \`NOT\_FOUND\`
-    if the requested course, course work, or student submission does not exist.
+    access errors. \\* \\`FAILED\\_PRECONDITION\\` if the student submission has not
+    been turned in. \\* \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\*
+    \\`NOT\\_FOUND\\` if the requested course, course work, or student submission does
+    not exist.
 
     HTTP: ``POST``  Discovery: ``courses.courseWork.studentSubmissions.reclaim``
 
@@ -1979,12 +1998,12 @@ def courses_course_work_student_submissions_return(courseId, courseWorkId, id, b
     student submission may call this method. This request must be made by the Developer
     Console project of the [OAuth client
     ID](https://support.google.com/cloud/answer/6158849) used to create the
-    corresponding course work item. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to access the
+    corresponding course work item. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to access the
     requested course or course work, return the requested student submission, or for
-    access errors. \* \`INVALID\_ARGUMENT\` if the request is malformed. \*
-    \`NOT\_FOUND\` if the requested course, course work, or student submission does not
-    exist.
+    access errors. \\* \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\*
+    \\`NOT\\_FOUND\\` if the requested course, course work, or student submission does
+    not exist.
 
     HTTP: ``POST``  Discovery: ``courses.courseWork.studentSubmissions.return``
 
@@ -2026,12 +2045,12 @@ def courses_course_work_student_submissions_turn_in(
     This may only be called by the student that owns the specified student submission.
     This request must be made by the Developer Console project of the [OAuth client
     ID](https://support.google.com/cloud/answer/6158849) used to create the
-    corresponding course work item. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to access the
+    corresponding course work item. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to access the
     requested course or course work, turn in the requested student submission, or for
-    access errors. \* \`INVALID\_ARGUMENT\` if the request is malformed. \*
-    \`NOT\_FOUND\` if the requested course, course work, or student submission does not
-    exist.
+    access errors. \\* \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\*
+    \\`NOT\\_FOUND\\` if the requested course, course work, or student submission does
+    not exist.
 
     HTTP: ``POST``  Discovery: ``courses.courseWork.studentSubmissions.turnIn``
 
@@ -2066,13 +2085,13 @@ def courses_course_work_student_submissions_turn_in(
 
 def courses_course_work_materials_create(courseId, body=None, **params):
     """
-    Creates a course work material. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to access the
+    Creates a course work material. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to access the
     requested course, create course work material in the requested course, share a Drive
-    attachment, or for access errors. \* \`INVALID\_ARGUMENT\` if the request is
-    malformed or if more than 20 \* materials are provided. \* \`NOT\_FOUND\` if the
-    requested course does not exist. \* \`FAILED\_PRECONDITION\` for the following
-    request error: \* AttachmentNotVisible
+    attachment, or for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the request is
+    malformed or if more than 20 \\* materials are provided. \\* \\`NOT\\_FOUND\\` if
+    the requested course does not exist. \\* \\`FAILED\\_PRECONDITION\\` for the
+    following request error: \\* AttachmentNotVisible
 
     HTTP: ``POST``  Discovery: ``courses.courseWorkMaterials.create``
 
@@ -2106,11 +2125,11 @@ def courses_course_work_materials_delete(courseId, id, **params):
     Deletes a course work material. This request must be made by the Developer Console
     project of the [OAuth client ID](https://support.google.com/cloud/answer/6158849)
     used to create the corresponding course work material item. This method returns the
-    following error codes: \* \`PERMISSION\_DENIED\` if the requesting developer project
-    did not create the corresponding course work material, if the requesting user is not
-    permitted to delete the requested course or for access errors. \*
-    \`FAILED\_PRECONDITION\` if the requested course work material has already been
-    deleted. \* \`NOT\_FOUND\` if no course exists with the requested ID.
+    following error codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting developer
+    project did not create the corresponding course work material, if the requesting
+    user is not permitted to delete the requested course or for access errors. \\*
+    \\`FAILED\\_PRECONDITION\\` if the requested course work material has already been
+    deleted. \\* \\`NOT\\_FOUND\\` if no course exists with the requested ID.
 
     HTTP: ``DELETE``  Discovery: ``courses.courseWorkMaterials.delete``
 
@@ -2140,10 +2159,10 @@ def courses_course_work_materials_delete(courseId, id, **params):
 
 def courses_course_work_materials_get(courseId, id, **params):
     """
-    Returns a course work material. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to access the
-    requested course or course work material, or for access errors. \*
-    \`INVALID\_ARGUMENT\` if the request is malformed. \* \`NOT\_FOUND\` if the
+    Returns a course work material. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to access the
+    requested course or course work material, or for access errors. \\*
+    \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\* \\`NOT\\_FOUND\\` if the
     requested course or course work material does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.courseWorkMaterials.get``
@@ -2177,23 +2196,24 @@ def courses_course_work_materials_get_add_on_context(courseId, itemId, **params)
     Gets metadata for Classroom add-ons in the context of a specific post. To maintain
     the integrity of its own data and permissions model, an add-on should call this to
     validate query parameters and the requesting user's role whenever the add-on is
-    opened in an [iframe](https://developers.google.com/workspace/classroom/add-ons/get-
-    started/iframes/iframes-overview). This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the request is
-    malformed. \* \`NOT\_FOUND\` if one of the identified resources does not exist.
+    opened in an
+    [iframe](https://developers.google.com/workspace/classroom/add-ons/get-started/iframes/iframes-overview).
+    This method returns the following error codes: \\* \\`PERMISSION\\_DENIED\\` for
+    access errors. \\* \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\*
+    \\`NOT\\_FOUND\\` if one of the identified resources does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.courseWorkMaterials.getAddOnContext``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\\_id.
 
     Optional parameters (pass via keyword args):
 
     * ``addOnToken`` (str): Optional. Token that authorizes the request. The token is passed as a query parameter when the user is redirected from Classroom to the add-on's URL. The authorization token is required when neither…
     * ``attachmentId`` (str): Optional. The identifier of the attachment. This field is required for all requests except when the user is in the [Attachment Discovery iframe](https://developers.google.com/workspace/classroom/add-…
-    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \\`item\\_id\\` instead.
 
     CLI Example:
 
@@ -2217,11 +2237,11 @@ def courses_course_work_materials_get_add_on_context(courseId, itemId, **params)
 def courses_course_work_materials_list(courseId, **params):
     """
     Returns a list of course work material that the requester is permitted to view.
-    Course students may only view \`PUBLISHED\` course work material. Course teachers
+    Course students may only view \\`PUBLISHED\\` course work material. Course teachers
     and domain administrators may view all course work material. This method returns the
-    following error codes: \* \`PERMISSION\_DENIED\` if the requesting user is not
-    permitted to access the requested course or for access errors. \*
-    \`INVALID\_ARGUMENT\` if the request is malformed. \* \`NOT\_FOUND\` if the
+    following error codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting user is not
+    permitted to access the requested course or for access errors. \\*
+    \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\* \\`NOT\\_FOUND\\` if the
     requested course does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.courseWorkMaterials.list``
@@ -2232,10 +2252,10 @@ def courses_course_work_materials_list(courseId, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``courseWorkMaterialStates`` (str): Restriction on the work status to return. Only course work material that matches is returned. If unspecified, items with a work status of \`PUBLISHED\` is returned.
-    * ``materialDriveId`` (str): Optional filtering for course work material with at least one Drive material whose ID matches the provided string. If \`material\_link\` is also specified, course work material must have materials match…
+    * ``courseWorkMaterialStates`` (str): Restriction on the work status to return. Only course work material that matches is returned. If unspecified, items with a work status of \\`PUBLISHED\\` is returned.
+    * ``materialDriveId`` (str): Optional filtering for course work material with at least one Drive material whose ID matches the provided string. If \\`material\\_link\\` is also specified, course work material must have materials match…
     * ``materialLink`` (str): Optional filtering for course work material with at least one link material whose URL partially matches the provided string.
-    * ``orderBy`` (str): Optional sort ordering for results. A comma-separated list of fields with an optional sort direction keyword. Supported field is \`updateTime\`. Supported direction keywords are \`asc\` and \`desc\`. If no…
+    * ``orderBy`` (str): Optional sort ordering for results. A comma-separated list of fields with an optional sort direction keyword. Supported field is \\`updateTime\\`. Supported direction keywords are \\`asc\\` and \\`desc\\`. If no…
     * ``pageSize`` (int): Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
     * ``pageToken`` (str): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in thi…
 
@@ -2260,11 +2280,11 @@ def courses_course_work_materials_list(courseId, **params):
 def courses_course_work_materials_patch(courseId, id, body=None, **params):
     """
     Updates one or more fields of a course work material. This method returns the
-    following error codes: \* \`PERMISSION\_DENIED\` if the requesting developer project
-    for access errors. \* \`INVALID\_ARGUMENT\` if the request is malformed. \*
-    \`FAILED\_PRECONDITION\` if the requested course work material has already been
-    deleted. \* \`NOT\_FOUND\` if the requested course or course work material does not
-    exist
+    following error codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting developer
+    project for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the request is malformed.
+    \\* \\`FAILED\\_PRECONDITION\\` if the requested course work material has already
+    been deleted. \\* \\`NOT\\_FOUND\\` if the requested course or course work material
+    does not exist
 
     HTTP: ``PATCH``  Discovery: ``courses.courseWorkMaterials.patch``
 
@@ -2303,22 +2323,23 @@ def courses_course_work_materials_add_on_attachments_create(courseId, itemId, bo
     """
     Creates an add-on attachment under a post. Requires the add-on to have permission to
     create new attachments on the post. This method returns the following error codes:
-    \* \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the request
-    is malformed. \* \`NOT\_FOUND\` if one of the identified resources does not exist.
+    \\* \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified resources does
+    not exist.
 
     HTTP: ``POST``  Discovery: ``courses.courseWorkMaterials.addOnAttachments.create``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which to create the attachment. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which to create the attachment. This field is required, but is not marked as such while we are migrating from post\\_id.
 
     * ``body`` (dict): request body payload.
 
     Optional parameters (pass via keyword args):
 
     * ``addOnToken`` (str): Optional. Token that authorizes the request. The token is passed as a query parameter when the user is redirected from Classroom to the add-on's URL. This authorization token is required for in-Class…
-    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \\`item\\_id\\` instead.
 
     CLI Example:
 
@@ -2345,21 +2366,22 @@ def courses_course_work_materials_add_on_attachments_delete(
 ):
     """
     Deletes an add-on attachment. Requires the add-on to have been the original creator
-    of the attachment. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the request is
-    malformed. \* \`NOT\_FOUND\` if one of the identified resources does not exist.
+    of the attachment. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified resources does
+    not exist.
 
     HTTP: ``DELETE``  Discovery: ``courses.courseWorkMaterials.addOnAttachments.delete``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\\_id.
     * ``attachmentId`` (str): Required. Identifier of the attachment.
 
     Optional parameters (pass via keyword args):
 
-    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \\`item\\_id\\` instead.
 
     CLI Example:
 
@@ -2385,21 +2407,21 @@ def courses_course_work_materials_add_on_attachments_get(courseId, itemId, attac
     """
     Returns an add-on attachment. Requires the add-on requesting the attachment to be
     the original creator of the attachment. This method returns the following error
-    codes: \* \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the
-    request is malformed. \* \`NOT\_FOUND\` if one of the identified resources does not
-    exist.
+    codes: \\* \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\`
+    if the request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified
+    resources does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.courseWorkMaterials.addOnAttachments.get``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\\_id.
     * ``attachmentId`` (str): Required. Identifier of the attachment.
 
     Optional parameters (pass via keyword args):
 
-    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str) *(deprecated)*: Optional. Deprecated, use \\`item\\_id\\` instead.
 
     CLI Example:
 
@@ -2425,22 +2447,23 @@ def courses_course_work_materials_add_on_attachments_list(courseId, itemId, **pa
     """
     Returns all attachments created by an add-on under the post. Requires the add-on to
     have active attachments on the post or have permission to create new attachments on
-    the post. This method returns the following error codes: \* \`PERMISSION\_DENIED\`
-    for access errors. \* \`INVALID\_ARGUMENT\` if the request is malformed. \*
-    \`NOT\_FOUND\` if one of the identified resources does not exist.
+    the post. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified resources does
+    not exist.
 
     HTTP: ``GET``  Discovery: ``courses.courseWorkMaterials.addOnAttachments.list``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` whose attachments should be enumerated. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` whose attachments should be enumerated. This field is required, but is not marked as such while we are migrating from post\\_id.
 
     Optional parameters (pass via keyword args):
 
     * ``pageSize`` (int): The maximum number of attachments to return. The service may return fewer than this value. If unspecified, at most 20 attachments will be returned. The maximum value is 20; values above 20 will be co…
-    * ``pageToken`` (str): A page token, received from a previous \`ListAddOnAttachments\` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to \`ListAddOnAttachments\` must match t…
-    * ``postId`` (str) *(deprecated)*: Optional. Identifier of the post under the course whose attachments to enumerate. Deprecated, use \`item\_id\` instead.
+    * ``pageToken`` (str): A page token, received from a previous \\`ListAddOnAttachments\\` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to \\`ListAddOnAttachments\\` must match t…
+    * ``postId`` (str) *(deprecated)*: Optional. Identifier of the post under the course whose attachments to enumerate. Deprecated, use \\`item\\_id\\` instead.
 
     CLI Example:
 
@@ -2466,9 +2489,10 @@ def courses_course_work_materials_add_on_attachments_patch(
 ):
     """
     Updates an add-on attachment. Requires the add-on to have been the original creator
-    of the attachment. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the request is
-    malformed. \* \`NOT\_FOUND\` if one of the identified resources does not exist.
+    of the attachment. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified resources does
+    not exist.
 
     HTTP: ``PATCH``  Discovery: ``courses.courseWorkMaterials.addOnAttachments.patch``
 
@@ -2511,23 +2535,24 @@ def courses_posts_get_add_on_context(courseId, postId, **params):
     Gets metadata for Classroom add-ons in the context of a specific post. To maintain
     the integrity of its own data and permissions model, an add-on should call this to
     validate query parameters and the requesting user's role whenever the add-on is
-    opened in an [iframe](https://developers.google.com/workspace/classroom/add-ons/get-
-    started/iframes/iframes-overview). This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the request is
-    malformed. \* \`NOT\_FOUND\` if one of the identified resources does not exist.
+    opened in an
+    [iframe](https://developers.google.com/workspace/classroom/add-ons/get-started/iframes/iframes-overview).
+    This method returns the following error codes: \\* \\`PERMISSION\\_DENIED\\` for
+    access errors. \\* \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\*
+    \\`NOT\\_FOUND\\` if one of the identified resources does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.posts.getAddOnContext``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``postId`` (str): Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str): Optional. Deprecated, use \\`item\\_id\\` instead.
 
     Optional parameters (pass via keyword args):
 
     * ``addOnToken`` (str): Optional. Token that authorizes the request. The token is passed as a query parameter when the user is redirected from Classroom to the add-on's URL. The authorization token is required when neither…
     * ``attachmentId`` (str): Optional. The identifier of the attachment. This field is required for all requests except when the user is in the [Attachment Discovery iframe](https://developers.google.com/workspace/classroom/add-…
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\\_id.
 
     CLI Example:
 
@@ -2552,22 +2577,23 @@ def courses_posts_add_on_attachments_create(courseId, postId, body=None, **param
     """
     Creates an add-on attachment under a post. Requires the add-on to have permission to
     create new attachments on the post. This method returns the following error codes:
-    \* \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the request
-    is malformed. \* \`NOT\_FOUND\` if one of the identified resources does not exist.
+    \\* \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified resources does
+    not exist.
 
     HTTP: ``POST``  Discovery: ``courses.posts.addOnAttachments.create``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``postId`` (str): Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str): Optional. Deprecated, use \\`item\\_id\\` instead.
 
     * ``body`` (dict): request body payload.
 
     Optional parameters (pass via keyword args):
 
     * ``addOnToken`` (str): Optional. Token that authorizes the request. The token is passed as a query parameter when the user is redirected from Classroom to the add-on's URL. This authorization token is required for in-Class…
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which to create the attachment. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which to create the attachment. This field is required, but is not marked as such while we are migrating from post\\_id.
 
     CLI Example:
 
@@ -2592,21 +2618,22 @@ def courses_posts_add_on_attachments_create(courseId, postId, body=None, **param
 def courses_posts_add_on_attachments_delete(courseId, postId, attachmentId, **params):
     """
     Deletes an add-on attachment. Requires the add-on to have been the original creator
-    of the attachment. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the request is
-    malformed. \* \`NOT\_FOUND\` if one of the identified resources does not exist.
+    of the attachment. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified resources does
+    not exist.
 
     HTTP: ``DELETE``  Discovery: ``courses.posts.addOnAttachments.delete``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``postId`` (str): Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str): Optional. Deprecated, use \\`item\\_id\\` instead.
     * ``attachmentId`` (str): Required. Identifier of the attachment.
 
     Optional parameters (pass via keyword args):
 
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\\_id.
 
     CLI Example:
 
@@ -2632,21 +2659,21 @@ def courses_posts_add_on_attachments_get(courseId, postId, attachmentId, **param
     """
     Returns an add-on attachment. Requires the add-on requesting the attachment to be
     the original creator of the attachment. This method returns the following error
-    codes: \* \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the
-    request is malformed. \* \`NOT\_FOUND\` if one of the identified resources does not
-    exist.
+    codes: \\* \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\`
+    if the request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified
+    resources does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.posts.addOnAttachments.get``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``postId`` (str): Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str): Optional. Deprecated, use \\`item\\_id\\` instead.
     * ``attachmentId`` (str): Required. Identifier of the attachment.
 
     Optional parameters (pass via keyword args):
 
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\\_id.
 
     CLI Example:
 
@@ -2672,22 +2699,23 @@ def courses_posts_add_on_attachments_list(courseId, postId, **params):
     """
     Returns all attachments created by an add-on under the post. Requires the add-on to
     have active attachments on the post or have permission to create new attachments on
-    the post. This method returns the following error codes: \* \`PERMISSION\_DENIED\`
-    for access errors. \* \`INVALID\_ARGUMENT\` if the request is malformed. \*
-    \`NOT\_FOUND\` if one of the identified resources does not exist.
+    the post. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified resources does
+    not exist.
 
     HTTP: ``GET``  Discovery: ``courses.posts.addOnAttachments.list``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``postId`` (str): Optional. Identifier of the post under the course whose attachments to enumerate. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str): Optional. Identifier of the post under the course whose attachments to enumerate. Deprecated, use \\`item\\_id\\` instead.
 
     Optional parameters (pass via keyword args):
 
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` whose attachments should be enumerated. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` whose attachments should be enumerated. This field is required, but is not marked as such while we are migrating from post\\_id.
     * ``pageSize`` (int): The maximum number of attachments to return. The service may return fewer than this value. If unspecified, at most 20 attachments will be returned. The maximum value is 20; values above 20 will be co…
-    * ``pageToken`` (str): A page token, received from a previous \`ListAddOnAttachments\` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to \`ListAddOnAttachments\` must match t…
+    * ``pageToken`` (str): A page token, received from a previous \\`ListAddOnAttachments\\` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to \\`ListAddOnAttachments\\` must match t…
 
     CLI Example:
 
@@ -2711,9 +2739,10 @@ def courses_posts_add_on_attachments_list(courseId, postId, **params):
 def courses_posts_add_on_attachments_patch(courseId, postId, attachmentId, body=None, **params):
     """
     Updates an add-on attachment. Requires the add-on to have been the original creator
-    of the attachment. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the request is
-    malformed. \* \`NOT\_FOUND\` if one of the identified resources does not exist.
+    of the attachment. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified resources does
+    not exist.
 
     HTTP: ``PATCH``  Discovery: ``courses.posts.addOnAttachments.patch``
 
@@ -2756,22 +2785,22 @@ def courses_posts_add_on_attachments_student_submissions_get(
 ):
     """
     Returns a student submission for an add-on attachment. This method returns the
-    following error codes: \* \`PERMISSION\_DENIED\` for access errors. \*
-    \`INVALID\_ARGUMENT\` if the request is malformed. \* \`NOT\_FOUND\` if one of the
-    identified resources does not exist.
+    following error codes: \\* \\`PERMISSION\\_DENIED\\` for access errors. \\*
+    \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\* \\`NOT\\_FOUND\\` if one
+    of the identified resources does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.posts.addOnAttachments.studentSubmissions.get``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``postId`` (str): Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str): Optional. Deprecated, use \\`item\\_id\\` instead.
     * ``attachmentId`` (str): Required. Identifier of the attachment.
     * ``submissionId`` (str): Required. Identifier of the student’s submission.
 
     Optional parameters (pass via keyword args):
 
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\\_id.
 
     CLI Example:
 
@@ -2800,16 +2829,17 @@ def courses_posts_add_on_attachments_student_submissions_patch(
     """
     Updates data associated with an add-on attachment submission. Requires the add-on to
     have been the original creator of the attachment and the attachment to have a
-    positive \`max\_points\` value set. This method returns the following error codes:
-    \* \`PERMISSION\_DENIED\` for access errors. \* \`INVALID\_ARGUMENT\` if the request
-    is malformed. \* \`NOT\_FOUND\` if one of the identified resources does not exist.
+    positive \\`max\\_points\\` value set. This method returns the following error
+    codes: \\* \\`PERMISSION\\_DENIED\\` for access errors. \\* \\`INVALID\\_ARGUMENT\\`
+    if the request is malformed. \\* \\`NOT\\_FOUND\\` if one of the identified
+    resources does not exist.
 
     HTTP: ``PATCH``  Discovery: ``courses.posts.addOnAttachments.studentSubmissions.patch``
 
     Required parameters:
 
     * ``courseId`` (str): Required. Identifier of the course.
-    * ``postId`` (str): Optional. Deprecated, use \`item\_id\` instead.
+    * ``postId`` (str): Optional. Deprecated, use \\`item\\_id\\` instead.
     * ``attachmentId`` (str): Required. Identifier of the attachment.
     * ``submissionId`` (str): Required. Identifier of the student's submission.
 
@@ -2817,7 +2847,7 @@ def courses_posts_add_on_attachments_student_submissions_patch(
 
     Optional parameters (pass via keyword args):
 
-    * ``itemId`` (str): Identifier of the \`Announcement\`, \`CourseWork\`, or \`CourseWorkMaterial\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\_id.
+    * ``itemId`` (str): Identifier of the \\`Announcement\\`, \\`CourseWork\\`, or \\`CourseWorkMaterial\\` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post\\_id.
     * ``updateMask`` (str): Required. Mask that identifies which fields on the attachment to update. The update fails if invalid fields are specified. If a field supports empty values, it can be cleared by specifying it in the…
 
     CLI Example:
@@ -2845,10 +2875,10 @@ def courses_posts_add_on_attachments_student_submissions_patch(
 def courses_student_groups_create(courseId, body=None, **params):
     """
     Creates a student group for a course. This method returns the following error codes:
-    \* \`PERMISSION\_DENIED\` if the requesting user is not permitted to create the
-    student group or for access errors. \* \`NOT\_FOUND\` if the course does not exist
-    or the requesting user doesn't have access to the course. \*
-    \`FAILED\_PRECONDITION\` if creating the student group would exceed the maximum
+    \\* \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to create the
+    student group or for access errors. \\* \\`NOT\\_FOUND\\` if the course does not
+    exist or the requesting user doesn't have access to the course. \\*
+    \\`FAILED\\_PRECONDITION\\` if creating the student group would exceed the maximum
     number of student groups per course.
 
     HTTP: ``POST``  Discovery: ``courses.studentGroups.create``
@@ -2880,10 +2910,10 @@ def courses_student_groups_create(courseId, body=None, **params):
 
 def courses_student_groups_delete(courseId, id, **params):
     """
-    Deletes a student group. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to delete the
-    requested student group or for access errors. \* \`NOT\_FOUND\` if the student group
-    does not exist or the user does not have access to the student group.
+    Deletes a student group. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to delete the
+    requested student group or for access errors. \\* \\`NOT\\_FOUND\\` if the student
+    group does not exist or the user does not have access to the student group.
 
     HTTP: ``DELETE``  Discovery: ``courses.studentGroups.delete``
 
@@ -2914,7 +2944,7 @@ def courses_student_groups_delete(courseId, id, **params):
 def courses_student_groups_list(courseId, **params):
     """
     Returns a list of groups in a course. This method returns the following error codes:
-    \* \`NOT\_FOUND\` if the course does not exist.
+    \\* \\`NOT\\_FOUND\\` if the course does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.studentGroups.list``
 
@@ -2948,11 +2978,11 @@ def courses_student_groups_list(courseId, **params):
 def courses_student_groups_patch(courseId, id, body=None, **params):
     """
     Updates one or more fields in a student group. This method returns the following
-    error codes: \* \`PERMISSION\_DENIED\` if the requesting user is not permitted to
-    modify the requested student group or for access errors. \* \`NOT\_FOUND\` if the
-    student group does not exist or the user does not have access to the student group.
-    \* \`INVALID\_ARGUMENT\` if invalid fields are specified in the update mask or if no
-    update mask is supplied.
+    error codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted
+    to modify the requested student group or for access errors. \\* \\`NOT\\_FOUND\\` if
+    the student group does not exist or the user does not have access to the student
+    group. \\* \\`INVALID\\_ARGUMENT\\` if invalid fields are specified in the update
+    mask or if no update mask is supplied.
 
     HTTP: ``PATCH``  Discovery: ``courses.studentGroups.patch``
 
@@ -2992,12 +3022,12 @@ def courses_student_groups_student_group_members_create(
 ):
     """
     Creates a student group member for a student group. This method returns the
-    following error codes: \* \`PERMISSION\_DENIED\` if the requesting user is not
-    permitted to create the student group or member for access errors. \* \`NOT\_FOUND\`
-    if the student group does not exist or the user does not have access to the student
-    group. \* \`ALREADY\_EXISTS\` if the student group member already exists. \*
-    \`FAILED\_PRECONDITION\` if attempting to add a member to a student group that has
-    reached its member limit.
+    following error codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting user is not
+    permitted to create the student group or member for access errors. \\*
+    \\`NOT\\_FOUND\\` if the student group does not exist or the user does not have
+    access to the student group. \\* \\`ALREADY\\_EXISTS\\` if the student group member
+    already exists. \\* \\`FAILED\\_PRECONDITION\\` if attempting to add a member to a
+    student group that has reached its member limit.
 
     HTTP: ``POST``  Discovery: ``courses.studentGroups.studentGroupMembers.create``
 
@@ -3030,9 +3060,9 @@ def courses_student_groups_student_group_members_create(
 
 def courses_student_groups_student_group_members_delete(courseId, studentGroupId, userId, **params):
     """
-    Deletes a student group member. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to delete the
-    requested student group member or for access errors. \* \`NOT\_FOUND\` if the
+    Deletes a student group member. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to delete the
+    requested student group member or for access errors. \\* \\`NOT\\_FOUND\\` if the
     student group member does not exist or the user does not have access to the student
     group.
 
@@ -3067,7 +3097,7 @@ def courses_student_groups_student_group_members_delete(courseId, studentGroupId
 def courses_student_groups_student_group_members_list(courseId, studentGroupId, **params):
     """
     Returns a list of students in a group. This method returns the following error
-    codes: \* \`NOT\_FOUND\` if the course or student group does not exist.
+    codes: \\* \\`NOT\\_FOUND\\` if the course or student group does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.studentGroups.studentGroupMembers.list``
 
@@ -3103,16 +3133,17 @@ def courses_student_groups_student_group_members_list(courseId, studentGroupId, 
 def courses_students_create(courseId, body=None, **params):
     """
     Adds a user as a student of a course. Domain administrators are permitted to
-    [directly add](https://developers.google.com/workspace/classroom/guides/manage-
-    users) users within their domain as students to courses within their domain.
-    Students are permitted to add themselves to a course using an enrollment code. This
-    method returns the following error codes: \* \`PERMISSION\_DENIED\` if the
-    requesting user is not permitted to create students in this course or for access
-    errors. \* \`NOT\_FOUND\` if the requested course ID does not exist. \*
-    \`FAILED\_PRECONDITION\` if the requested user's account is disabled, for the
-    following request errors: \* CourseMemberLimitReached \* CourseNotModifiable \*
-    UserGroupsMembershipLimitReached \* InactiveCourseOwner \* \`ALREADY\_EXISTS\` if
-    the user is already a student or teacher in the course.
+    [directly
+    add](https://developers.google.com/workspace/classroom/guides/manage-users) users
+    within their domain as students to courses within their domain. Students are
+    permitted to add themselves to a course using an enrollment code. This method
+    returns the following error codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting
+    user is not permitted to create students in this course or for access errors. \\*
+    \\`NOT\\_FOUND\\` if the requested course ID does not exist. \\*
+    \\`FAILED\\_PRECONDITION\\` if the requested user's account is disabled, for the
+    following request errors: \\* CourseMemberLimitReached \\* CourseNotModifiable \\*
+    UserGroupsMembershipLimitReached \\* InactiveCourseOwner \\* \\`ALREADY\\_EXISTS\\`
+    if the user is already a student or teacher in the course.
 
     HTTP: ``POST``  Discovery: ``courses.students.create``
 
@@ -3147,17 +3178,17 @@ def courses_students_create(courseId, body=None, **params):
 
 def courses_students_delete(courseId, userId, **params):
     """
-    Deletes a student of a course. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to delete students of
-    this course or for access errors. \* \`NOT\_FOUND\` if no student of this course has
-    the requested ID or if the course does not exist.
+    Deletes a student of a course. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to delete students
+    of this course or for access errors. \\* \\`NOT\\_FOUND\\` if no student of this
+    course has the requested ID or if the course does not exist.
 
     HTTP: ``DELETE``  Discovery: ``courses.students.delete``
 
     Required parameters:
 
     * ``courseId`` (str): Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
-    * ``userId`` (str): Identifier of the student to delete. The identifier can be one of the following: \* the numeric identifier for the user \* the email address of the user \* the string literal \`"me"\`, indicating the requ…
+    * ``userId`` (str): Identifier of the student to delete. The identifier can be one of the following: \\* the numeric identifier for the user \\* the email address of the user \\* the string literal \\`"me"\\`, indicating the requ…
 
     CLI Example:
 
@@ -3180,17 +3211,17 @@ def courses_students_delete(courseId, userId, **params):
 
 def courses_students_get(courseId, userId, **params):
     """
-    Returns a student of a course. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to view students of
-    this course or for access errors. \* \`NOT\_FOUND\` if no student of this course has
-    the requested ID or if the course does not exist.
+    Returns a student of a course. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to view students
+    of this course or for access errors. \\* \\`NOT\\_FOUND\\` if no student of this
+    course has the requested ID or if the course does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.students.get``
 
     Required parameters:
 
     * ``courseId`` (str): Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
-    * ``userId`` (str): Identifier of the student to return. The identifier can be one of the following: \* the numeric identifier for the user \* the email address of the user \* the string literal \`"me"\`, indicating the requ…
+    * ``userId`` (str): Identifier of the student to return. The identifier can be one of the following: \\* the numeric identifier for the user \\* the email address of the user \\* the string literal \\`"me"\\`, indicating the requ…
 
     CLI Example:
 
@@ -3214,8 +3245,8 @@ def courses_students_get(courseId, userId, **params):
 def courses_students_list(courseId, **params):
     """
     Returns a list of students of this course that the requester is permitted to view.
-    This method returns the following error codes: \* \`NOT\_FOUND\` if the course does
-    not exist. \* \`PERMISSION\_DENIED\` for access errors.
+    This method returns the following error codes: \\* \\`NOT\\_FOUND\\` if the course
+    does not exist. \\* \\`PERMISSION\\_DENIED\\` for access errors.
 
     HTTP: ``GET``  Discovery: ``courses.students.list``
 
@@ -3225,7 +3256,7 @@ def courses_students_list(courseId, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``pageSize`` (int): Maximum number of items to return. The default is 30 if unspecified or \`0\`. The server may return fewer than the specified number of results.
+    * ``pageSize`` (int): Maximum number of items to return. The default is 30 if unspecified or \\`0\\`. The server may return fewer than the specified number of results.
     * ``pageToken`` (str): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in thi…
 
     CLI Example:
@@ -3251,14 +3282,14 @@ def courses_teachers_create(courseId, body=None, **params):
     Creates a teacher of a course. Domain administrators are permitted to [directly
     add](https://developers.google.com/workspace/classroom/guides/manage-users) users
     within their domain as teachers to courses within their domain. Non-admin users
-    should send an Invitation instead. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to create teachers in
-    this course or for access errors. \* \`NOT\_FOUND\` if the requested course ID does
-    not exist. \* \`FAILED\_PRECONDITION\` if the requested user's account is disabled,
-    for the following request errors: \* CourseMemberLimitReached \* CourseNotModifiable
-    \* CourseTeacherLimitReached \* UserGroupsMembershipLimitReached \*
-    InactiveCourseOwner \* \`ALREADY\_EXISTS\` if the user is already a teacher or
-    student in the course.
+    should send an Invitation instead. This method returns the following error codes:
+    \\* \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to create
+    teachers in this course or for access errors. \\* \\`NOT\\_FOUND\\` if the requested
+    course ID does not exist. \\* \\`FAILED\\_PRECONDITION\\` if the requested user's
+    account is disabled, for the following request errors: \\* CourseMemberLimitReached
+    \\* CourseNotModifiable \\* CourseTeacherLimitReached \\*
+    UserGroupsMembershipLimitReached \\* InactiveCourseOwner \\* \\`ALREADY\\_EXISTS\\`
+    if the user is already a teacher or student in the course.
 
     HTTP: ``POST``  Discovery: ``courses.teachers.create``
 
@@ -3290,20 +3321,20 @@ def courses_teachers_create(courseId, body=None, **params):
 def courses_teachers_delete(courseId, userId, **params):
     """
     Removes the specified teacher from the specified course. This method returns the
-    following error codes: \* \`PERMISSION\_DENIED\` if the requesting user is not
-    permitted to delete teachers of this course or for access errors. \* \`NOT\_FOUND\`
-    if no teacher of this course has the requested ID or if the course does not exist.
-    \* \`FAILED\_PRECONDITION\` if the requested ID belongs to the primary teacher of
-    this course. \* \`FAILED\_PRECONDITION\` if the requested ID belongs to the owner of
-    the course Drive folder. \* \`FAILED\_PRECONDITION\` if the course no longer has an
-    active owner.
+    following error codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting user is not
+    permitted to delete teachers of this course or for access errors. \\*
+    \\`NOT\\_FOUND\\` if no teacher of this course has the requested ID or if the course
+    does not exist. \\* \\`FAILED\\_PRECONDITION\\` if the requested ID belongs to the
+    primary teacher of this course. \\* \\`FAILED\\_PRECONDITION\\` if the requested ID
+    belongs to the owner of the course Drive folder. \\* \\`FAILED\\_PRECONDITION\\` if
+    the course no longer has an active owner.
 
     HTTP: ``DELETE``  Discovery: ``courses.teachers.delete``
 
     Required parameters:
 
     * ``courseId`` (str): Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
-    * ``userId`` (str): Identifier of the teacher to delete. The identifier can be one of the following: \* the numeric identifier for the user \* the email address of the user \* the string literal \`"me"\`, indicating the requ…
+    * ``userId`` (str): Identifier of the teacher to delete. The identifier can be one of the following: \\* the numeric identifier for the user \\* the email address of the user \\* the string literal \\`"me"\\`, indicating the requ…
 
     CLI Example:
 
@@ -3326,17 +3357,17 @@ def courses_teachers_delete(courseId, userId, **params):
 
 def courses_teachers_get(courseId, userId, **params):
     """
-    Returns a teacher of a course. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to view teachers of
-    this course or for access errors. \* \`NOT\_FOUND\` if no teacher of this course has
-    the requested ID or if the course does not exist.
+    Returns a teacher of a course. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to view teachers
+    of this course or for access errors. \\* \\`NOT\\_FOUND\\` if no teacher of this
+    course has the requested ID or if the course does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.teachers.get``
 
     Required parameters:
 
     * ``courseId`` (str): Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
-    * ``userId`` (str): Identifier of the teacher to return. The identifier can be one of the following: \* the numeric identifier for the user \* the email address of the user \* the string literal \`"me"\`, indicating the requ…
+    * ``userId`` (str): Identifier of the teacher to return. The identifier can be one of the following: \\* the numeric identifier for the user \\* the email address of the user \\* the string literal \\`"me"\\`, indicating the requ…
 
     CLI Example:
 
@@ -3360,8 +3391,8 @@ def courses_teachers_get(courseId, userId, **params):
 def courses_teachers_list(courseId, **params):
     """
     Returns a list of teachers of this course that the requester is permitted to view.
-    This method returns the following error codes: \* \`NOT\_FOUND\` if the course does
-    not exist. \* \`PERMISSION\_DENIED\` for access errors.
+    This method returns the following error codes: \\* \\`NOT\\_FOUND\\` if the course
+    does not exist. \\* \\`PERMISSION\\_DENIED\\` for access errors.
 
     HTTP: ``GET``  Discovery: ``courses.teachers.list``
 
@@ -3371,7 +3402,7 @@ def courses_teachers_list(courseId, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``pageSize`` (int): Maximum number of items to return. The default is 30 if unspecified or \`0\`. The server may return fewer than the specified number of results.
+    * ``pageSize`` (int): Maximum number of items to return. The default is 30 if unspecified or \\`0\\`. The server may return fewer than the specified number of results.
     * ``pageToken`` (str): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in thi…
 
     CLI Example:
@@ -3394,13 +3425,14 @@ def courses_teachers_list(courseId, **params):
 
 def courses_topics_create(courseId, body=None, **params):
     """
-    Creates a topic. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to access the
-    requested course, create a topic in the requested course, or for access errors. \*
-    \`INVALID\_ARGUMENT\` if the request is malformed. \* \`ALREADY\_EXISTS\` if there
-    exists a topic in the course with the same name. \* \`FAILED\_PRECONDITION\` for the
-    following request error: \* CourseTopicLimitReached \* \`NOT\_FOUND\` if the
-    requested course does not exist.
+    Creates a topic. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to access the
+    requested course, create a topic in the requested course, or for access errors. \\*
+    \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\* \\`ALREADY\\_EXISTS\\` if
+    there exists a topic in the course with the same name. \\*
+    \\`FAILED\\_PRECONDITION\\` for the following request error: \\*
+    CourseTopicLimitReached \\* \\`NOT\\_FOUND\\` if the requested course does not
+    exist.
 
     HTTP: ``POST``  Discovery: ``courses.topics.create``
 
@@ -3431,11 +3463,11 @@ def courses_topics_create(courseId, body=None, **params):
 
 def courses_topics_delete(courseId, id, **params):
     """
-    Deletes a topic. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not allowed to delete the requested
-    topic or for access errors. \* \`FAILED\_PRECONDITION\` if the requested topic has
-    already been deleted. \* \`NOT\_FOUND\` if no course or topic exists with the
-    requested ID.
+    Deletes a topic. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not allowed to delete the
+    requested topic or for access errors. \\* \\`FAILED\\_PRECONDITION\\` if the
+    requested topic has already been deleted. \\* \\`NOT\\_FOUND\\` if no course or
+    topic exists with the requested ID.
 
     HTTP: ``DELETE``  Discovery: ``courses.topics.delete``
 
@@ -3465,11 +3497,11 @@ def courses_topics_delete(courseId, id, **params):
 
 def courses_topics_get(courseId, id, **params):
     """
-    Returns a topic. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to access the
-    requested course or topic, or for access errors. \* \`INVALID\_ARGUMENT\` if the
-    request is malformed. \* \`NOT\_FOUND\` if the requested course or topic does not
-    exist.
+    Returns a topic. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to access the
+    requested course or topic, or for access errors. \\* \\`INVALID\\_ARGUMENT\\` if the
+    request is malformed. \\* \\`NOT\\_FOUND\\` if the requested course or topic does
+    not exist.
 
     HTTP: ``GET``  Discovery: ``courses.topics.get``
 
@@ -3500,9 +3532,9 @@ def courses_topics_get(courseId, id, **params):
 def courses_topics_list(courseId, **params):
     """
     Returns the list of topics that the requester is permitted to view. This method
-    returns the following error codes: \* \`PERMISSION\_DENIED\` if the requesting user
-    is not permitted to access the requested course or for access errors. \*
-    \`INVALID\_ARGUMENT\` if the request is malformed. \* \`NOT\_FOUND\` if the
+    returns the following error codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting
+    user is not permitted to access the requested course or for access errors. \\*
+    \\`INVALID\\_ARGUMENT\\` if the request is malformed. \\* \\`NOT\\_FOUND\\` if the
     requested course does not exist.
 
     HTTP: ``GET``  Discovery: ``courses.topics.list``
@@ -3537,11 +3569,11 @@ def courses_topics_list(courseId, **params):
 def courses_topics_patch(courseId, id, body=None, **params):
     """
     Updates one or more fields of a topic. This method returns the following error
-    codes: \* \`PERMISSION\_DENIED\` if the requesting developer project did not create
-    the corresponding topic or for access errors. \* \`INVALID\_ARGUMENT\` if the
-    request is malformed. \* \`FAILED\_PRECONDITION\` if there exists a topic in the
-    course with the same name. \* \`NOT\_FOUND\` if the requested course or topic does
-    not exist
+    codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting developer project did not
+    create the corresponding topic or for access errors. \\* \\`INVALID\\_ARGUMENT\\` if
+    the request is malformed. \\* \\`FAILED\\_PRECONDITION\\` if there exists a topic in
+    the course with the same name. \\* \\`NOT\\_FOUND\\` if the requested course or
+    topic does not exist
 
     HTTP: ``PATCH``  Discovery: ``courses.topics.patch``
 
@@ -3580,12 +3612,12 @@ def invitations_accept(id, **params):
     """
     Accepts an invitation, removing it and adding the invited user to the teachers or
     students (as appropriate) of the specified course. Only the invited user may accept
-    an invitation. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to accept the
-    requested invitation or for access errors. \* \`FAILED\_PRECONDITION\` for the
-    following request errors: \* CourseMemberLimitReached \* CourseNotModifiable \*
-    CourseTeacherLimitReached \* UserGroupsMembershipLimitReached \* \`NOT\_FOUND\` if
-    no invitation exists with the requested ID.
+    an invitation. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to accept the
+    requested invitation or for access errors. \\* \\`FAILED\\_PRECONDITION\\` for the
+    following request errors: \\* CourseMemberLimitReached \\* CourseNotModifiable \\*
+    CourseTeacherLimitReached \\* UserGroupsMembershipLimitReached \\* \\`NOT\\_FOUND\\`
+    if no invitation exists with the requested ID.
 
     HTTP: ``POST``  Discovery: ``invitations.accept``
 
@@ -3615,13 +3647,13 @@ def invitations_create(body=None, **params):
     """
     Creates an invitation. Only one invitation for a user and course may exist at a
     time. Delete and re-create an invitation to make changes. This method returns the
-    following error codes: \* \`PERMISSION\_DENIED\` if the requesting user is not
-    permitted to create invitations for this course or for access errors. \*
-    \`NOT\_FOUND\` if the course or the user does not exist. \*
-    \`FAILED\_PRECONDITION\`: \* if the requested user's account is disabled. \* if the
-    user already has this role or a role with greater permissions. \* for the following
-    request errors: \* IneligibleOwner \* \`ALREADY\_EXISTS\` if an invitation for the
-    specified user and course already exists.
+    following error codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting user is not
+    permitted to create invitations for this course or for access errors. \\*
+    \\`NOT\\_FOUND\\` if the course or the user does not exist. \\*
+    \\`FAILED\\_PRECONDITION\\`: \\* if the requested user's account is disabled. \\* if
+    the user already has this role or a role with greater permissions. \\* for the
+    following request errors: \\* IneligibleOwner \\* \\`ALREADY\\_EXISTS\\` if an
+    invitation for the specified user and course already exists.
 
     HTTP: ``POST``  Discovery: ``invitations.create``
 
@@ -3647,10 +3679,10 @@ def invitations_create(body=None, **params):
 
 def invitations_delete(id, **params):
     """
-    Deletes an invitation. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to delete the
-    requested invitation or for access errors. \* \`NOT\_FOUND\` if no invitation exists
-    with the requested ID.
+    Deletes an invitation. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to delete the
+    requested invitation or for access errors. \\* \\`NOT\\_FOUND\\` if no invitation
+    exists with the requested ID.
 
     HTTP: ``DELETE``  Discovery: ``invitations.delete``
 
@@ -3678,10 +3710,10 @@ def invitations_delete(id, **params):
 
 def invitations_get(id, **params):
     """
-    Returns an invitation. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to view the requested
-    invitation or for access errors. \* \`NOT\_FOUND\` if no invitation exists with the
-    requested ID.
+    Returns an invitation. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to view the
+    requested invitation or for access errors. \\* \\`NOT\\_FOUND\\` if no invitation
+    exists with the requested ID.
 
     HTTP: ``GET``  Discovery: ``invitations.get``
 
@@ -3710,19 +3742,19 @@ def invitations_get(id, **params):
 def invitations_list(**params):
     """
     Returns a list of invitations that the requesting user is permitted to view,
-    restricted to those that match the list request. \*Note:\* At least one of
-    \`user\_id\` or \`course\_id\` must be supplied. Both fields can be supplied. This
-    method returns the following error codes: \* \`PERMISSION\_DENIED\` for access
-    errors.
+    restricted to those that match the list request. \\*Note:\\* At least one of
+    \\`user\\_id\\` or \\`course\\_id\\` must be supplied. Both fields can be supplied.
+    This method returns the following error codes: \\* \\`PERMISSION\\_DENIED\\` for
+    access errors.
 
     HTTP: ``GET``  Discovery: ``invitations.list``
 
     Optional parameters (pass via keyword args):
 
     * ``courseId`` (str): Restricts returned invitations to those for a course with the specified identifier.
-    * ``pageSize`` (int): Maximum number of items to return. The default is 500 if unspecified or \`0\`. The server may return fewer than the specified number of results.
+    * ``pageSize`` (int): Maximum number of items to return. The default is 500 if unspecified or \\`0\\`. The server may return fewer than the specified number of results.
     * ``pageToken`` (str): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in thi…
-    * ``userId`` (str): Restricts returned invitations to those for a specific user. The identifier can be one of the following: \* the numeric identifier for the user \* the email address of the user \* the string literal \`"m…
+    * ``userId`` (str): Restricts returned invitations to those for a specific user. The identifier can be one of the following: \\* the numeric identifier for the user \\* the email address of the user \\* the string literal \\`"m…
 
     CLI Example:
 
@@ -3743,26 +3775,27 @@ def invitations_list(**params):
 
 def registrations_create(body=None, **params):
     """
-    Creates a \`Registration\`, causing Classroom to start sending notifications from
-    the provided \`feed\` to the destination provided in \`cloudPubSubTopic\`. Returns
-    the created \`Registration\`. Currently, this will be the same as the argument, but
-    with server-assigned fields such as \`expiry\_time\` and \`id\` filled in. Note that
-    any value specified for the \`expiry\_time\` or \`id\` fields will be ignored. While
-    Classroom may validate the \`cloudPubSubTopic\` and return errors on a best effort
-    basis, it is the caller's responsibility to ensure that it exists and that Classroom
-    has permission to publish to it. This method may return the following error codes:
-    \* \`PERMISSION\_DENIED\` if: \* the authenticated user does not have permission to
-    receive notifications from the requested field; or \* the current user has not
-    granted access to the current Cloud project with the appropriate scope for the
-    requested feed. Note that domain-wide delegation of authority is not currently
-    supported for this purpose. If the request has the appropriate scope, but no grant
-    exists, a Request Errors is returned. \* another access error is encountered. \*
-    \`INVALID\_ARGUMENT\` if: \* no \`cloudPubsubTopic\` is specified, or the specified
-    \`cloudPubsubTopic\` is not valid; or \* no \`feed\` is specified, or the specified
-    \`feed\` is not valid. \* \`NOT\_FOUND\` if: \* the specified \`feed\` cannot be
-    located, or the requesting user does not have permission to determine whether or not
-    it exists; or \* the specified \`cloudPubsubTopic\` cannot be located, or Classroom
-    has not been granted permission to publish to it.
+    Creates a \\`Registration\\`, causing Classroom to start sending notifications from
+    the provided \\`feed\\` to the destination provided in \\`cloudPubSubTopic\\`.
+    Returns the created \\`Registration\\`. Currently, this will be the same as the
+    argument, but with server-assigned fields such as \\`expiry\\_time\\` and \\`id\\`
+    filled in. Note that any value specified for the \\`expiry\\_time\\` or \\`id\\`
+    fields will be ignored. While Classroom may validate the \\`cloudPubSubTopic\\` and
+    return errors on a best effort basis, it is the caller's responsibility to ensure
+    that it exists and that Classroom has permission to publish to it. This method may
+    return the following error codes: \\* \\`PERMISSION\\_DENIED\\` if: \\* the
+    authenticated user does not have permission to receive notifications from the
+    requested field; or \\* the current user has not granted access to the current Cloud
+    project with the appropriate scope for the requested feed. Note that domain-wide
+    delegation of authority is not currently supported for this purpose. If the request
+    has the appropriate scope, but no grant exists, a Request Errors is returned. \\*
+    another access error is encountered. \\* \\`INVALID\\_ARGUMENT\\` if: \\* no
+    \\`cloudPubsubTopic\\` is specified, or the specified \\`cloudPubsubTopic\\` is not
+    valid; or \\* no \\`feed\\` is specified, or the specified \\`feed\\` is not valid.
+    \\* \\`NOT\\_FOUND\\` if: \\* the specified \\`feed\\` cannot be located, or the
+    requesting user does not have permission to determine whether or not it exists; or
+    \\* the specified \\`cloudPubsubTopic\\` cannot be located, or Classroom has not
+    been granted permission to publish to it.
 
     HTTP: ``POST``  Discovery: ``registrations.create``
 
@@ -3788,14 +3821,14 @@ def registrations_create(body=None, **params):
 
 def registrations_delete(registrationId, **params):
     """
-    Deletes a \`Registration\`, causing Classroom to stop sending notifications for that
-    \`Registration\`.
+    Deletes a \\`Registration\\`, causing Classroom to stop sending notifications for
+    that \\`Registration\\`.
 
     HTTP: ``DELETE``  Discovery: ``registrations.delete``
 
     Required parameters:
 
-    * ``registrationId`` (str): The \`registration\_id\` of the \`Registration\` to be deleted.
+    * ``registrationId`` (str): The \\`registration\\_id\\` of the \\`Registration\\` to be deleted.
 
     CLI Example:
 
@@ -3817,15 +3850,15 @@ def registrations_delete(registrationId, **params):
 
 def user_profiles_get(userId, **params):
     """
-    Returns a user profile. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the requesting user is not permitted to access this user
-    profile, if no profile exists with the requested ID, or for access errors.
+    Returns a user profile. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to access this
+    user profile, if no profile exists with the requested ID, or for access errors.
 
     HTTP: ``GET``  Discovery: ``userProfiles.get``
 
     Required parameters:
 
-    * ``userId`` (str): Identifier of the profile to return. The identifier can be one of the following: \* the numeric identifier for the user \* the email address of the user \* the string literal \`"me"\`, indicating the requ…
+    * ``userId`` (str): Identifier of the profile to return. The identifier can be one of the following: \\* the numeric identifier for the user \\* the email address of the user \\* the string literal \\`"me"\\`, indicating the requ…
 
     CLI Example:
 
@@ -3849,25 +3882,26 @@ def user_profiles_guardian_invitations_create(studentId, body=None, **params):
     """
     Creates a guardian invitation, and sends an email to the guardian asking them to
     confirm that they are the student's guardian. Once the guardian accepts the
-    invitation, their \`state\` will change to \`COMPLETED\` and they will start
-    receiving guardian notifications. A \`Guardian\` resource will also be created to
-    represent the active guardian. The request object must have the \`student\_id\` and
-    \`invited\_email\_address\` fields set. Failing to set these fields, or setting any
-    other fields in the request, will result in an error. This method returns the
-    following error codes: \* \`PERMISSION\_DENIED\` if the current user does not have
-    permission to manage guardians, if the guardian in question has already rejected too
-    many requests for that student, if guardians are not enabled for the domain in
-    question, or for other access errors. \* \`RESOURCE\_EXHAUSTED\` if the student or
-    guardian has exceeded the guardian link limit. \* \`INVALID\_ARGUMENT\` if the
-    guardian email address is not valid (for example, if it is too long), or if the
-    format of the student ID provided cannot be recognized (it is not an email address,
-    nor a \`user\_id\` from this API). This error will also be returned if read-only
-    fields are set, or if the \`state\` field is set to to a value other than
-    \`PENDING\`. \* \`NOT\_FOUND\` if the student ID provided is a valid student ID, but
-    Classroom has no record of that student. \* \`ALREADY\_EXISTS\` if there is already
-    a pending guardian invitation for the student and \`invited\_email\_address\`
-    provided, or if the provided \`invited\_email\_address\` matches the Google account
-    of an existing \`Guardian\` for this user.
+    invitation, their \\`state\\` will change to \\`COMPLETED\\` and they will start
+    receiving guardian notifications. A \\`Guardian\\` resource will also be created to
+    represent the active guardian. The request object must have the \\`student\\_id\\`
+    and \\`invited\\_email\\_address\\` fields set. Failing to set these fields, or
+    setting any other fields in the request, will result in an error. This method
+    returns the following error codes: \\* \\`PERMISSION\\_DENIED\\` if the current user
+    does not have permission to manage guardians, if the guardian in question has
+    already rejected too many requests for that student, if guardians are not enabled
+    for the domain in question, or for other access errors. \\*
+    \\`RESOURCE\\_EXHAUSTED\\` if the student or guardian has exceeded the guardian link
+    limit. \\* \\`INVALID\\_ARGUMENT\\` if the guardian email address is not valid (for
+    example, if it is too long), or if the format of the student ID provided cannot be
+    recognized (it is not an email address, nor a \\`user\\_id\\` from this API). This
+    error will also be returned if read-only fields are set, or if the \\`state\\` field
+    is set to to a value other than \\`PENDING\\`. \\* \\`NOT\\_FOUND\\` if the student
+    ID provided is a valid student ID, but Classroom has no record of that student. \\*
+    \\`ALREADY\\_EXISTS\\` if there is already a pending guardian invitation for the
+    student and \\`invited\\_email\\_address\\` provided, or if the provided
+    \\`invited\\_email\\_address\\` matches the Google account of an existing
+    \\`Guardian\\` for this user.
 
     HTTP: ``POST``  Discovery: ``userProfiles.guardianInvitations.create``
 
@@ -3899,21 +3933,22 @@ def user_profiles_guardian_invitations_create(studentId, body=None, **params):
 def user_profiles_guardian_invitations_get(studentId, invitationId, **params):
     """
     Returns a specific guardian invitation. This method returns the following error
-    codes: \* \`PERMISSION\_DENIED\` if the requesting user is not permitted to view
-    guardian invitations for the student identified by the \`student\_id\`, if guardians
-    are not enabled for the domain in question, or for other access errors. \*
-    \`INVALID\_ARGUMENT\` if a \`student\_id\` is specified, but its format cannot be
-    recognized (it is not an email address, nor a \`student\_id\` from the API, nor the
-    literal string \`me\`). \* \`NOT\_FOUND\` if Classroom cannot find any record of the
-    given student or \`invitation\_id\`. May also be returned if the student exists, but
-    the requesting user does not have access to see that student.
+    codes: \\* \\`PERMISSION\\_DENIED\\` if the requesting user is not permitted to view
+    guardian invitations for the student identified by the \\`student\\_id\\`, if
+    guardians are not enabled for the domain in question, or for other access errors.
+    \\* \\`INVALID\\_ARGUMENT\\` if a \\`student\\_id\\` is specified, but its format
+    cannot be recognized (it is not an email address, nor a \\`student\\_id\\` from the
+    API, nor the literal string \\`me\\`). \\* \\`NOT\\_FOUND\\` if Classroom cannot
+    find any record of the given student or \\`invitation\\_id\\`. May also be returned
+    if the student exists, but the requesting user does not have access to see that
+    student.
 
     HTTP: ``GET``  Discovery: ``userProfiles.guardianInvitations.get``
 
     Required parameters:
 
     * ``studentId`` (str): The ID of the student whose guardian invitation is being requested.
-    * ``invitationId`` (str): The \`id\` field of the \`GuardianInvitation\` being requested.
+    * ``invitationId`` (str): The \\`id\\` field of the \\`GuardianInvitation\\` being requested.
 
     CLI Example:
 
@@ -3938,29 +3973,29 @@ def user_profiles_guardian_invitations_list(studentId, **params):
     """
     Returns a list of guardian invitations that the requesting user is permitted to
     view, filtered by the parameters provided. This method returns the following error
-    codes: \* \`PERMISSION\_DENIED\` if a \`student\_id\` is specified, and the
+    codes: \\* \\`PERMISSION\\_DENIED\\` if a \\`student\\_id\\` is specified, and the
     requesting user is not permitted to view guardian invitations for that student, if
-    \`"-"\` is specified as the \`student\_id\` and the user is not a domain
+    \\`"-"\\` is specified as the \\`student\\_id\\` and the user is not a domain
     administrator, if guardians are not enabled for the domain in question, or for other
-    access errors. \* \`INVALID\_ARGUMENT\` if a \`student\_id\` is specified, but its
-    format cannot be recognized (it is not an email address, nor a \`student\_id\` from
-    the API, nor the literal string \`me\`). May also be returned if an invalid
-    \`page\_token\` or \`state\` is provided. \* \`NOT\_FOUND\` if a \`student\_id\` is
-    specified, and its format can be recognized, but Classroom has no record of that
-    student.
+    access errors. \\* \\`INVALID\\_ARGUMENT\\` if a \\`student\\_id\\` is specified,
+    but its format cannot be recognized (it is not an email address, nor a
+    \\`student\\_id\\` from the API, nor the literal string \\`me\\`). May also be
+    returned if an invalid \\`page\\_token\\` or \\`state\\` is provided. \\*
+    \\`NOT\\_FOUND\\` if a \\`student\\_id\\` is specified, and its format can be
+    recognized, but Classroom has no record of that student.
 
     HTTP: ``GET``  Discovery: ``userProfiles.guardianInvitations.list``
 
     Required parameters:
 
-    * ``studentId`` (str): The ID of the student whose guardian invitations are to be returned. The identifier can be one of the following: \* the numeric identifier for the user \* the email address of the user \* the string lit…
+    * ``studentId`` (str): The ID of the student whose guardian invitations are to be returned. The identifier can be one of the following: \\* the numeric identifier for the user \\* the email address of the user \\* the string lit…
 
     Optional parameters (pass via keyword args):
 
-    * ``invitedEmailAddress`` (str): If specified, only results with the specified \`invited\_email\_address\` are returned.
+    * ``invitedEmailAddress`` (str): If specified, only results with the specified \\`invited\\_email\\_address\\` are returned.
     * ``pageSize`` (int): Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
     * ``pageToken`` (str): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in thi…
-    * ``states`` (str): If specified, only results with the specified \`state\` values are returned. Otherwise, results with a \`state\` of \`PENDING\` are returned.
+    * ``states`` (str): If specified, only results with the specified \\`state\\` values are returned. Otherwise, results with a \\`state\\` of \\`PENDING\\` are returned.
 
     CLI Example:
 
@@ -3983,30 +4018,31 @@ def user_profiles_guardian_invitations_list(studentId, **params):
 def user_profiles_guardian_invitations_patch(studentId, invitationId, body=None, **params):
     """
     Modifies a guardian invitation. Currently, the only valid modification is to change
-    the \`state\` from \`PENDING\` to \`COMPLETE\`. This has the effect of withdrawing
-    the invitation. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if the current user does not have permission to manage
+    the \\`state\\` from \\`PENDING\\` to \\`COMPLETE\\`. This has the effect of
+    withdrawing the invitation. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if the current user does not have permission to manage
     guardians, if guardians are not enabled for the domain in question or for other
-    access errors. \* \`FAILED\_PRECONDITION\` if the guardian link is not in the
-    \`PENDING\` state. \* \`INVALID\_ARGUMENT\` if the format of the student ID provided
-    cannot be recognized (it is not an email address, nor a \`user\_id\` from this API),
-    or if the passed \`GuardianInvitation\` has a \`state\` other than \`COMPLETE\`, or
-    if it modifies fields other than \`state\`. \* \`NOT\_FOUND\` if the student ID
-    provided is a valid student ID, but Classroom has no record of that student, or if
-    the \`id\` field does not refer to a guardian invitation known to Classroom.
+    access errors. \\* \\`FAILED\\_PRECONDITION\\` if the guardian link is not in the
+    \\`PENDING\\` state. \\* \\`INVALID\\_ARGUMENT\\` if the format of the student ID
+    provided cannot be recognized (it is not an email address, nor a \\`user\\_id\\`
+    from this API), or if the passed \\`GuardianInvitation\\` has a \\`state\\` other
+    than \\`COMPLETE\\`, or if it modifies fields other than \\`state\\`. \\*
+    \\`NOT\\_FOUND\\` if the student ID provided is a valid student ID, but Classroom
+    has no record of that student, or if the \\`id\\` field does not refer to a guardian
+    invitation known to Classroom.
 
     HTTP: ``PATCH``  Discovery: ``userProfiles.guardianInvitations.patch``
 
     Required parameters:
 
     * ``studentId`` (str): The ID of the student whose guardian invitation is to be modified.
-    * ``invitationId`` (str): The \`id\` field of the \`GuardianInvitation\` to be modified.
+    * ``invitationId`` (str): The \\`id\\` field of the \\`GuardianInvitation\\` to be modified.
 
     * ``body`` (dict): request body payload.
 
     Optional parameters (pass via keyword args):
 
-    * ``updateMask`` (str): Mask that identifies which fields on the course to update. This field is required to do an update. The update fails if invalid fields are specified. The following fields are valid: \* \`state\` When set…
+    * ``updateMask`` (str): Mask that identifies which fields on the course to update. This field is required to do an update. The update fails if invalid fields are specified. The following fields are valid: \\* \\`state\\` When set…
 
     CLI Example:
 
@@ -4032,22 +4068,22 @@ def user_profiles_guardians_delete(studentId, guardianId, **params):
     """
     Deletes a guardian. The guardian will no longer receive guardian notifications and
     the guardian will no longer be accessible via the API. This method returns the
-    following error codes: \* \`PERMISSION\_DENIED\` if no user that matches the
-    provided \`student\_id\` is visible to the requesting user, if the requesting user
-    is not permitted to manage guardians for the student identified by the
-    \`student\_id\`, if guardians are not enabled for the domain in question, or for
-    other access errors. \* \`INVALID\_ARGUMENT\` if a \`student\_id\` is specified, but
-    its format cannot be recognized (it is not an email address, nor a \`student\_id\`
-    from the API). \* \`NOT\_FOUND\` if the requesting user is permitted to modify
-    guardians for the requested \`student\_id\`, but no \`Guardian\` record exists for
-    that student with the provided \`guardian\_id\`.
+    following error codes: \\* \\`PERMISSION\\_DENIED\\` if no user that matches the
+    provided \\`student\\_id\\` is visible to the requesting user, if the requesting
+    user is not permitted to manage guardians for the student identified by the
+    \\`student\\_id\\`, if guardians are not enabled for the domain in question, or for
+    other access errors. \\* \\`INVALID\\_ARGUMENT\\` if a \\`student\\_id\\` is
+    specified, but its format cannot be recognized (it is not an email address, nor a
+    \\`student\\_id\\` from the API). \\* \\`NOT\\_FOUND\\` if the requesting user is
+    permitted to modify guardians for the requested \\`student\\_id\\`, but no
+    \\`Guardian\\` record exists for that student with the provided \\`guardian\\_id\\`.
 
     HTTP: ``DELETE``  Discovery: ``userProfiles.guardians.delete``
 
     Required parameters:
 
-    * ``studentId`` (str): The student whose guardian is to be deleted. One of the following: \* the numeric identifier for the user \* the email address of the user \* the string literal \`"me"\`, indicating the requesting user
-    * ``guardianId`` (str): The \`id\` field from a \`Guardian\`.
+    * ``studentId`` (str): The student whose guardian is to be deleted. One of the following: \\* the numeric identifier for the user \\* the email address of the user \\* the string literal \\`"me"\\`, indicating the requesting user
+    * ``guardianId`` (str): The \\`id\\` field from a \\`Guardian\\`.
 
     CLI Example:
 
@@ -4070,23 +4106,24 @@ def user_profiles_guardians_delete(studentId, guardianId, **params):
 
 def user_profiles_guardians_get(studentId, guardianId, **params):
     """
-    Returns a specific guardian. This method returns the following error codes: \*
-    \`PERMISSION\_DENIED\` if no user that matches the provided \`student\_id\` is
+    Returns a specific guardian. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if no user that matches the provided \\`student\\_id\\` is
     visible to the requesting user, if the requesting user is not permitted to view
-    guardian information for the student identified by the \`student\_id\`, if guardians
-    are not enabled for the domain in question, or for other access errors. \*
-    \`INVALID\_ARGUMENT\` if a \`student\_id\` is specified, but its format cannot be
-    recognized (it is not an email address, nor a \`student\_id\` from the API, nor the
-    literal string \`me\`). \* \`NOT\_FOUND\` if the requesting user is permitted to
-    view guardians for the requested \`student\_id\`, but no \`Guardian\` record exists
-    for that student that matches the provided \`guardian\_id\`.
+    guardian information for the student identified by the \\`student\\_id\\`, if
+    guardians are not enabled for the domain in question, or for other access errors.
+    \\* \\`INVALID\\_ARGUMENT\\` if a \\`student\\_id\\` is specified, but its format
+    cannot be recognized (it is not an email address, nor a \\`student\\_id\\` from the
+    API, nor the literal string \\`me\\`). \\* \\`NOT\\_FOUND\\` if the requesting user
+    is permitted to view guardians for the requested \\`student\\_id\\`, but no
+    \\`Guardian\\` record exists for that student that matches the provided
+    \\`guardian\\_id\\`.
 
     HTTP: ``GET``  Discovery: ``userProfiles.guardians.get``
 
     Required parameters:
 
-    * ``studentId`` (str): The student whose guardian is being requested. One of the following: \* the numeric identifier for the user \* the email address of the user \* the string literal \`"me"\`, indicating the requesting user
-    * ``guardianId`` (str): The \`id\` field from a \`Guardian\`.
+    * ``studentId`` (str): The student whose guardian is being requested. One of the following: \\* the numeric identifier for the user \\* the email address of the user \\* the string literal \\`"me"\\`, indicating the requesting user
+    * ``guardianId`` (str): The \\`id\\` field from a \\`Guardian\\`.
 
     CLI Example:
 
@@ -4111,24 +4148,25 @@ def user_profiles_guardians_list(studentId, **params):
     """
     Returns a list of guardians that the requesting user is permitted to view,
     restricted to those that match the request. To list guardians for any student that
-    the requesting user may view guardians for, use the literal character \`-\` for the
-    student ID. This method returns the following error codes: \* \`PERMISSION\_DENIED\`
-    if a \`student\_id\` is specified, and the requesting user is not permitted to view
-    guardian information for that student, if \`"-"\` is specified as the
-    \`student\_id\` and the user is not a domain administrator, if guardians are not
-    enabled for the domain in question, if the \`invited\_email\_address\` filter is set
-    by a user who is not a domain administrator, or for other access errors. \*
-    \`INVALID\_ARGUMENT\` if a \`student\_id\` is specified, but its format cannot be
-    recognized (it is not an email address, nor a \`student\_id\` from the API, nor the
-    literal string \`me\`). May also be returned if an invalid \`page\_token\` is
-    provided. \* \`NOT\_FOUND\` if a \`student\_id\` is specified, and its format can be
+    the requesting user may view guardians for, use the literal character \\`-\\` for
+    the student ID. This method returns the following error codes: \\*
+    \\`PERMISSION\\_DENIED\\` if a \\`student\\_id\\` is specified, and the requesting
+    user is not permitted to view guardian information for that student, if \\`"-"\\` is
+    specified as the \\`student\\_id\\` and the user is not a domain administrator, if
+    guardians are not enabled for the domain in question, if the
+    \\`invited\\_email\\_address\\` filter is set by a user who is not a domain
+    administrator, or for other access errors. \\* \\`INVALID\\_ARGUMENT\\` if a
+    \\`student\\_id\\` is specified, but its format cannot be recognized (it is not an
+    email address, nor a \\`student\\_id\\` from the API, nor the literal string
+    \\`me\\`). May also be returned if an invalid \\`page\\_token\\` is provided. \\*
+    \\`NOT\\_FOUND\\` if a \\`student\\_id\\` is specified, and its format can be
     recognized, but Classroom has no record of that student.
 
     HTTP: ``GET``  Discovery: ``userProfiles.guardians.list``
 
     Required parameters:
 
-    * ``studentId`` (str): Filter results by the student who the guardian is linked to. The identifier can be one of the following: \* the numeric identifier for the user \* the email address of the user \* the string literal \`"m…
+    * ``studentId`` (str): Filter results by the student who the guardian is linked to. The identifier can be one of the following: \\* the numeric identifier for the user \\* the email address of the user \\* the string literal \\`"m…
 
     Optional parameters (pass via keyword args):
 

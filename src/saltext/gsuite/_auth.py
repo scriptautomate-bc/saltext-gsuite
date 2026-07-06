@@ -135,9 +135,7 @@ def environment(pillar=None, opts=None, base_env=None):
                     "was provided"
                 )
             if not os.path.isfile(credentials_file):
-                raise AuthError(
-                    f"gsuite:auth:credentials_file '{credentials_file}' does not exist"
-                )
+                raise AuthError(f"gsuite:auth:credentials_file '{credentials_file}' does not exist")
             env[ENV_CREDENTIALS_FILE] = str(credentials_file)
         elif method == "service_account":
             if not service_account:

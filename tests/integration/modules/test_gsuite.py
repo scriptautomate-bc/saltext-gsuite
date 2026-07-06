@@ -42,9 +42,7 @@ def test_drive_files_list(modules):
 
 
 def test_drive_file_roundtrip(modules):
-    created = modules.gsuite_drive.files_create(
-        body={"name": "saltext-gsuite-integration-scratch"}
-    )
+    created = modules.gsuite_drive.files_create(body={"name": "saltext-gsuite-integration-scratch"})
     file_id = created["id"]
     try:
         fetched = modules.gsuite_drive.files_get(file_id)

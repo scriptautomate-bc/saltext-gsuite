@@ -1,123 +1,55 @@
-import ast
-import os.path
-import subprocess
+"""
+Validate that every hand-written module under modules/ or states/ has a docs/ref page.
+
+tools/generate_modules.py owns docs/ref/{modules,states}/**: it writes a page for every
+generated module and, per tools/_codegen/hand_written.toml, for every registered hand-written
+module too (see that file's comment header). This hook does not generate anything itself -- two
+tools writing the same files in different templates is exactly the drift bug this replaced. It
+only checks that the registry and the generator's own manifest agree with what's actually on
+disk, so a new hand-written module can't silently ship without docs.
+"""
+
+import json
+import sys
+import tomllib
 from pathlib import Path
 
-repo_path = Path(subprocess.check_output(["git", "rev-parse", "--show-toplevel"]).decode().strip())
+repo_path = Path(__file__).resolve().parent.parent
 src_dir = repo_path / "src" / "saltext" / "gsuite"
-doc_dir = repo_path / "docs"
+manifest_path = src_dir / "metadata" / "generated_manifest.json"
+registry_path = repo_path / "tools" / "_codegen" / "hand_written.toml"
 
-docs_by_kind = {}
-changed_something = False
+with manifest_path.open(encoding="utf-8") as handle:
+    generated_files = set(json.load(handle)["files"])
 
+with registry_path.open("rb") as handle:
+    registry = tomllib.load(handle)["module"]
+registered_paths = {
+    "src/saltext/gsuite/" + entry["path"].replace(".", "/") + ".py" for entry in registry
+}
 
-def _find_virtualname(path):
-    tree = ast.parse(path.read_text())
-    for node in ast.walk(tree):
-        if isinstance(node, ast.Assign):
-            for target in node.targets:
-                if isinstance(target, ast.Name) and target.id == "__virtualname__":
-                    if isinstance(node.value, ast.Constant) and isinstance(node.value.value, str):
-                        virtualname = node.value.value
-                        break
-            else:
-                continue
-            break
-    else:
-        virtualname = path.with_suffix("").name
-    return virtualname
+errors = []
+for kind in ("modules", "states"):
+    for path in sorted((src_dir / kind).glob("*.py")):
+        if path.name == "__init__.py":
+            continue
+        rel = str(path.relative_to(repo_path))
+        if rel in generated_files:
+            continue
+        if rel not in registered_paths:
+            errors.append(
+                f"{rel}: hand-written module has no docs/ref page. Register it in "
+                f"{registry_path.relative_to(repo_path)} and run `just generate`."
+            )
 
-
-def write_module(rst_path, path, use_virtualname=True):
-    if use_virtualname:
-        virtualname = "``" + _find_virtualname(path) + "``"
-    else:
-        virtualname = make_import_path(path)
-    header_len = len(virtualname)
-    # The check-merge-conflict pre-commit hook chokes here:
-    # https://github.com/pre-commit/pre-commit-hooks/issues/100
-    if header_len == 7:
-        header_len += 1
-    module_contents = f"""\
-{virtualname}
-{'='*header_len}
-
-.. automodule:: {make_import_path(path)}
-    :members:
-"""
-    if not rst_path.exists() or rst_path.read_text() != module_contents:
-        print(rst_path)
-        rst_path.write_text(module_contents)
-        return True
-    return False
-
-
-def write_index(index_rst, import_paths, kind):
-    if kind == "utils":
-        header_text = "Utilities"
-        common_path = os.path.commonpath(tuple(x.replace(".", "/") for x in import_paths)).replace(
-            "/", "."
+for entry in registry:
+    rst_name = f"docs/ref/{'states' if entry['path'].startswith('states.') else 'modules'}/{entry['name']}.rst"
+    if rst_name not in generated_files:
+        errors.append(
+            f"{registry_path.relative_to(repo_path)}: entry {entry['name']!r} is not reflected "
+            f"in {manifest_path.relative_to(repo_path)}. Run `just generate`."
         )
-        if any(x == common_path for x in import_paths):
-            common_path = common_path[: common_path.rfind(".")]
-    else:
-        header_text = (
-            "execution modules" if kind.lower() == "modules" else kind.rstrip("s") + " modules"
-        )
-        common_path = import_paths[0][: import_paths[0].rfind(".")]
-    header = f"{'_'*len(header_text)}\n{header_text.title()}\n{'_'*len(header_text)}"
-    index_contents = f"""\
-.. all-saltext.gsuite.{kind}:
 
-{header}
-
-.. currentmodule:: {common_path}
-
-.. autosummary::
-    :toctree:
-
-{chr(10).join(sorted('    '+p[len(common_path)+1:] for p in import_paths))}
-"""
-    if not index_rst.exists() or index_rst.read_text() != index_contents:
-        print(index_rst)
-        index_rst.write_text(index_contents)
-        return True
-    return False
-
-
-def make_import_path(path):
-    if path.name == "__init__.py":
-        path = path.parent
-    return ".".join(path.relative_to(repo_path / "src").with_suffix("").parts)
-
-
-for path in src_dir.glob("*/*.py"):
-    if path.name != "__init__.py":
-        kind = path.parent.name
-        if kind != "utils":
-            docs_by_kind.setdefault(kind, set()).add(path)
-
-# Utils can have subdirectories, treat them separately
-for path in (src_dir / "utils").rglob("*.py"):
-    if path.name == "__init__.py" and not path.read_text():
-        continue
-    docs_by_kind.setdefault("utils", set()).add(path)
-
-for kind in docs_by_kind:
-    kind_path = doc_dir / "ref" / kind
-    index_rst = kind_path / "index.rst"
-    import_paths = []
-    for path in sorted(docs_by_kind[kind]):
-        import_path = make_import_path(path)
-        import_paths.append(import_path)
-        rst_path = kind_path / (import_path + ".rst")
-        rst_path.parent.mkdir(parents=True, exist_ok=True)
-        change = write_module(rst_path, path, use_virtualname=kind != "utils")
-        changed_something = changed_something or change
-
-    write_index(index_rst, import_paths, kind)
-
-
-# Ensure pre-commit realizes we did something
-if changed_something:
-    exit(2)
+if errors:
+    print("\n".join(errors), file=sys.stderr)
+    sys.exit(1)

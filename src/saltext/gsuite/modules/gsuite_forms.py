@@ -66,7 +66,7 @@ def forms_batch_update(formId, body=None, **params):
 def forms_create(body=None, **params):
     """
     Create a new form using the title given in the provided form message in the request.
-    \*Important:\* Only the form.info.title and form.info.document\_title fields are
+    \\*Important:\\* Only the form.info.title and form.info.document\\_title fields are
     copied to the new form. All other fields including the form description, items and
     settings are disallowed. To create a new form and add items, you must first call
     forms.create to create an empty form with a title and (optional) document title, and
@@ -78,7 +78,7 @@ def forms_create(body=None, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``unpublished`` (bool): Optional. Whether the form is unpublished. If set to \`true\`, the form doesn't accept responses. If set to \`false\` or unset, the form is published and accepts responses.
+    * ``unpublished`` (bool): Optional. Whether the form is unpublished. If set to \\`true\\`, the form doesn't accept responses. If set to \\`false\\` or unset, the form is published and accepts responses.
 
     CLI Example:
 
@@ -129,13 +129,13 @@ def forms_get(formId, **params):
 def forms_set_publish_settings(formId, body=None, **params):
     """
     Updates the publish settings of a form. Legacy forms aren't supported because they
-    don't have the \`publish\_settings\` field.
+    don't have the \\`publish\\_settings\\` field.
 
     HTTP: ``POST``  Discovery: ``forms.setPublishSettings``
 
     Required parameters:
 
-    * ``formId`` (str): Required. The ID of the form. You can get the id from Form.form\_id field.
+    * ``formId`` (str): Required. The ID of the form. You can get the id from Form.form\\_id field.
 
     * ``body`` (dict): request body payload.
 
@@ -200,7 +200,7 @@ def forms_responses_list(formId, **params):
 
     Optional parameters (pass via keyword args):
 
-    * ``filter`` (str): Which form responses to return. Currently, the only supported filters are: \* timestamp > \*N\* which means to get all form responses submitted after (but not at) timestamp \*N\*. \* timestamp >= \*N\* which…
+    * ``filter`` (str): Which form responses to return. Currently, the only supported filters are: \\* timestamp > \\*N\\* which means to get all form responses submitted after (but not at) timestamp \\*N\\*. \\* timestamp >= \\*N\\* which…
     * ``pageSize`` (int): The maximum number of responses to return. The service may return fewer than this value. If unspecified or zero, at most 5000 responses are returned.
     * ``pageToken`` (str): A page token returned by a previous list response. If this field is set, the form and the values of the filter must be the same as for the original request.
 
@@ -226,7 +226,7 @@ def forms_watches_create(formId, body=None, **params):
     """
     Create a new watch. If a watch ID is provided, it must be unused. For each invoking
     project, the per form limit is one watch per Watch.EventType. A watch expires seven
-    days after it is created (see Watch.expire\_time).
+    days after it is created (see Watch.expire\\_time).
 
     HTTP: ``POST``  Discovery: ``forms.watches.create``
 
@@ -317,10 +317,10 @@ def forms_watches_list(formId, **params):
 def forms_watches_renew(formId, watchId, body=None, **params):
     """
     Renew an existing watch for seven days. The state of the watch after renewal is
-    \`ACTIVE\`, and the \`expire\_time\` is seven days from the renewal. Renewing a
-    watch in an error state (e.g. \`SUSPENDED\`) succeeds if the error is no longer
+    \\`ACTIVE\\`, and the \\`expire\\_time\\` is seven days from the renewal. Renewing a
+    watch in an error state (e.g. \\`SUSPENDED\\`) succeeds if the error is no longer
     present, but fail otherwise. After a watch has expired, RenewWatch returns
-    \`NOT\_FOUND\`.
+    \\`NOT\\_FOUND\\`.
 
     HTTP: ``POST``  Discovery: ``forms.watches.renew``
 

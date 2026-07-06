@@ -1,0 +1,18 @@
+# Registry of hand-written execution/state modules under src/saltext/gsuite/.
+#
+# Everything else under modules/ and states/ is generated from Discovery + the gws CLI by
+# tools/generate_modules.py. The generator reads this file to write a docs/ref page for each
+# entry (so the reconciler's pruning never treats a hand-written module as stale), and the
+# check-docs pre-commit hook cross-checks it against what's actually on disk, failing if a
+# hand-written module under modules/ or states/ is missing from this list.
+#
+# name: virtualname used as the doc page title.
+# path: module path relative to src/saltext/gsuite, dotted, without the .py suffix.
+
+[[module]]
+name = "gsuite_util"
+path = "modules.gsuite_util"
+
+[[module]]
+name = "gsuite_chat_webhook"
+path = "modules.gsuite_chat_webhook"

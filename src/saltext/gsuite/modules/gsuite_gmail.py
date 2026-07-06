@@ -40,7 +40,7 @@ def users_get_profile(userId, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
 
     CLI Example:
 
@@ -70,7 +70,7 @@ def users_stop(userId, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
 
     CLI Example:
 
@@ -100,7 +100,7 @@ def users_watch(userId, body=None, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
 
     * ``body`` (dict): request body payload.
 
@@ -125,14 +125,14 @@ def users_watch(userId, body=None, **params):
 
 def users_drafts_create(userId, body=None, upload=None, **params):
     """
-    Creates a draft with the \`DRAFT\` label. For more information, see [Create and send
-    draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).
+    Creates a draft with the \\`DRAFT\\` label. For more information, see [Create and
+    send draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).
 
     HTTP: ``POST``  Discovery: ``users.drafts.create``
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
 
     * ``body`` (dict): request body payload.
 
@@ -168,7 +168,7 @@ def users_drafts_delete(userId, id, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``id`` (str): The ID of the draft to delete.
 
     CLI Example:
@@ -199,7 +199,7 @@ def users_drafts_get(userId, id, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``id`` (str): The ID of the draft to retrieve.
 
     Optional parameters (pass via keyword args):
@@ -234,14 +234,14 @@ def users_drafts_list(userId, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
 
     Optional parameters (pass via keyword args):
 
-    * ``includeSpamTrash`` (bool): Include drafts from \`SPAM\` and \`TRASH\` in the results.
+    * ``includeSpamTrash`` (bool): Include drafts from \\`SPAM\\` and \\`TRASH\\` in the results.
     * ``maxResults`` (int): Maximum number of drafts to return. This field defaults to 100. The maximum allowed value for this field is 500.
     * ``pageToken`` (str): Page token to retrieve a specific page of results in the list.
-    * ``q`` (str): Only return draft messages matching the specified query. Supports the same query format as the Gmail search box. For example, \`"from:someuser@example.com rfc822msgid: is:unread"\`.
+    * ``q`` (str): Only return draft messages matching the specified query. Supports the same query format as the Gmail search box. For example, \\`"from:someuser@example.com rfc822msgid: is:unread"\\`.
 
     CLI Example:
 
@@ -263,15 +263,15 @@ def users_drafts_list(userId, **params):
 
 def users_drafts_send(userId, body=None, upload=None, **params):
     """
-    Sends the specified, existing draft to the recipients in the \`To\`, \`Cc\`, and
-    \`Bcc\` headers. For more information, see [Create and send draft
+    Sends the specified, existing draft to the recipients in the \\`To\\`, \\`Cc\\`, and
+    \\`Bcc\\` headers. For more information, see [Create and send draft
     emails](https://developers.google.com/workspace/gmail/api/guides/drafts).
 
     HTTP: ``POST``  Discovery: ``users.drafts.send``
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
 
     * ``body`` (dict): request body payload.
 
@@ -306,7 +306,7 @@ def users_drafts_update(userId, id, body=None, upload=None, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``id`` (str): The ID of the draft to update.
 
     * ``body`` (dict): request body payload.
@@ -337,7 +337,7 @@ def users_drafts_update(userId, id, body=None, upload=None, **params):
 def users_history_list(userId, **params):
     """
     Lists the history of all changes to the given mailbox. History results are returned
-    in chronological order (increasing \`historyId\`). For more information, see
+    in chronological order (increasing \\`historyId\\`). For more information, see
     [Synchronize clients with
     Gmail](https://developers.google.com/workspace/gmail/api/guides/sync).
 
@@ -345,7 +345,7 @@ def users_history_list(userId, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
 
     Optional parameters (pass via keyword args):
 
@@ -353,7 +353,7 @@ def users_history_list(userId, **params):
     * ``labelId`` (str): Only return messages with a label matching the ID.
     * ``maxResults`` (int): Maximum number of history records to return. This field defaults to 100. The maximum allowed value for this field is 500.
     * ``pageToken`` (str): Page token to retrieve a specific page of results in the list.
-    * ``startHistoryId`` (str): Required. Returns history records after the specified \`startHistoryId\`. The supplied \`startHistoryId\` should be obtained from the \`historyId\` of a message, thread, or previous \`list\` response. Histor…
+    * ``startHistoryId`` (str): Required. Returns history records after the specified \\`startHistoryId\\`. The supplied \\`startHistoryId\\` should be obtained from the \\`historyId\\` of a message, thread, or previous \\`list\\` response. Histor…
 
     CLI Example:
 
@@ -382,7 +382,7 @@ def users_labels_create(userId, body=None, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
 
     * ``body`` (dict): request body payload.
 
@@ -415,7 +415,7 @@ def users_labels_delete(userId, id, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``id`` (str): The ID of the label to delete.
 
     CLI Example:
@@ -446,7 +446,7 @@ def users_labels_get(userId, id, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``id`` (str): The ID of the label to retrieve.
 
     CLI Example:
@@ -477,7 +477,7 @@ def users_labels_list(userId, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
 
     CLI Example:
 
@@ -506,7 +506,7 @@ def users_labels_patch(userId, id, body=None, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``id`` (str): The ID of the label to update.
 
     * ``body`` (dict): request body payload.
@@ -540,7 +540,7 @@ def users_labels_update(userId, id, body=None, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``id`` (str): The ID of the label to update.
 
     * ``body`` (dict): request body payload.
@@ -574,7 +574,7 @@ def users_messages_batch_delete(userId, body=None, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
 
     * ``body`` (dict): request body payload.
 
@@ -603,15 +603,16 @@ def users_messages_batch_modify(userId, body=None, **params):
     For administrators modifying messages for users in their organization, requests
     require authorization with a [service
     account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that
-    has [domain-wide delegation authority](https://developers.google.com/identity/protoc
-    ols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the
-    \`https://www.googleapis.com/auth/gmail.modify.restricted\` scope.
+    has [domain-wide delegation
+    authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority)
+    to impersonate users with the
+    \\`https://www.googleapis.com/auth/gmail.modify.restricted\\` scope.
 
     HTTP: ``POST``  Discovery: ``users.messages.batchModify``
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
 
     * ``body`` (dict): request body payload.
 
@@ -637,13 +638,13 @@ def users_messages_batch_modify(userId, body=None, **params):
 def users_messages_delete(userId, id, **params):
     """
     Immediately and permanently deletes the specified message. This operation cannot be
-    undone. Prefer \`messages.trash\` instead.
+    undone. Prefer \\`messages.trash\\` instead.
 
     HTTP: ``DELETE``  Discovery: ``users.messages.delete``
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``id`` (str): The ID of the message to delete.
 
     CLI Example:
@@ -673,13 +674,13 @@ def users_messages_get(userId, id, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
-    * ``id`` (str): The ID of the message to retrieve. This ID is usually retrieved using \`messages.list\`. The ID is also contained in the result when a message is inserted (\`messages.insert\`) or imported (\`messages.imp…
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
+    * ``id`` (str): The ID of the message to retrieve. This ID is usually retrieved using \\`messages.list\\`. The ID is also contained in the result when a message is inserted (\\`messages.insert\\`) or imported (\\`messages.imp…
 
     Optional parameters (pass via keyword args):
 
     * ``format`` (str): The format to return the message in.
-    * ``metadataHeaders`` (str): When given and format is \`METADATA\`, only include headers specified.
+    * ``metadataHeaders`` (str): When given and format is \\`METADATA\\`, only include headers specified.
 
     CLI Example:
 
@@ -712,7 +713,7 @@ def users_messages_import(userId, body=None, upload=None, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
 
     * ``body`` (dict): request body payload.
 
@@ -747,16 +748,16 @@ def users_messages_import(userId, body=None, upload=None, **params):
 
 def users_messages_insert(userId, body=None, upload=None, **params):
     """
-    Directly inserts a message into only this user's mailbox similar to \`IMAP APPEND\`,
-    bypassing most scanning and classification. Does not send a message. For more
-    information, see [Create and send email
+    Directly inserts a message into only this user's mailbox similar to \\`IMAP
+    APPEND\\`, bypassing most scanning and classification. Does not send a message. For
+    more information, see [Create and send email
     messages](https://developers.google.com/workspace/gmail/api/guides/sending).
 
     HTTP: ``POST``  Discovery: ``users.messages.insert``
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
 
     * ``body`` (dict): request body payload.
 
@@ -796,15 +797,15 @@ def users_messages_list(userId, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
 
     Optional parameters (pass via keyword args):
 
-    * ``includeSpamTrash`` (bool): Include messages from \`SPAM\` and \`TRASH\` in the results.
+    * ``includeSpamTrash`` (bool): Include messages from \\`SPAM\\` and \\`TRASH\\` in the results.
     * ``labelIds`` (str): Only return messages with labels that match all of the specified label IDs. Messages in a thread might have labels that other messages in the same thread don't have. To learn more, see [Manage labels…
     * ``maxResults`` (int): Maximum number of messages to return. This field defaults to 100. The maximum allowed value for this field is 500.
     * ``pageToken`` (str): Page token to retrieve a specific page of results in the list.
-    * ``q`` (str): Only return messages matching the specified query. Supports the same query format as the Gmail search box. For example, \`"from:someuser@example.com rfc822msgid: is:unread"\`. Parameter cannot be used…
+    * ``q`` (str): Only return messages matching the specified query. Supports the same query format as the Gmail search box. For example, \\`"from:someuser@example.com rfc822msgid: is:unread"\\`. Parameter cannot be used…
 
     CLI Example:
 
@@ -830,15 +831,16 @@ def users_messages_modify(userId, id, body=None, **params):
     For administrators modifying message for users in their organization, requests
     require authorization with a [service
     account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that
-    has [domain-wide delegation authority](https://developers.google.com/identity/protoc
-    ols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the
-    \`https://www.googleapis.com/auth/gmail.modify.restricted\` scope.
+    has [domain-wide delegation
+    authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority)
+    to impersonate users with the
+    \\`https://www.googleapis.com/auth/gmail.modify.restricted\\` scope.
 
     HTTP: ``POST``  Discovery: ``users.messages.modify``
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``id`` (str): The ID of the message to modify.
 
     * ``body`` (dict): request body payload.
@@ -865,15 +867,15 @@ def users_messages_modify(userId, id, body=None, **params):
 
 def users_messages_send(userId, body=None, upload=None, **params):
     """
-    Sends the specified message to the recipients in the \`To\`, \`Cc\`, and \`Bcc\`
-    headers. For more information, see [Create and send email
+    Sends the specified message to the recipients in the \\`To\\`, \\`Cc\\`, and
+    \\`Bcc\\` headers. For more information, see [Create and send email
     messages](https://developers.google.com/workspace/gmail/api/guides/sending).
 
     HTTP: ``POST``  Discovery: ``users.messages.send``
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
 
     * ``body`` (dict): request body payload.
 
@@ -907,7 +909,7 @@ def users_messages_trash(userId, id, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``id`` (str): The ID of the message to Trash.
 
     CLI Example:
@@ -937,7 +939,7 @@ def users_messages_untrash(userId, id, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``id`` (str): The ID of the message to remove from Trash.
 
     CLI Example:
@@ -967,7 +969,7 @@ def users_messages_attachments_get(userId, messageId, id, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``messageId`` (str): The ID of the message containing the attachment.
     * ``id`` (str): The ID of the attachment.
 
@@ -994,8 +996,8 @@ def users_messages_attachments_get(userId, messageId, id, **params):
 def users_settings_get_auto_forwarding(userId, **params):
     """
     Gets the auto-forwarding setting for the specified account. For more information,
-    see [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guid
-    es/forwarding\_settings).
+    see [Manage email
+    forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding\\_settings).
 
     HTTP: ``GET``  Discovery: ``users.settings.getAutoForwarding``
 
@@ -1025,7 +1027,7 @@ def users_settings_get_imap(userId, **params):
     """
     Gets IMAP settings. For more information, see [Configure POP and IMAP settings with
     the Gmail
-    API](https://developers.google.com/workspace/gmail/api/guides/pop\_imap\_settings).
+    API](https://developers.google.com/workspace/gmail/api/guides/pop\\_imap\\_settings).
 
     HTTP: ``GET``  Discovery: ``users.settings.getImap``
 
@@ -1054,8 +1056,7 @@ def users_settings_get_imap(userId, **params):
 def users_settings_get_language(userId, **params):
     """
     Gets language settings. For more information, see [Manage language
-    settings](https://developers.google.com/workspace/gmail/api/guides/language-
-    settings).
+    settings](https://developers.google.com/workspace/gmail/api/guides/language-settings).
 
     HTTP: ``GET``  Discovery: ``users.settings.getLanguage``
 
@@ -1085,7 +1086,7 @@ def users_settings_get_pop(userId, **params):
     """
     Gets POP settings. For more information, see [Configure POP and IMAP settings with
     the Gmail
-    API](https://developers.google.com/workspace/gmail/api/guides/pop\_imap\_settings).
+    API](https://developers.google.com/workspace/gmail/api/guides/pop\\_imap\\_settings).
 
     HTTP: ``GET``  Discovery: ``users.settings.getPop``
 
@@ -1115,7 +1116,7 @@ def users_settings_get_vacation(userId, **params):
     """
     Gets vacation responder settings. For more information, see [Manage vacation
     settings with the Gmail
-    API](https://developers.google.com/workspace/gmail/api/guides/vacation\_settings).
+    API](https://developers.google.com/workspace/gmail/api/guides/vacation\\_settings).
 
     HTTP: ``GET``  Discovery: ``users.settings.getVacation``
 
@@ -1145,9 +1146,10 @@ def users_settings_update_auto_forwarding(userId, body=None, **params):
     """
     Updates the auto-forwarding setting for the specified account. A verified forwarding
     address must be specified when auto-forwarding is enabled. For more information, see
-    [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/f
-    orwarding\_settings). This method is only available to service account clients that
-    have been delegated domain-wide authority.
+    [Manage email
+    forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding\\_settings).
+    This method is only available to service account clients that have been delegated
+    domain-wide authority.
 
     HTTP: ``PUT``  Discovery: ``users.settings.updateAutoForwarding``
 
@@ -1180,7 +1182,7 @@ def users_settings_update_imap(userId, body=None, **params):
     """
     Updates IMAP settings. For more information, see [Configure POP and IMAP settings
     with the Gmail
-    API](https://developers.google.com/workspace/gmail/api/guides/pop\_imap\_settings).
+    API](https://developers.google.com/workspace/gmail/api/guides/pop\\_imap\\_settings).
 
     HTTP: ``PUT``  Discovery: ``users.settings.updateImap``
 
@@ -1212,11 +1214,11 @@ def users_settings_update_imap(userId, body=None, **params):
 def users_settings_update_language(userId, body=None, **params):
     """
     Updates language settings. For more information, see [Manage language
-    settings](https://developers.google.com/workspace/gmail/api/guides/language-
-    settings). If successful, the return object contains the \`displayLanguage\` that
-    was saved for the user, which may differ from the value passed into the request.
-    This is because the requested \`displayLanguage\` may not be directly supported by
-    Gmail but have a close variant that is, and so the variant may be chosen and saved
+    settings](https://developers.google.com/workspace/gmail/api/guides/language-settings).
+    If successful, the return object contains the \\`displayLanguage\\` that was saved
+    for the user, which may differ from the value passed into the request. This is
+    because the requested \\`displayLanguage\\` may not be directly supported by Gmail
+    but have a close variant that is, and so the variant may be chosen and saved
     instead.
 
     HTTP: ``PUT``  Discovery: ``users.settings.updateLanguage``
@@ -1250,7 +1252,7 @@ def users_settings_update_pop(userId, body=None, **params):
     """
     Updates POP settings. For more information, see [Configure POP and IMAP settings
     with the Gmail
-    API](https://developers.google.com/workspace/gmail/api/guides/pop\_imap\_settings).
+    API](https://developers.google.com/workspace/gmail/api/guides/pop\\_imap\\_settings).
 
     HTTP: ``PUT``  Discovery: ``users.settings.updatePop``
 
@@ -1283,7 +1285,7 @@ def users_settings_update_vacation(userId, body=None, **params):
     """
     Updates vacation responder settings. For more information, see [Manage vacation
     settings with the Gmail
-    API](https://developers.google.com/workspace/gmail/api/guides/vacation\_settings).
+    API](https://developers.google.com/workspace/gmail/api/guides/vacation\\_settings).
 
     HTTP: ``PUT``  Discovery: ``users.settings.updateVacation``
 
@@ -1321,9 +1323,10 @@ def users_settings_cse_identities_create(userId, body=None, **params):
     keypairs for users in their organization, requests require authorization with a
     [service
     account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that
-    has [domain-wide delegation authority](https://developers.google.com/identity/protoc
-    ols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the
-    \`https://www.googleapis.com/auth/gmail.settings.basic\` scope. For users managing
+    has [domain-wide delegation
+    authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority)
+    to impersonate users with the
+    \\`https://www.googleapis.com/auth/gmail.settings.basic\\` scope. For users managing
     their own identities and keypairs, requests require [hardware key
     encryption](https://support.google.com/a/answer/14153163) turned on and configured.
 
@@ -1331,7 +1334,7 @@ def users_settings_cse_identities_create(userId, body=None, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \`me\`.
+    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \\`me\\`.
 
     * ``body`` (dict): request body payload.
 
@@ -1362,9 +1365,10 @@ def users_settings_cse_identities_delete(userId, cseEmailAddress, **params):
     the same configuration. For administrators managing identities and keypairs for
     users in their organization, requests require authorization with a [service
     account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that
-    has [domain-wide delegation authority](https://developers.google.com/identity/protoc
-    ols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the
-    \`https://www.googleapis.com/auth/gmail.settings.basic\` scope. For users managing
+    has [domain-wide delegation
+    authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority)
+    to impersonate users with the
+    \\`https://www.googleapis.com/auth/gmail.settings.basic\\` scope. For users managing
     their own identities and keypairs, requests require [hardware key
     encryption](https://support.google.com/a/answer/14153163) turned on and configured.
 
@@ -1372,7 +1376,7 @@ def users_settings_cse_identities_delete(userId, cseEmailAddress, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \`me\`.
+    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \\`me\\`.
     * ``cseEmailAddress`` (str): The primary email address associated with the client-side encryption identity configuration that's removed.
 
     CLI Example:
@@ -1400,9 +1404,10 @@ def users_settings_cse_identities_get(userId, cseEmailAddress, **params):
     managing identities and keypairs for users in their organization, requests require
     authorization with a [service
     account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that
-    has [domain-wide delegation authority](https://developers.google.com/identity/protoc
-    ols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the
-    \`https://www.googleapis.com/auth/gmail.settings.basic\` scope. For users managing
+    has [domain-wide delegation
+    authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority)
+    to impersonate users with the
+    \\`https://www.googleapis.com/auth/gmail.settings.basic\\` scope. For users managing
     their own identities and keypairs, requests require [hardware key
     encryption](https://support.google.com/a/answer/14153163) turned on and configured.
 
@@ -1410,7 +1415,7 @@ def users_settings_cse_identities_get(userId, cseEmailAddress, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \`me\`.
+    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \\`me\\`.
     * ``cseEmailAddress`` (str): The primary email address associated with the client-side encryption identity configuration that's retrieved.
 
     CLI Example:
@@ -1438,9 +1443,10 @@ def users_settings_cse_identities_list(userId, **params):
     administrators managing identities and keypairs for users in their organization,
     requests require authorization with a [service
     account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that
-    has [domain-wide delegation authority](https://developers.google.com/identity/protoc
-    ols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the
-    \`https://www.googleapis.com/auth/gmail.settings.basic\` scope. For users managing
+    has [domain-wide delegation
+    authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority)
+    to impersonate users with the
+    \\`https://www.googleapis.com/auth/gmail.settings.basic\\` scope. For users managing
     their own identities and keypairs, requests require [hardware key
     encryption](https://support.google.com/a/answer/14153163) turned on and configured.
 
@@ -1448,7 +1454,7 @@ def users_settings_cse_identities_list(userId, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \`me\`.
+    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \\`me\\`.
 
     Optional parameters (pass via keyword args):
 
@@ -1481,9 +1487,10 @@ def users_settings_cse_identities_patch(userId, emailAddress, body=None, **param
     identities and keypairs for users in their organization, requests require
     authorization with a [service
     account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that
-    has [domain-wide delegation authority](https://developers.google.com/identity/protoc
-    ols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the
-    \`https://www.googleapis.com/auth/gmail.settings.basic\` scope. For users managing
+    has [domain-wide delegation
+    authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority)
+    to impersonate users with the
+    \\`https://www.googleapis.com/auth/gmail.settings.basic\\` scope. For users managing
     their own identities and keypairs, requests require [hardware key
     encryption](https://support.google.com/a/answer/14153163) turned on and configured.
 
@@ -1491,7 +1498,7 @@ def users_settings_cse_identities_patch(userId, emailAddress, body=None, **param
 
     Required parameters:
 
-    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \`me\`.
+    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \\`me\\`.
     * ``emailAddress`` (str): The email address of the client-side encryption identity to update.
 
     * ``body`` (dict): request body payload.
@@ -1523,9 +1530,10 @@ def users_settings_cse_keypairs_create(userId, body=None, **params):
     identities and keypairs for users in their organization, requests require
     authorization with a [service
     account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that
-    has [domain-wide delegation authority](https://developers.google.com/identity/protoc
-    ols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the
-    \`https://www.googleapis.com/auth/gmail.settings.basic\` scope. For users managing
+    has [domain-wide delegation
+    authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority)
+    to impersonate users with the
+    \\`https://www.googleapis.com/auth/gmail.settings.basic\\` scope. For users managing
     their own identities and keypairs, requests require [hardware key
     encryption](https://support.google.com/a/answer/14153163) turned on and configured.
 
@@ -1533,7 +1541,7 @@ def users_settings_cse_keypairs_create(userId, body=None, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \`me\`.
+    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \\`me\\`.
 
     * ``body`` (dict): request body payload.
 
@@ -1565,9 +1573,10 @@ def users_settings_cse_keypairs_disable(userId, keyPairId, body=None, **params):
     administrators managing identities and keypairs for users in their organization,
     requests require authorization with a [service
     account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that
-    has [domain-wide delegation authority](https://developers.google.com/identity/protoc
-    ols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the
-    \`https://www.googleapis.com/auth/gmail.settings.basic\` scope. For users managing
+    has [domain-wide delegation
+    authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority)
+    to impersonate users with the
+    \\`https://www.googleapis.com/auth/gmail.settings.basic\\` scope. For users managing
     their own identities and keypairs, requests require [hardware key
     encryption](https://support.google.com/a/answer/14153163) turned on and configured.
 
@@ -1575,7 +1584,7 @@ def users_settings_cse_keypairs_disable(userId, keyPairId, body=None, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \`me\`.
+    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \\`me\\`.
     * ``keyPairId`` (str): The identifier of the key pair to turn off.
 
     * ``body`` (dict): request body payload.
@@ -1607,9 +1616,10 @@ def users_settings_cse_keypairs_enable(userId, keyPairId, body=None, **params):
     administrators managing identities and keypairs for users in their organization,
     requests require authorization with a [service
     account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that
-    has [domain-wide delegation authority](https://developers.google.com/identity/protoc
-    ols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the
-    \`https://www.googleapis.com/auth/gmail.settings.basic\` scope. For users managing
+    has [domain-wide delegation
+    authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority)
+    to impersonate users with the
+    \\`https://www.googleapis.com/auth/gmail.settings.basic\\` scope. For users managing
     their own identities and keypairs, requests require [hardware key
     encryption](https://support.google.com/a/answer/14153163) turned on and configured.
 
@@ -1617,7 +1627,7 @@ def users_settings_cse_keypairs_enable(userId, keyPairId, body=None, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \`me\`.
+    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \\`me\\`.
     * ``keyPairId`` (str): The identifier of the key pair to turn on.
 
     * ``body`` (dict): request body payload.
@@ -1648,9 +1658,10 @@ def users_settings_cse_keypairs_get(userId, keyPairId, **params):
     identities and keypairs for users in their organization, requests require
     authorization with a [service
     account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that
-    has [domain-wide delegation authority](https://developers.google.com/identity/protoc
-    ols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the
-    \`https://www.googleapis.com/auth/gmail.settings.basic\` scope. For users managing
+    has [domain-wide delegation
+    authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority)
+    to impersonate users with the
+    \\`https://www.googleapis.com/auth/gmail.settings.basic\\` scope. For users managing
     their own identities and keypairs, requests require [hardware key
     encryption](https://support.google.com/a/answer/14153163) turned on and configured.
 
@@ -1658,7 +1669,7 @@ def users_settings_cse_keypairs_get(userId, keyPairId, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \`me\`.
+    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \\`me\\`.
     * ``keyPairId`` (str): The identifier of the key pair to retrieve.
 
     CLI Example:
@@ -1686,9 +1697,10 @@ def users_settings_cse_keypairs_list(userId, **params):
     managing identities and keypairs for users in their organization, requests require
     authorization with a [service
     account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that
-    has [domain-wide delegation authority](https://developers.google.com/identity/protoc
-    ols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the
-    \`https://www.googleapis.com/auth/gmail.settings.basic\` scope. For users managing
+    has [domain-wide delegation
+    authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority)
+    to impersonate users with the
+    \\`https://www.googleapis.com/auth/gmail.settings.basic\\` scope. For users managing
     their own identities and keypairs, requests require [hardware key
     encryption](https://support.google.com/a/answer/14153163) turned on and configured.
 
@@ -1696,7 +1708,7 @@ def users_settings_cse_keypairs_list(userId, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \`me\`.
+    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \\`me\\`.
 
     Optional parameters (pass via keyword args):
 
@@ -1731,9 +1743,10 @@ def users_settings_cse_keypairs_obliterate(userId, keyPairId, body=None, **param
     For administrators managing identities and keypairs for users in their organization,
     requests require authorization with a [service
     account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that
-    has [domain-wide delegation authority](https://developers.google.com/identity/protoc
-    ols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the
-    \`https://www.googleapis.com/auth/gmail.settings.basic\` scope. For users managing
+    has [domain-wide delegation
+    authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority)
+    to impersonate users with the
+    \\`https://www.googleapis.com/auth/gmail.settings.basic\\` scope. For users managing
     their own identities and keypairs, requests require [hardware key
     encryption](https://support.google.com/a/answer/14153163) turned on and configured.
 
@@ -1741,7 +1754,7 @@ def users_settings_cse_keypairs_obliterate(userId, keyPairId, body=None, **param
 
     Required parameters:
 
-    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \`me\`.
+    * ``userId`` (str): The requester's primary email address. To indicate the authenticated user, you can use the special value \\`me\\`.
     * ``keyPairId`` (str): The identifier of the key pair to obliterate.
 
     * ``body`` (dict): request body payload.
@@ -1768,17 +1781,18 @@ def users_settings_cse_keypairs_obliterate(userId, keyPairId, body=None, **param
 
 def users_settings_delegates_create(userId, body=None, **params):
     """
-    Adds a delegate with its verification status set directly to \`accepted\`, without
+    Adds a delegate with its verification status set directly to \\`accepted\\`, without
     sending any verification email. The delegate user must be a member of the same
     Google Workspace organization as the delegator user. For more information, see
-    [Manage delegates](https://developers.google.com/workspace/gmail/api/guides/delegate
-    \_settings). Gmail imposes limitations on the number of delegates and delegators
-    each user in a Google Workspace organization can have. These limits depend on your
-    organization, but in general each user can have up to 25 delegates and up to 10
-    delegators. A delegate user must be referred to by their primary email address, and
-    not an email alias. When a new delegate is created, there may be up to a one minute
-    delay before the new delegate is available for use. This method is only available to
-    service account clients that have been delegated domain-wide authority.
+    [Manage
+    delegates](https://developers.google.com/workspace/gmail/api/guides/delegate\\_settings).
+    Gmail imposes limitations on the number of delegates and delegators each user in a
+    Google Workspace organization can have. These limits depend on your organization,
+    but in general each user can have up to 25 delegates and up to 10 delegators. A
+    delegate user must be referred to by their primary email address, and not an email
+    alias. When a new delegate is created, there may be up to a one minute delay before
+    the new delegate is available for use. This method is only available to service
+    account clients that have been delegated domain-wide authority.
 
     HTTP: ``POST``  Discovery: ``users.settings.delegates.create``
 
@@ -1811,10 +1825,11 @@ def users_settings_delegates_delete(userId, delegateEmail, **params):
     """
     Removes the specified delegate (which can be of any verification status), and
     revokes any verification that may have been required for using it. For more
-    information, see [Manage delegates](https://developers.google.com/workspace/gmail/ap
-    i/guides/delegate\_settings). A delegate user must be referred to by their primary
-    email address, and not an email alias. This method is only available to service
-    account clients that have been delegated domain-wide authority.
+    information, see [Manage
+    delegates](https://developers.google.com/workspace/gmail/api/guides/delegate\\_settings).
+    A delegate user must be referred to by their primary email address, and not an email
+    alias. This method is only available to service account clients that have been
+    delegated domain-wide authority.
 
     HTTP: ``DELETE``  Discovery: ``users.settings.delegates.delete``
 
@@ -1844,11 +1859,11 @@ def users_settings_delegates_delete(userId, delegateEmail, **params):
 
 def users_settings_delegates_get(userId, delegateEmail, **params):
     """
-    Gets the specified delegate. For more information, see [Manage delegates](https://de
-    velopers.google.com/workspace/gmail/api/guides/delegate\_settings). A delegate user
-    must be referred to by their primary email address, and not an email alias. This
-    method is only available to service account clients that have been delegated domain-
-    wide authority.
+    Gets the specified delegate. For more information, see [Manage
+    delegates](https://developers.google.com/workspace/gmail/api/guides/delegate\\_settings).
+    A delegate user must be referred to by their primary email address, and not an email
+    alias. This method is only available to service account clients that have been
+    delegated domain-wide authority.
 
     HTTP: ``GET``  Discovery: ``users.settings.delegates.get``
 
@@ -1878,9 +1893,9 @@ def users_settings_delegates_get(userId, delegateEmail, **params):
 
 def users_settings_delegates_list(userId, **params):
     """
-    Lists the delegates for the specified account. For more information, see [Manage del
-    egates](https://developers.google.com/workspace/gmail/api/guides/delegate\_settings)
-    . This method is only available to service account clients that have been delegated
+    Lists the delegates for the specified account. For more information, see [Manage
+    delegates](https://developers.google.com/workspace/gmail/api/guides/delegate\\_settings).
+    This method is only available to service account clients that have been delegated
     domain-wide authority.
 
     HTTP: ``GET``  Discovery: ``users.settings.delegates.list``
@@ -1911,7 +1926,7 @@ def users_settings_filters_create(userId, body=None, **params):
     """
     Creates a filter. Note: you can only create a maximum of 1,000 filters. For more
     information, see [Manage Gmail
-    filters](https://developers.google.com/workspace/gmail/api/guides/filter\_settings).
+    filters](https://developers.google.com/workspace/gmail/api/guides/filter\\_settings).
 
     HTTP: ``POST``  Discovery: ``users.settings.filters.create``
 
@@ -1944,7 +1959,7 @@ def users_settings_filters_delete(userId, id, **params):
     """
     Immediately and permanently deletes the specified filter. For more information, see
     [Manage Gmail
-    filters](https://developers.google.com/workspace/gmail/api/guides/filter\_settings).
+    filters](https://developers.google.com/workspace/gmail/api/guides/filter\\_settings).
 
     HTTP: ``DELETE``  Discovery: ``users.settings.filters.delete``
 
@@ -1975,7 +1990,7 @@ def users_settings_filters_delete(userId, id, **params):
 def users_settings_filters_get(userId, id, **params):
     """
     Gets a filter. For more information, see [Manage Gmail
-    filters](https://developers.google.com/workspace/gmail/api/guides/filter\_settings).
+    filters](https://developers.google.com/workspace/gmail/api/guides/filter\\_settings).
 
     HTTP: ``GET``  Discovery: ``users.settings.filters.get``
 
@@ -2006,7 +2021,7 @@ def users_settings_filters_get(userId, id, **params):
 def users_settings_filters_list(userId, **params):
     """
     Lists the message filters of a Gmail user. For more information, see [Manage Gmail
-    filters](https://developers.google.com/workspace/gmail/api/guides/filter\_settings).
+    filters](https://developers.google.com/workspace/gmail/api/guides/filter\\_settings).
 
     HTTP: ``GET``  Discovery: ``users.settings.filters.list``
 
@@ -2036,10 +2051,11 @@ def users_settings_forwarding_addresses_create(userId, body=None, **params):
     """
     Creates a forwarding address. If ownership verification is required, a message will
     be sent to the recipient and the resource's verification status will be set to
-    \`pending\`; otherwise, the resource will be created with verification status set to
-    \`accepted\`. For more information, see [Manage email forwarding](https://developers
-    .google.com/workspace/gmail/api/guides/forwarding\_settings). This method is only
-    available to service account clients that have been delegated domain-wide authority.
+    \\`pending\\`; otherwise, the resource will be created with verification status set
+    to \\`accepted\\`. For more information, see [Manage email
+    forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding\\_settings).
+    This method is only available to service account clients that have been delegated
+    domain-wide authority.
 
     HTTP: ``POST``  Discovery: ``users.settings.forwardingAddresses.create``
 
@@ -2071,9 +2087,10 @@ def users_settings_forwarding_addresses_create(userId, body=None, **params):
 def users_settings_forwarding_addresses_delete(userId, forwardingEmail, **params):
     """
     Deletes the specified forwarding address and revokes any verification that may have
-    been required. For more information, see [Manage email forwarding](https://developer
-    s.google.com/workspace/gmail/api/guides/forwarding\_settings). This method is only
-    available to service account clients that have been delegated domain-wide authority.
+    been required. For more information, see [Manage email
+    forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding\\_settings).
+    This method is only available to service account clients that have been delegated
+    domain-wide authority.
 
     HTTP: ``DELETE``  Discovery: ``users.settings.forwardingAddresses.delete``
 
@@ -2103,9 +2120,8 @@ def users_settings_forwarding_addresses_delete(userId, forwardingEmail, **params
 
 def users_settings_forwarding_addresses_get(userId, forwardingEmail, **params):
     """
-    Gets the specified forwarding address. For more information, see [Manage email forwa
-    rding](https://developers.google.com/workspace/gmail/api/guides/forwarding\_settings
-    ).
+    Gets the specified forwarding address. For more information, see [Manage email
+    forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding\\_settings).
 
     HTTP: ``GET``  Discovery: ``users.settings.forwardingAddresses.get``
 
@@ -2136,8 +2152,8 @@ def users_settings_forwarding_addresses_get(userId, forwardingEmail, **params):
 def users_settings_forwarding_addresses_list(userId, **params):
     """
     Lists the forwarding addresses for the specified account. For more information, see
-    [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/f
-    orwarding\_settings).
+    [Manage email
+    forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding\\_settings).
 
     HTTP: ``GET``  Discovery: ``users.settings.forwardingAddresses.list``
 
@@ -2169,12 +2185,13 @@ def users_settings_send_as_create(userId, body=None, **params):
     attempt to connect to the SMTP service to validate the configuration before creating
     the alias. If ownership verification is required for the alias, a message will be
     sent to the email address and the resource's verification status will be set to
-    \`pending\`; otherwise, the resource will be created with verification status set to
-    \`accepted\`. If a signature is provided, Gmail will sanitize the HTML before saving
-    it with the alias. For more information, see [Manage aliases and signatures with the
-    Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias\_and\_sign
-    ature\_settings). This method is only available to service account clients that have
-    been delegated domain-wide authority.
+    \\`pending\\`; otherwise, the resource will be created with verification status set
+    to \\`accepted\\`. If a signature is provided, Gmail will sanitize the HTML before
+    saving it with the alias. For more information, see [Manage aliases and signatures
+    with the Gmail
+    API](https://developers.google.com/workspace/gmail/api/guides/alias\\_and\\_signature\\_settings).
+    This method is only available to service account clients that have been delegated
+    domain-wide authority.
 
     HTTP: ``POST``  Discovery: ``users.settings.sendAs.create``
 
@@ -2207,9 +2224,10 @@ def users_settings_send_as_delete(userId, sendAsEmail, **params):
     """
     Deletes the specified send-as alias. Revokes any verification that may have been
     required for using it. For more information, see [Manage aliases and signatures with
-    the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias\_and\_
-    signature\_settings). This method is only available to service account clients that
-    have been delegated domain-wide authority.
+    the Gmail
+    API](https://developers.google.com/workspace/gmail/api/guides/alias\\_and\\_signature\\_settings).
+    This method is only available to service account clients that have been delegated
+    domain-wide authority.
 
     HTTP: ``DELETE``  Discovery: ``users.settings.sendAs.delete``
 
@@ -2241,8 +2259,8 @@ def users_settings_send_as_get(userId, sendAsEmail, **params):
     """
     Gets the specified send-as alias. Fails with an HTTP 404 error if the specified
     address is not a member of the collection. For more information, see [Manage aliases
-    and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api
-    /guides/alias\_and\_signature\_settings).
+    and signatures with the Gmail
+    API](https://developers.google.com/workspace/gmail/api/guides/alias\\_and\\_signature\\_settings).
 
     HTTP: ``GET``  Discovery: ``users.settings.sendAs.get``
 
@@ -2274,8 +2292,8 @@ def users_settings_send_as_list(userId, **params):
     """
     Lists the send-as aliases for the specified account. The result includes the primary
     send-as address associated with the account as well as any custom "from" aliases.
-    For more information, see [Manage aliases and signatures with the Gmail API](https:/
-    /developers.google.com/workspace/gmail/api/guides/alias\_and\_signature\_settings).
+    For more information, see [Manage aliases and signatures with the Gmail
+    API](https://developers.google.com/workspace/gmail/api/guides/alias\\_and\\_signature\\_settings).
 
     HTTP: ``GET``  Discovery: ``users.settings.sendAs.list``
 
@@ -2304,8 +2322,8 @@ def users_settings_send_as_list(userId, **params):
 def users_settings_send_as_patch(userId, sendAsEmail, body=None, **params):
     """
     Patch the specified send-as alias. For more information, see [Manage aliases and
-    signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/gui
-    des/alias\_and\_signature\_settings).
+    signatures with the Gmail
+    API](https://developers.google.com/workspace/gmail/api/guides/alias\\_and\\_signature\\_settings).
 
     HTTP: ``PATCH``  Discovery: ``users.settings.sendAs.patch``
 
@@ -2340,10 +2358,10 @@ def users_settings_send_as_update(userId, sendAsEmail, body=None, **params):
     """
     Updates a send-as alias. If a signature is provided, Gmail will sanitize the HTML
     before saving it with the alias. For more information, see [Manage aliases and
-    signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/gui
-    des/alias\_and\_signature\_settings). Addresses other than the primary address for
-    the account can only be updated by service account clients that have been delegated
-    domain-wide authority.
+    signatures with the Gmail
+    API](https://developers.google.com/workspace/gmail/api/guides/alias\\_and\\_signature\\_settings).
+    Addresses other than the primary address for the account can only be updated by
+    service account clients that have been delegated domain-wide authority.
 
     HTTP: ``PUT``  Discovery: ``users.settings.sendAs.update``
 
@@ -2377,10 +2395,11 @@ def users_settings_send_as_update(userId, sendAsEmail, body=None, **params):
 def users_settings_send_as_verify(userId, sendAsEmail, **params):
     """
     Sends a verification email to the specified send-as alias address. The verification
-    status must be \`pending\`. For more information, see [Manage aliases and signatures
-    with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias\_
-    and\_signature\_settings). This method is only available to service account clients
-    that have been delegated domain-wide authority.
+    status must be \\`pending\\`. For more information, see [Manage aliases and
+    signatures with the Gmail
+    API](https://developers.google.com/workspace/gmail/api/guides/alias\\_and\\_signature\\_settings).
+    This method is only available to service account clients that have been delegated
+    domain-wide authority.
 
     HTTP: ``POST``  Discovery: ``users.settings.sendAs.verify``
 
@@ -2412,13 +2431,13 @@ def users_settings_send_as_smime_info_delete(userId, sendAsEmail, id, **params):
     """
     Deletes the specified S/MIME config for the specified send-as alias. For more
     information, see [Manage S/MIME certificates with the Gmail
-    API](https://developers.google.com/workspace/gmail/api/guides/smime\_certs).
+    API](https://developers.google.com/workspace/gmail/api/guides/smime\\_certs).
 
     HTTP: ``DELETE``  Discovery: ``users.settings.sendAs.smimeInfo.delete``
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``sendAsEmail`` (str): The email address that appears in the "From:" header for mail sent using this alias.
     * ``id`` (str): The immutable ID for the SmimeInfo.
 
@@ -2446,13 +2465,13 @@ def users_settings_send_as_smime_info_get(userId, sendAsEmail, id, **params):
     """
     Gets the specified S/MIME config for the specified send-as alias. For more
     information, see [Manage S/MIME certificates with the Gmail
-    API](https://developers.google.com/workspace/gmail/api/guides/smime\_certs).
+    API](https://developers.google.com/workspace/gmail/api/guides/smime\\_certs).
 
     HTTP: ``GET``  Discovery: ``users.settings.sendAs.smimeInfo.get``
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``sendAsEmail`` (str): The email address that appears in the "From:" header for mail sent using this alias.
     * ``id`` (str): The immutable ID for the SmimeInfo.
 
@@ -2479,15 +2498,15 @@ def users_settings_send_as_smime_info_get(userId, sendAsEmail, id, **params):
 def users_settings_send_as_smime_info_insert(userId, sendAsEmail, body=None, **params):
     """
     Insert (upload) the given S/MIME config for the specified send-as alias. Note that
-    \`pkcs12\` format is required for the key. For more information, see [Manage S/MIME
-    certificates with the Gmail
-    API](https://developers.google.com/workspace/gmail/api/guides/smime\_certs).
+    \\`pkcs12\\` format is required for the key. For more information, see [Manage
+    S/MIME certificates with the Gmail
+    API](https://developers.google.com/workspace/gmail/api/guides/smime\\_certs).
 
     HTTP: ``POST``  Discovery: ``users.settings.sendAs.smimeInfo.insert``
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``sendAsEmail`` (str): The email address that appears in the "From:" header for mail sent using this alias.
 
     * ``body`` (dict): request body payload.
@@ -2516,13 +2535,13 @@ def users_settings_send_as_smime_info_list(userId, sendAsEmail, **params):
     """
     Lists S/MIME configs for the specified send-as alias. For more information, see
     [Manage S/MIME certificates with the Gmail
-    API](https://developers.google.com/workspace/gmail/api/guides/smime\_certs).
+    API](https://developers.google.com/workspace/gmail/api/guides/smime\\_certs).
 
     HTTP: ``GET``  Discovery: ``users.settings.sendAs.smimeInfo.list``
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``sendAsEmail`` (str): The email address that appears in the "From:" header for mail sent using this alias.
 
     CLI Example:
@@ -2548,13 +2567,13 @@ def users_settings_send_as_smime_info_set_default(userId, sendAsEmail, id, **par
     """
     Sets the default S/MIME config for the specified send-as alias. For more
     information, see [Manage S/MIME certificates with the Gmail
-    API](https://developers.google.com/workspace/gmail/api/guides/smime\_certs).
+    API](https://developers.google.com/workspace/gmail/api/guides/smime\\_certs).
 
     HTTP: ``POST``  Discovery: ``users.settings.sendAs.smimeInfo.setDefault``
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``sendAsEmail`` (str): The email address that appears in the "From:" header for mail sent using this alias.
     * ``id`` (str): The immutable ID for the SmimeInfo.
 
@@ -2582,14 +2601,14 @@ def users_threads_delete(userId, id, **params):
     """
     Immediately and permanently deletes the specified thread. Any messages that belong
     to the thread are also deleted. This operation cannot be undone. Prefer
-    \`threads.trash\` instead. For more information, see [Manage
+    \\`threads.trash\\` instead. For more information, see [Manage
     threads](https://developers.google.com/workspace/gmail/api/guides/threads).
 
     HTTP: ``DELETE``  Discovery: ``users.threads.delete``
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``id`` (str): ID of the Thread to delete.
 
     CLI Example:
@@ -2620,7 +2639,7 @@ def users_threads_get(userId, id, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``id`` (str): The ID of the thread to retrieve.
 
     Optional parameters (pass via keyword args):
@@ -2656,15 +2675,15 @@ def users_threads_list(userId, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
 
     Optional parameters (pass via keyword args):
 
-    * ``includeSpamTrash`` (bool): Include threads from \`SPAM\` and \`TRASH\` in the results.
+    * ``includeSpamTrash`` (bool): Include threads from \\`SPAM\\` and \\`TRASH\\` in the results.
     * ``labelIds`` (str): Only return threads with labels that match all of the specified label IDs.
     * ``maxResults`` (int): Maximum number of threads to return. This field defaults to 100. The maximum allowed value for this field is 500.
     * ``pageToken`` (str): Page token to retrieve a specific page of results in the list.
-    * ``q`` (str): Only return threads matching the specified query. Supports the same query format as the Gmail search box. For example, \`"from:someuser@example.com rfc822msgid: is:unread"\`. Parameter cannot be used w…
+    * ``q`` (str): Only return threads matching the specified query. Supports the same query format as the Gmail search box. For example, \\`"from:someuser@example.com rfc822msgid: is:unread"\\`. Parameter cannot be used w…
 
     CLI Example:
 
@@ -2694,7 +2713,7 @@ def users_threads_modify(userId, id, body=None, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``id`` (str): The ID of the thread to modify.
 
     * ``body`` (dict): request body payload.
@@ -2729,7 +2748,7 @@ def users_threads_trash(userId, id, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``id`` (str): The ID of the thread to Trash.
 
     CLI Example:
@@ -2761,7 +2780,7 @@ def users_threads_untrash(userId, id, **params):
 
     Required parameters:
 
-    * ``userId`` (str): The user's email address. The special value \`me\` can be used to indicate the authenticated user.
+    * ``userId`` (str): The user's email address. The special value \\`me\\` can be used to indicate the authenticated user.
     * ``id`` (str): The ID of the thread to remove from Trash.
 
     CLI Example:

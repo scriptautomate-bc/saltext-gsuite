@@ -6,8 +6,6 @@ We drive this straight off ``gws <service> --help`` and ``gws <service> +helper 
 the generated wrappers always match exactly what the shipped binary supports.
 """
 
-from __future__ import annotations
-
 import re
 import subprocess
 from dataclasses import dataclass

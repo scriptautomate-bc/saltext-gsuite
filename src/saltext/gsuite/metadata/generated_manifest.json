@@ -3,6 +3,7 @@
     "docs/ref/modules/gsuite_admin_reports.rst",
     "docs/ref/modules/gsuite_calendar.rst",
     "docs/ref/modules/gsuite_chat.rst",
+    "docs/ref/modules/gsuite_chat_webhook.rst",
     "docs/ref/modules/gsuite_classroom.rst",
     "docs/ref/modules/gsuite_docs.rst",
     "docs/ref/modules/gsuite_drive.rst",

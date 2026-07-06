@@ -67,7 +67,7 @@ def file_announce(file_id, space, message=None, test=False):
     Options:
 
     * ``file_id`` (required value): Drive file ID to announce
-    * ``space`` (required value): Chat space name (e.g. spaces/SPACE\_ID)
+    * ``space`` (required value): Chat space name (e.g. spaces/SPACE\\_ID)
     * ``message`` (optional value): Custom announcement message
 
     CLI Example:

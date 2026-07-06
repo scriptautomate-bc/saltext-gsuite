@@ -69,7 +69,7 @@ def conference_records_list(**params):
 
     Optional parameters (pass via keyword args):
 
-    * ``filter`` (str): Optional. User specified filtering condition in [EBNF format](https://en.wikipedia.org/wiki/Extended\_Backus%E2%80%93Naur\_form). The following are the filterable fields: \* \`space.meeting\_code\` \* \`spac…
+    * ``filter`` (str): Optional. User specified filtering condition in [EBNF format](https://en.wikipedia.org/wiki/Extended\\_Backus%E2%80%93Naur\\_form). The following are the filterable fields: \\* \\`space.meeting\\_code\\` \\* \\`spac…
     * ``pageSize`` (int): Optional. Maximum number of conference records to return. The service might return fewer than this value. If unspecified, at most 25 conference records are returned. The maximum value is 100; values…
     * ``pageToken`` (str): Optional. Page token returned from previous List Call.
 
@@ -121,19 +121,19 @@ def conference_records_participants_get(name, **params):
 def conference_records_participants_list(parent, **params):
     """
     Lists the participants in a conference record. By default, ordered by join time and
-    in descending order. This API supports \`fields\` as standard parameters like every
-    other API. However, when the \`fields\` request parameter is omitted, this API
-    defaults to \`'participants/\*, next\_page\_token'\`.
+    in descending order. This API supports \\`fields\\` as standard parameters like
+    every other API. However, when the \\`fields\\` request parameter is omitted, this
+    API defaults to \\`'participants/\\*, next\\_page\\_token'\\`.
 
     HTTP: ``GET``  Discovery: ``conferenceRecords.participants.list``
 
     Required parameters:
 
-    * ``parent`` (str): Required. Format: \`conferenceRecords/{conference\_record}\`
+    * ``parent`` (str): Required. Format: \\`conferenceRecords/{conference\\_record}\\`
 
     Optional parameters (pass via keyword args):
 
-    * ``filter`` (str): Optional. User specified filtering condition in [EBNF format](https://en.wikipedia.org/wiki/Extended\_Backus%E2%80%93Naur\_form). The following are the filterable fields: \* \`earliest\_start\_time\` \* \`lat…
+    * ``filter`` (str): Optional. User specified filtering condition in [EBNF format](https://en.wikipedia.org/wiki/Extended\\_Backus%E2%80%93Naur\\_form). The following are the filterable fields: \\* \\`earliest\\_start\\_time\\` \\* \\`lat…
     * ``pageSize`` (int): Maximum number of participants to return. The service might return fewer than this value. If unspecified, at most 100 participants are returned. The maximum value is 250; values above 250 are coerced…
     * ``pageToken`` (str): Page token returned from previous List Call.
 
@@ -186,20 +186,20 @@ def conference_records_participants_participant_sessions_get(name, **params):
 def conference_records_participants_participant_sessions_list(parent, **params):
     """
     Lists the participant sessions of a participant in a conference record. By default,
-    ordered by join time and in descending order. This API supports \`fields\` as
-    standard parameters like every other API. However, when the \`fields\` request
-    parameter is omitted this API defaults to \`'participantsessions/\*,
-    next\_page\_token'\`.
+    ordered by join time and in descending order. This API supports \\`fields\\` as
+    standard parameters like every other API. However, when the \\`fields\\` request
+    parameter is omitted this API defaults to \\`'participantsessions/\\*,
+    next\\_page\\_token'\\`.
 
     HTTP: ``GET``  Discovery: ``conferenceRecords.participants.participantSessions.list``
 
     Required parameters:
 
-    * ``parent`` (str): Required. Format: \`conferenceRecords/{conference\_record}/participants/{participant}\`
+    * ``parent`` (str): Required. Format: \\`conferenceRecords/{conference\\_record}/participants/{participant}\\`
 
     Optional parameters (pass via keyword args):
 
-    * ``filter`` (str): Optional. User specified filtering condition in [EBNF format](https://en.wikipedia.org/wiki/Extended\_Backus%E2%80%93Naur\_form). The following are the filterable fields: \* \`start\_time\` \* \`end\_time\` Fo…
+    * ``filter`` (str): Optional. User specified filtering condition in [EBNF format](https://en.wikipedia.org/wiki/Extended\\_Backus%E2%80%93Naur\\_form). The following are the filterable fields: \\* \\`start\\_time\\` \\* \\`end\\_time\\` Fo…
     * ``pageSize`` (int): Optional. Maximum number of participant sessions to return. The service might return fewer than this value. If unspecified, at most 100 participants are returned. The maximum value is 250; values abo…
     * ``pageToken`` (str): Optional. Page token returned from previous List Call.
 
@@ -258,7 +258,7 @@ def conference_records_recordings_list(parent, **params):
 
     Required parameters:
 
-    * ``parent`` (str): Required. Format: \`conferenceRecords/{conference\_record}\`
+    * ``parent`` (str): Required. Format: \\`conferenceRecords/{conference\\_record}\\`
 
     Optional parameters (pass via keyword args):
 
@@ -291,7 +291,7 @@ def conference_records_smart_notes_get(name, **params):
 
     Required parameters:
 
-    * ``name`` (str): Required. Resource name of the smart note. Format: conferenceRecords/{conference\_record}/smartNotes/{smart\_note}
+    * ``name`` (str): Required. Resource name of the smart note. Format: conferenceRecords/{conference\\_record}/smartNotes/{smart\\_note}
 
     CLI Example:
 
@@ -320,7 +320,7 @@ def conference_records_smart_notes_list(parent, **params):
 
     Required parameters:
 
-    * ``parent`` (str): Required. Format: \`conferenceRecords/{conference\_record}\`
+    * ``parent`` (str): Required. Format: \\`conferenceRecords/{conference\\_record}\\`
 
     Optional parameters (pass via keyword args):
 
@@ -382,7 +382,7 @@ def conference_records_transcripts_list(parent, **params):
 
     Required parameters:
 
-    * ``parent`` (str): Required. Format: \`conferenceRecords/{conference\_record}\`
+    * ``parent`` (str): Required. Format: \\`conferenceRecords/{conference\\_record}\\`
 
     Optional parameters (pass via keyword args):
 
@@ -409,7 +409,7 @@ def conference_records_transcripts_list(parent, **params):
 
 def conference_records_transcripts_entries_get(name, **params):
     """
-    Gets a \`TranscriptEntry\` resource by entry ID. Note: The transcript entries
+    Gets a \\`TranscriptEntry\\` resource by entry ID. Note: The transcript entries
     returned by the Google Meet API might not match the transcription found in the
     Google Docs transcript file. This can occur when 1) we have interleaved speakers
     within milliseconds, or 2) the Google Docs transcript file is modified after
@@ -419,7 +419,7 @@ def conference_records_transcripts_entries_get(name, **params):
 
     Required parameters:
 
-    * ``name`` (str): Required. Resource name of the \`TranscriptEntry\`.
+    * ``name`` (str): Required. Resource name of the \\`TranscriptEntry\\`.
 
     CLI Example:
 
@@ -451,7 +451,7 @@ def conference_records_transcripts_entries_list(parent, **params):
 
     Required parameters:
 
-    * ``parent`` (str): Required. Format: \`conferenceRecords/{conference\_record}/transcripts/{transcript}\`
+    * ``parent`` (str): Required. Format: \\`conferenceRecords/{conference\\_record}/transcripts/{transcript}\\`
 
     Optional parameters (pass via keyword args):
 
@@ -505,14 +505,13 @@ def spaces_create(body=None, **params):
 def spaces_end_active_conference(name, body=None, **params):
     """
     Ends an active conference (if there's one). For an example, see [End active
-    conference](https://developers.google.com/workspace/meet/api/guides/meeting-
-    spaces#end-active-conference).
+    conference](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#end-active-conference).
 
     HTTP: ``POST``  Discovery: ``spaces.endActiveConference``
 
     Required parameters:
 
-    * ``name`` (str): Required. Resource name of the space. Format: \`spaces/{space}\`. \`{space}\` is the resource identifier for the space. It's a unique, server-generated ID and is case sensitive. For example, \`jQCFfuBOdN5…
+    * ``name`` (str): Required. Resource name of the space. Format: \\`spaces/{space}\\`. \\`{space}\\` is the resource identifier for the space. It's a unique, server-generated ID and is case sensitive. For example, \\`jQCFfuBOdN5…
 
     * ``body`` (dict): request body payload.
 
@@ -538,14 +537,13 @@ def spaces_end_active_conference(name, body=None, **params):
 def spaces_get(name, **params):
     """
     Gets details about a meeting space. For an example, see [Get a meeting
-    space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#get-
-    meeting-space).
+    space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#get-meeting-space).
 
     HTTP: ``GET``  Discovery: ``spaces.get``
 
     Required parameters:
 
-    * ``name`` (str): Required. Resource name of the space. Format: \`spaces/{space}\` or \`spaces/{meetingCode}\`. \`{space}\` is the resource identifier for the space. It's a unique, server-generated ID and is case sensitive.…
+    * ``name`` (str): Required. Resource name of the space. Format: \\`spaces/{space}\\` or \\`spaces/{meetingCode}\\`. \\`{space}\\` is the resource identifier for the space. It's a unique, server-generated ID and is case sensitive.…
 
     CLI Example:
 
@@ -568,20 +566,19 @@ def spaces_get(name, **params):
 def spaces_patch(name, body=None, **params):
     """
     Updates details about a meeting space. For an example, see [Update a meeting
-    space](https://developers.google.com/workspace/meet/api/guides/meeting-
-    spaces#update-meeting-space).
+    space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#update-meeting-space).
 
     HTTP: ``PATCH``  Discovery: ``spaces.patch``
 
     Required parameters:
 
-    * ``name`` (str): Immutable. Resource name of the space. Format: \`spaces/{space}\`. \`{space}\` is the resource identifier for the space. It's a unique, server-generated ID and is case sensitive. For example, \`jQCFfuBOdN…
+    * ``name`` (str): Immutable. Resource name of the space. Format: \\`spaces/{space}\\`. \\`{space}\\` is the resource identifier for the space. It's a unique, server-generated ID and is case sensitive. For example, \\`jQCFfuBOdN…
 
     * ``body`` (dict): request body payload.
 
     Optional parameters (pass via keyword args):
 
-    * ``updateMask`` (str): Optional. Field mask used to specify the fields to be updated in the space. If update\_mask isn't provided(not set, set with empty paths, or only has "" as paths), it defaults to update all fields pro…
+    * ``updateMask`` (str): Optional. Field mask used to specify the fields to be updated in the space. If update\\_mask isn't provided(not set, set with empty paths, or only has "" as paths), it defaults to update all fields pro…
 
     CLI Example:
 
