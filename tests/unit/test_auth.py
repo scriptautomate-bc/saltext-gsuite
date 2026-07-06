@@ -1,6 +1,7 @@
 import json
 import os
 import stat
+import sys
 
 import pytest
 
@@ -53,8 +54,9 @@ def test_service_account_inline_staged_and_cleaned(opts):
         path = env[_auth.ENV_CREDENTIALS_FILE]
         staged["path"] = path
         assert os.path.isfile(path)
-        # 0600 permissions
-        assert stat.S_IMODE(os.stat(path).st_mode) == 0o600
+        if sys.platform != "win32":
+            # 0600 permissions; Windows ACLs don't map to POSIX mode bits
+            assert stat.S_IMODE(os.stat(path).st_mode) == 0o600
         with open(path, encoding="utf-8") as handle:
             assert json.load(handle)["private_key"] == "SECRET"
     # cleaned up after the context exits

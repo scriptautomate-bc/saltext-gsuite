@@ -1,6 +1,7 @@
 import os
 import stat
 import subprocess
+import sys
 from unittest.mock import MagicMock
 from unittest.mock import patch
 
@@ -38,6 +39,10 @@ def test_resolve_bundled_missing_raises(tmp_path):
             _binary.resolve()
 
 
+@pytest.mark.skipif(
+    sys.platform == "win32",
+    reason="POSIX executable bit is not meaningful on Windows filesystems",
+)
 def test_resolve_sets_executable_bit(tmp_path):
     fake = tmp_path / "gws"
     fake.write_text("#!/bin/sh\n")
